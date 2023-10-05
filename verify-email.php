@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/signup.css">
-
+    <link rel="icon" type="image/png" href="./img/logo.png" />
     <title>Verify Email</title>
     <style>
         .container {
@@ -20,82 +20,82 @@
 <body>
     <?php
 
-//learn from w3schools.com
-//Unset all the server side variables
+    //learn from w3schools.com
+    //Unset all the server side variables
 
-session_start();
+    session_start();
 
-if(!isset($_SESSION["verify-otp"])){
-    header("Location: login.php");
-}
-
-$_SESSION["user"]="";
-$_SESSION["usertype"]="";
-
-// Set the new timezone
-date_default_timezone_set('Asia/Kolkata');
-$date = date('Y-m-d');
-
-$_SESSION["date"]=$date;
-
-$email = $_SESSION['verify-email'];
-
-//import database
-include("connection.php");
-
-$sqlmain= "select * from otp where email=?;";
-$stmt = $database->prepare($sqlmain);
-$stmt->bind_param("s",$email);
-$stmt->execute();
-$result = $stmt->get_result();
-$row = $result->fetch_assoc();
-
-$otp = $row['otp_code'];
-
-// check if there is otp code 
-if($otp == ""){
-    header("Location: login.php");
-}
-
-// check if the user is already verified
-$sqlmain= "select * from webuser where email=?;";
-$stmt = $database->prepare($sqlmain);
-$stmt->bind_param("s",$email);
-$stmt->execute();
-$result = $stmt->get_result();
-$row = $result->fetch_assoc();
-
-if($row['status'] == 1){
-    header("Location: login.php");
-}
-
-$error = "";
-
-if($_POST){
-
-    $otp_code = $_POST['otp_code'];
-
-    if($otp_code == $otp){
-        $sqlmain= "update webuser set status=1 where email=?;";
-        $stmt = $database->prepare($sqlmain);
-        $stmt->bind_param("s",$email);
-        $stmt->execute();
-
-        $sqlmain= "delete from otp where email=?;";
-        $stmt = $database->prepare($sqlmain);
-        $stmt->bind_param("s",$email);
-        $stmt->execute();
-
-        // unset session variables
-        unset($_SESSION['verify-email']);
-        unset($_SESSION['verify-otp']);
+    if (!isset($_SESSION["verify-otp"])) {
         header("Location: login.php");
-    }else{
-        $error = "<p class='error-text'>Invalid Verification Code</p>";
     }
-}
 
-?>
+    $_SESSION["user"] = "";
+    $_SESSION["usertype"] = "";
+
+    // Set the new timezone
+    date_default_timezone_set('Asia/Kolkata');
+    $date = date('Y-m-d');
+
+    $_SESSION["date"] = $date;
+
+    $email = $_SESSION['verify-email'];
+
+    //import database
+    include("connection.php");
+
+    $sqlmain = "select * from otp where email=?;";
+    $stmt = $database->prepare($sqlmain);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+
+    $otp = $row['otp_code'];
+
+    // check if there is otp code 
+    if ($otp == "") {
+        header("Location: login.php");
+    }
+
+    // check if the user is already verified
+    $sqlmain = "select * from webuser where email=?;";
+    $stmt = $database->prepare($sqlmain);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+
+    if ($row['status'] == 1) {
+        header("Location: login.php");
+    }
+
+    $error = "";
+
+    if ($_POST) {
+
+        $otp_code = $_POST['otp_code'];
+
+        if ($otp_code == $otp) {
+            $sqlmain = "update webuser set status=1 where email=?;";
+            $stmt = $database->prepare($sqlmain);
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+
+            $sqlmain = "delete from otp where email=?;";
+            $stmt = $database->prepare($sqlmain);
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+
+            // unset session variables
+            unset($_SESSION['verify-email']);
+            unset($_SESSION['verify-otp']);
+            header("Location: login.php");
+        } else {
+            $error = "<p class='error-text'>Invalid Verification Code</p>";
+        }
+    }
+
+    ?>
 
 
     <center>

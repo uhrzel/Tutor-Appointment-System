@@ -18,17 +18,18 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/login.css">
-    <meta property="og:image" content="../img/doc.jpg" />
+
 
     <title>Tutor Appointment System</title>
 
 
 
 </head>
-<link rel="icon" type="image/png" href="img/doc.jpg" />
+<link rel="icon" type="image/png" href="./img/logo.png" />
 
 
 <body>
+
     <?php
 
     //learn from w3schools.com
@@ -152,7 +153,7 @@
 
 
     <center>
-        <h1>TUTOR MEDICAL APPOINTMENT SYSTEM</h1>
+        <h1>TUTORING APPOINTMENT SYSTEM</h1>
         <div class="container">
             <table border="0" style="margin: 0;padding: 0;width: 60%;">
                 <tr>
