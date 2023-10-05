@@ -146,12 +146,12 @@
 
                         <?php
                         echo '<datalist id="doctors">';
-                        $list11 = $database->query("select  docname,docemail from  doctor;");
+                        $list11 = $database->query("select  teachername,teacheremail from  teacher;");
 
                         for ($y = 0; $y < $list11->num_rows; $y++) {
                             $row00 = $list11->fetch_assoc();
-                            $d = $row00["docname"];
-                            $c = $row00["docemail"];
+                            $d = $row00["teachername"];
+                            $c = $row00["teacheremail"];
                             echo "<option value='$d'><br/>";
                             echo "<option value='$c'><br/>";
                         };
@@ -196,7 +196,7 @@
             </tr>
             <tr>
                 <td colspan="4" style="padding-top:10px;">
-                    <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">All Doctors (<?php echo $list11->num_rows; ?>)</p>
+                    <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">All Teachers (<?php echo $list11->num_rows; ?>)</p>
                 </td>
 
             </tr>
@@ -204,9 +204,9 @@
             if ($_POST) {
                 $keyword = $_POST["search"];
 
-                $sqlmain = "select * from doctor where docemail='$keyword' or docname='$keyword' or docname like '$keyword%' or docname like '%$keyword' or docname like '%$keyword%'";
+                $sqlmain = "select * from teacher where teacheremail='$keyword' or teachername='$keyword' or teachername like '$keyword%' or teachername like '%$keyword' or teacherame like '%$keyword%'";
             } else {
-                $sqlmain = "select * from doctor order by docid desc";
+                $sqlmain = "select * from teacher order by teacherid desc";
             }
 
 
@@ -223,7 +223,7 @@
                                         <th class="table-headin">
 
 
-                                            Doctor Name
+                                            Teacher Name
 
                                         </th>
                                         <th class="table-headin">
@@ -265,9 +265,9 @@
                                     } else {
                                         for ($x = 0; $x < $result->num_rows; $x++) {
                                             $row = $result->fetch_assoc();
-                                            $docid = $row["docid"];
-                                            $name = $row["docname"];
-                                            $email = $row["docemail"];
+                                            $docid = $row["teacherid"];
+                                            $name = $row["teachername"];
+                                            $email = $row["teacheremail"];
                                             $spe = $row["specialties"];
                                             $spcil_res = $database->query("select sname from specialties where id='$spe'");
                                             $spcil_array = $spcil_res->fetch_assoc();

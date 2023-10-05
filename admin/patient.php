@@ -147,12 +147,12 @@
 
                         <?php
                         echo '<datalist id="patient">';
-                        $list11 = $database->query("select  pname,pemail from patient;");
+                        $list11 = $database->query("select  studentname,studentemail from student;");
 
                         for ($y = 0; $y < $list11->num_rows; $y++) {
                             $row00 = $list11->fetch_assoc();
-                            $d = $row00["pname"];
-                            $c = $row00["pemail"];
+                            $d = $row00["studentname"];
+                            $c = $row00["studentemail"];
                             echo "<option value='$d'><br/>";
                             echo "<option value='$c'><br/>";
                         };
@@ -189,7 +189,7 @@
 
             <tr>
                 <td colspan="4" style="padding-top:10px;">
-                    <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">All Patients (<?php echo $list11->num_rows; ?>)</p>
+                    <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">All Students (<?php echo $list11->num_rows; ?>)</p>
                 </td>
 
             </tr>
@@ -197,9 +197,9 @@
             if ($_POST) {
                 $keyword = $_POST["search"];
 
-                $sqlmain = "select * from patient where pemail='$keyword' or pname='$keyword' or pname like '$keyword%' or pname like '%$keyword' or pname like '%$keyword%' ";
+                $sqlmain = "select * from student where studentemail='$keyword' or studentname='$keyword' or studentname like '$keyword%' or studentname like '%$keyword' or studentname like '%$keyword%' ";
             } else {
-                $sqlmain = "select * from patient order by pid desc";
+                $sqlmain = "select * from student order by studentid desc";
             }
 
 
@@ -270,12 +270,12 @@
                                     } else {
                                         for ($x = 0; $x < $result->num_rows; $x++) {
                                             $row = $result->fetch_assoc();
-                                            $pid = $row["pid"];
-                                            $name = $row["pname"];
-                                            $email = $row["pemail"];
-                                            $nic = $row["pnic"];
-                                            $dob = $row["pdob"];
-                                            $tel = $row["ptel"];
+                                            $pid = $row["studentid"];
+                                            $name = $row["studentname"];
+                                            $email = $row["studentemail"];
+                                            $nic = $row["studentnic"];
+                                            $dob = $row["studentdob"];
+                                            $tel = $row["studenttel"];
 
                                             echo '<tr>
                                         <td> &nbsp;' .
@@ -324,15 +324,15 @@
 
         $id = $_GET["id"];
         $action = $_GET["action"];
-        $sqlmain = "select * from patient where pid='$id'";
+        $sqlmain = "select * from student where studentid='$id'";
         $result = $database->query($sqlmain);
         $row = $result->fetch_assoc();
-        $name = $row["pname"];
-        $email = $row["pemail"];
-        $nic = $row["pnic"];
-        $dob = $row["pdob"];
-        $tele = $row["ptel"];
-        $address = $row["paddress"];
+        $name = $row["studentname"];
+        $email = $row["studentemail"];
+        $nic = $row["studentnic"];
+        $dob = $row["studentdob"];
+        $tele = $row["studenttel"];
+        $address = $row["studentaddress"];
         echo '
             <div id="popup1" class="overlay">
                     <div class="popup">
@@ -352,7 +352,7 @@
                             <tr>
                                 
                                 <td class="label-td" colspan="2">
-                                    <label for="name" class="form-label">Patient ID: </label>
+                                    <label for="name" class="form-label">Student ID: </label>
                                 </td>
                             </tr>
                             <tr>

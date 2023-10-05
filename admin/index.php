@@ -145,16 +145,16 @@
 
                     <form action="doctors.php" method="post" class="header-search">
 
-                        <input type="search" name="search" class="input-text header-searchbar" placeholder="Search Doctor name or Email" list="doctors">&nbsp;&nbsp;
+                        <input type="search" name="search" class="input-text header-searchbar" placeholder="Search Teacher name or Email" list="doctors">&nbsp;&nbsp;
 
                         <?php
                         echo '<datalist id="doctors">';
-                        $list11 = $database->query("select  docname,docemail from  doctor;");
+                        $list11 = $database->query("select  teachername,teacheremail from  teacher;");
 
                         for ($y = 0; $y < $list11->num_rows; $y++) {
                             $row00 = $list11->fetch_assoc();
-                            $d = $row00["docname"];
-                            $c = $row00["docemail"];
+                            $d = $row00["teachername"];
+                            $c = $row00["teacheremail"];
                             echo "<option value='$d'><br/>";
                             echo "<option value='$c'><br/>";
                         };
@@ -180,8 +180,8 @@
                         echo $today;
 
 
-                        $patientrow = $database->query("select  * from  patient;");
-                        $doctorrow = $database->query("select  * from  doctor;");
+                        $patientrow = $database->query("select  * from  student;");
+                        $doctorrow = $database->query("select  * from  teacher;");
                         $appointmentrow = $database->query("select  * from  appointment where appodate>='$today';");
                         $schedulerow = $database->query("select  * from  schedule where scheduledate='$today';");
 
@@ -331,7 +331,7 @@
 
                                                 <?php
                                                 $nextweek = date("Y-m-d", strtotime("+1 week"));
-                                                $sqlmain = "select appointment.appoid,schedule.scheduleid,schedule.title,doctor.docname,patient.pname,schedule.scheduledate,schedule.scheduletime,appointment.apponum,appointment.appodate from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join patient on patient.pid=appointment.pid inner join doctor on schedule.docid=doctor.docid  where schedule.scheduledate>='$today'  and schedule.scheduledate<='$nextweek' order by schedule.scheduledate desc";
+                                                $sqlmain = "select appointment.appoid,schedule.scheduleid,schedule.title,teacher.teachername,student.studentname,schedule.scheduledate,schedule.scheduletime,appointment.apponum,appointment.appodate from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join student on student.studentid=appointment.studentid inner join teacher on schedule.teacherid=teacher.teacherid  where schedule.scheduledate>='$today'  and schedule.scheduledate<='$nextweek' order by schedule.scheduledate desc";
 
                                                 $result = $database->query($sqlmain);
 
@@ -356,10 +356,10 @@
                                                         $appoid = $row["appoid"];
                                                         $scheduleid = $row["scheduleid"];
                                                         $title = $row["title"];
-                                                        $docname = $row["docname"];
+                                                        $docname = $row["teachername"];
                                                         $scheduledate = $row["scheduledate"];
                                                         $scheduletime = $row["scheduletime"];
-                                                        $pname = $row["pname"];
+                                                        $pname = $row["teachername"];
                                                         $apponum = $row["apponum"];
                                                         $appodate = $row["appodate"];
                                                         echo '<tr>
@@ -424,7 +424,7 @@
 
                                                 <?php
                                                 $nextweek = date("Y-m-d", strtotime("+1 week"));
-                                                $sqlmain = "select schedule.scheduleid,schedule.title,doctor.docname,schedule.scheduledate,schedule.scheduletime,schedule.nop from schedule inner join doctor on schedule.docid=doctor.docid  where schedule.scheduledate>='$today' and schedule.scheduledate<='$nextweek' order by schedule.scheduledate desc";
+                                                $sqlmain = "select schedule.scheduleid,schedule.title,teacher.teachername,schedule.scheduledate,schedule.scheduletime,schedule.nop from schedule inner join teacher on schedule.teacherid=teacher.teacherid  where schedule.scheduledate>='$today' and schedule.scheduledate<='$nextweek' order by schedule.scheduledate desc";
                                                 $result = $database->query($sqlmain);
 
                                                 if ($result->num_rows == 0) {
@@ -447,7 +447,7 @@
                                                         $row = $result->fetch_assoc();
                                                         $scheduleid = $row["scheduleid"];
                                                         $title = $row["title"];
-                                                        $docname = $row["docname"];
+                                                        $docname = $row["teachername"];
                                                         $scheduledate = $row["scheduledate"];
                                                         $scheduletime = $row["scheduletime"];
                                                         $nop = $row["nop"];

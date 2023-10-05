@@ -246,13 +246,13 @@
 
 
                 $sqlpt2 = "";
-                if (!empty($_POST["docid"])) {
-                    $docid = $_POST["docid"];
-                    $sqlpt2 = " doctor.docid=$docid ";
+                if (!empty($_POST["teacherid"])) {
+                    $docid = $_POST["teacherid"];
+                    $sqlpt2 = " teacher.teacherid=$docid ";
                 }
                 //echo $sqlpt2;
                 //echo $sqlpt1;
-                $sqlmain = "select schedule.scheduleid,schedule.title,doctor.docname,schedule.scheduledate,schedule.scheduletime,schedule.nop from schedule inner join doctor on schedule.docid=doctor.docid ";
+                $sqlmain = "select schedule.scheduleid,schedule.title,teacher.teachername,schedule.scheduledate,schedule.scheduletime,schedule.nop from schedule inner join teacher on schedule.teacherid=teacher.teacherid ";
                 $sqllist = array($sqlpt1, $sqlpt2);
                 $sqlkeywords = array(" where ", " and ");
                 $key2 = 0;
@@ -269,7 +269,7 @@
 
                 //
             } else {
-                $sqlmain = "select schedule.scheduleid,schedule.title,doctor.docname,schedule.scheduledate,schedule.scheduletime,schedule.nop from schedule inner join doctor on schedule.docid=doctor.docid  order by schedule.scheduledate desc";
+                $sqlmain = "select schedule.scheduleid,schedule.title,teacher.teachername,schedule.scheduledate,schedule.scheduletime,schedule.nop from schedule inner join teacher on schedule.teacherid=teacher.teacherid  order by schedule.scheduledate desc";
             }
 
 
@@ -337,7 +337,7 @@
                                             $row = $result->fetch_assoc();
                                             $scheduleid = $row["scheduleid"];
                                             $title = $row["title"];
-                                            $docname = $row["docname"];
+                                            $docname = $row["teachername"];
                                             $scheduledate = $row["scheduledate"];
                                             $scheduletime = $row["scheduletime"];
                                             $nop = $row["nop"];
@@ -425,21 +425,21 @@
                             <tr>
                                 
                                 <td class="label-td" colspan="2">
-                                    <label for="docid" class="form-label">Select Doctor: </label>
+                                    <label for="docid" class="form-label">Select Teacher: </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
                                     <select name="docid" id="" class="box" >
-                                    <option value="" disabled selected hidden>Choose Doctor Name from the list</option><br/>';
+                                    <option value="" disabled selected hidden>Choose Teacher Name from the list</option><br/>';
 
 
-            $list11 = $database->query("select  * from  doctor order by docname asc;");
+            $list11 = $database->query("select  * from  teacher order by teachername asc;");
 
             for ($y = 0; $y < $list11->num_rows; $y++) {
                 $row00 = $list11->fetch_assoc();
-                $sn = $row00["docname"];
-                $id00 = $row00["docid"];
+                $sn = $row00["teachername"];
+                $id00 = $row00["teacherid"];
                 echo "<option value=" . $id00 . ">$sn</option><br/>";
             };
 
@@ -451,7 +451,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="nop" class="form-label">Number of Patients/Appointment Numbers : </label>
+                                    <label for="nop" class="form-label">Number of Student/Appointment Numbers : </label>
                                 </td>
                             </tr>
                             <tr>

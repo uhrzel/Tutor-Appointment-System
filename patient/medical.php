@@ -185,11 +185,11 @@
 
                                 <thead>
                                     <tr>
-                                        <th style="text-align: left;padding-left: 20px;">Doctor Name</th>
-                                        <th style="text-align: left;padding-left: 20px;">Blood Sugar</th>
-                                        <th style="text-align: left;padding-left: 20px;">Blood Pressure</th>
-                                        <th style="text-align: left;padding-left: 20px;">Weight</th>
-                                        <th style="text-align: left;padding-left: 20px;">Body Temperature</th>
+                                        <th style="text-align: left;padding-left: 20px;">Teacher Name</th>
+                                        <th style="text-align: left;padding-left: 20px;">Student Name</th>
+                                        <th style="text-align: left;padding-left: 20px;">Id Number</th>
+                                        <th style="text-align: left;padding-left: 20px;">Status</th>
+                                        <th style="text-align: left;padding-left: 20px;">Course</th>
                                         <th style="text-align: left;padding-left: 20px;">Prescription</th>
                                         <th style="text-align: left;padding-left: 20px;">Date</th>
                                     </tr>

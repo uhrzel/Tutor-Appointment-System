@@ -204,16 +204,16 @@
                                 </td>
                                 <td width="30%">
                                     <select name="docid" id="" class="box filter-container-items" style="width:90% ;height: 37px;margin: 0;">
-                                        <option value="" disabled selected hidden>Choose Doctor Name from the list</option><br />
+                                        <option value="" disabled selected hidden>Choose Teacher Name from the list</option><br />
 
                                         <?php
 
-                                        $list11 = $database->query("select  * from  doctor order by docname asc;");
+                                        $list11 = $database->query("select  * from  teacher order by teachername asc;");
 
                                         for ($y = 0; $y < $list11->num_rows; $y++) {
                                             $row00 = $list11->fetch_assoc();
-                                            $sn = $row00["docname"];
-                                            $id00 = $row00["docid"];
+                                            $sn = $row00["teachername"];
+                                            $id00 = $row00["teacherid"];
                                             echo "<option value=" . $id00 . ">$sn</option><br/>";
                                         };
 
@@ -239,20 +239,20 @@
             if ($_POST) {
                 //print_r($_POST);
                 $sqlpt1 = "";
-                if (!empty($_POST["sheduledate"])) {
-                    $sheduledate = $_POST["sheduledate"];
+                if (!empty($_POST["scheduledate"])) {
+                    $sheduledate = $_POST["scheduledate"];
                     $sqlpt1 = " schedule.scheduledate='$sheduledate' ";
                 }
 
 
                 $sqlpt2 = "";
-                if (!empty($_POST["docid"])) {
-                    $docid = $_POST["docid"];
-                    $sqlpt2 = " doctor.docid=$docid ";
+                if (!empty($_POST["teacherid"])) {
+                    $docid = $_POST["teacherid"];
+                    $sqlpt2 = " teacher.teacherid=$docid ";
                 }
                 //echo $sqlpt2;
                 //echo $sqlpt1;
-                $sqlmain = "select appointment.appoid,schedule.scheduleid,appointment.status,schedule.title,doctor.docname,patient.pname,schedule.scheduledate,schedule.scheduletime,appointment.apponum,appointment.appodate from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join patient on patient.pid=appointment.pid inner join doctor on schedule.docid=doctor.docid";
+                $sqlmain = "select appointment.appoid,schedule.scheduleid,appointment.status,schedule.title,teacher.teachername,student.studentname,schedule.scheduledate,schedule.scheduletime,appointment.apponum,appointment.appodate from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join student on student.studentid=appointment.studentid inner join teacher on schedule.teacherid=teacher.teacherid";
                 $sqllist = array($sqlpt1, $sqlpt2);
                 $sqlkeywords = array(" where ", " and ");
                 $key2 = 0;
@@ -269,7 +269,7 @@
 
                 //
             } else {
-                $sqlmain = "select appointment.appoid,schedule.scheduleid,appointment.status,schedule.title,doctor.docname,patient.pname,schedule.scheduledate,schedule.scheduletime,appointment.apponum,appointment.appodate from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join patient on patient.pid=appointment.pid inner join doctor on schedule.docid=doctor.docid  order by schedule.scheduledate desc";
+                $sqlmain = "select appointment.appoid,schedule.scheduleid,appointment.status,schedule.title,teacher.teachername,student.studentname,schedule.scheduledate,schedule.scheduletime,appointment.apponum,appointment.appodate from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join student on student.studentid=appointment.studentid inner join teacher on schedule.teacherid=teacher.teacherid  order by schedule.scheduledate desc";
             }
 
 
@@ -284,7 +284,7 @@
                                 <thead>
                                     <tr>
                                         <th class="table-headin">
-                                            Patient name
+                                            Student name
                                         </th>
                                         <th class="table-headin">
 
@@ -294,7 +294,7 @@
 
 
                                         <th class="table-headin">
-                                            Doctor
+                                            Teacher
                                         </th>
                                         <th class="table-headin">
 
@@ -349,10 +349,10 @@
                                             $appoid = $row["appoid"];
                                             $scheduleid = $row["scheduleid"];
                                             $title = $row["title"];
-                                            $docname = $row["docname"];
+                                            $docname = $row["teachername"];
                                             $scheduledate = $row["scheduledate"];
                                             $scheduletime = $row["scheduletime"];
-                                            $pname = $row["pname"];
+                                            $pname = $row["studentname"];
                                             $apponum = $row["apponum"];
                                             $appodate = $row["appodate"];
                                             $status = $row["status"];
@@ -455,21 +455,21 @@
                             <tr>
                                 
                                 <td class="label-td" colspan="2">
-                                    <label for="docid" class="form-label">Select Doctor: </label>
+                                    <label for="docid" class="form-label">Select Teacher: </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
                                     <select name="docid" id="" class="box" >
-                                    <option value="" disabled selected hidden>Choose Doctor Name from the list</option><br/>';
+                                    <option value="" disabled selected hidden>Choose Teacher Name from the list</option><br/>';
 
 
-            $list11 = $database->query("select  * from  doctor;");
+            $list11 = $database->query("select  * from  teacher;");
 
             for ($y = 0; $y < $list11->num_rows; $y++) {
                 $row00 = $list11->fetch_assoc();
-                $sn = $row00["docname"];
-                $id00 = $row00["docid"];
+                $sn = $row00["teachername"];
+                $id00 = $row00["teacherid"];
                 echo "<option value=" . $id00 . ">$sn</option><br/>";
             };
 
@@ -481,7 +481,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="nop" class="form-label">Number of Patients/Appointment Numbers : </label>
+                                    <label for="nop" class="form-label">Number of Student/Appointment Numbers : </label>
                                 </td>
                             </tr>
                             <tr>
@@ -563,7 +563,7 @@
                         <a class="close" href="appointment.php">&times;</a>
                         <div class="content">
                             You want to delete this record<br><br>
-                            Patient Name: &nbsp;<b>' . substr($nameget, 0, 40) . '</b><br>
+                            Student Name: &nbsp;<b>' . substr($nameget, 0, 40) . '</b><br>
                             Appointment number &nbsp; : <b>' . substr($apponum, 0, 40) . '</b><br><br>
                             
                         </div>
@@ -577,18 +577,18 @@
             </div>
             ';
         } elseif ($action == 'view') {
-            $sqlmain = "select * from doctor where docid='$id'";
+            $sqlmain = "select * from teacher where teacherid='$id'";
             $result = $database->query($sqlmain);
             $row = $result->fetch_assoc();
-            $name = $row["docname"];
-            $email = $row["docemail"];
+            $name = $row["teachername"];
+            $email = $row["teacheremail"];
             $spe = $row["specialties"];
 
             $spcil_res = $database->query("select sname from specialties where id='$spe'");
             $spcil_array = $spcil_res->fetch_assoc();
             $spcil_name = $spcil_array["sname"];
-            $nic = $row['docnic'];
-            $tele = $row['doctel'];
+            $nic = $row['teachernic'];
+            $tele = $row['teachertel'];
             echo '
             <div id="popup1" class="overlay">
                     <div class="popup">

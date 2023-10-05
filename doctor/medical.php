@@ -136,7 +136,7 @@
                         </button></a>
                 </td>
                 <td>
-                    <p style="font-size: 23px;padding-left:12px;font-weight: 600;">Patients Medical</p>
+                    <p style="font-size: 23px;padding-left:12px;font-weight: 600;">Student Description</p>
 
                 </td>
                 <td width="15%">
@@ -314,7 +314,7 @@
                             <tr>
                                 <td>
                                     <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">
-                                        Add New Medical
+                                        Add New Description
                                     </p><br>
                                 </td>
                             </tr>
@@ -345,7 +345,7 @@
                             <tr>
                                 
                                 <td class="label-td" colspan="2">
-                                    <label for="docid" class="form-label">Doctor: </label>
+                                    <label for="docid" class="form-label">Teachers: </label>
                                 </td>
                             </tr>
                             <tr>
