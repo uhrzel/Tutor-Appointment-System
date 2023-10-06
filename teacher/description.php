@@ -83,7 +83,7 @@
         </tr>
         <tr class="menu-row">
             <td class="menu-btn menu-icon-session menu-active menu-icon-appoinment-active">
-                <a href="medical.php" class="non-style-link-menu non-style-link-menu-active">
+                <a href="description.php" class="non-style-link-menu non-style-link-menu-active">
                     <div>
                         <p class="menu-text">Description</p>
                 </a>
@@ -110,7 +110,7 @@
     </tr>
     <tr class="menu-row">
         <td class="menu-btn menu-icon-patient">
-            <a href="patient.php" class="non-style-link-menu">
+            <a href="student.php" class="non-style-link-menu">
                 <div>
                     <p class="menu-text">My Students</p>
             </a></div>
@@ -300,7 +300,7 @@
                     <center>
                     
                     
-                        <a class="close" href="medical.php">&times;</a> 
+                        <a class="close" href="description.php">&times;</a> 
                         <div style="display: flex;justify-content: center;">
                         <div class="abc">
                         <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0">
@@ -320,7 +320,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                <form action="add-medical.php" method="POST" class="add-new-form">
+                                <form action="add-description.php" method="POST" class="add-new-form">
                                     <label for="patient" class="form-label">Select Student : </label>
                                 </td>
                             </tr>

@@ -104,7 +104,7 @@
     }
 
 
-    header("location: doctors.php?action=add&error=" . $error);
+    header("location: teacher.php?action=add&error=" . $error);
     ?>
 
 

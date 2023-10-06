@@ -78,7 +78,7 @@
         </tr>
         <tr class="menu-row">
             <td class="menu-btn menu-icon-doctor ">
-                <a href="doctors.php" class="non-style-link-menu ">
+                <a href="teacher.php" class="non-style-link-menu ">
                     <div>
                         <p class="menu-text">Teachers</p>
                 </a>
@@ -104,7 +104,7 @@
     </tr>
     <tr class="menu-row">
         <td class="menu-btn menu-icon-patient  menu-active menu-icon-patient-active">
-            <a href="patient.php" class="non-style-link-menu  non-style-link-menu-active">
+            <a href="student.php" class="non-style-link-menu  non-style-link-menu-active">
                 <div>
                     <p class="menu-text">Students</p>
             </a></div>
@@ -134,7 +134,7 @@
             <tr>
                 <td width="13%">
 
-                    <a href="patient.php"><button class="login-btn btn-primary-soft btn btn-icon-back" style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px">
+                    <a href="student.php"><button class="login-btn btn-primary-soft btn btn-icon-back" style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px">
                             <font class="tn-in-text">Back</font>
                         </button></a>
 
@@ -261,7 +261,7 @@
                                     
                                     <br>
                                     <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">We  couldnt find anything related to your keywords !</p>
-                                    <a class="non-style-link" href="patient.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Show all Patients &nbsp;</font></button>
+                                    <a class="non-style-link" href="student.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Show all Sutdents &nbsp;</font></button>
                                     </a>
                                     </center>
                                     <br><br><br><br>
@@ -337,7 +337,7 @@
             <div id="popup1" class="overlay">
                     <div class="popup">
                     <center>
-                        <a class="close" href="patient.php">&times;</a>
+                        <a class="close" href="student.php">&times;</a>
                         <div class="content">
 
                         </div>
@@ -429,7 +429,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <a href="patient.php"><input type="button" value="OK" class="login-btn btn-primary-soft btn" ></a>
+                                    <a href="student.php"><input type="button" value="OK" class="login-btn btn-primary-soft btn" ></a>
                                 
                                     
                                 </td>

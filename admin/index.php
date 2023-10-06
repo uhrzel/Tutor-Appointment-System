@@ -86,7 +86,7 @@
         </tr>
         <tr class="menu-row">
             <td class="menu-btn menu-icon-doctor ">
-                <a href="doctors.php" class="non-style-link-menu">
+                <a href="teacher.php" class="non-style-link-menu">
                     <div>
                         <p class="menu-text">Teachers</p>
                 </a>
@@ -112,7 +112,7 @@
     </tr>
     <tr class="menu-row">
         <td class="menu-btn menu-icon-patient">
-            <a href="patient.php" class="non-style-link-menu">
+            <a href="student.php" class="non-style-link-menu">
                 <div>
                     <p class="menu-text">Students</p>
             </a></div>
@@ -143,7 +143,7 @@
 
                 <td colspan="2" class="nav-bar">
 
-                    <form action="doctors.php" method="post" class="header-search">
+                    <form action="teacher.php" method="post" class="header-search">
 
                         <input type="search" name="search" class="input-text header-searchbar" placeholder="Search Teacher name or Email" list="doctors">&nbsp;&nbsp;
 
@@ -226,7 +226,7 @@
                                                 <?php echo $patientrow->num_rows  ?>
                                             </div><br>
                                             <div class="h3-dashboard">
-                                                Patients &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                Student &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             </div>
                                         </div>
                                         <div class="btn-icon-back dashboard-icons" style="background-image: url('../img/icons/patients-hover.svg');"></div>

@@ -5,10 +5,10 @@
     include("./connection.php");
 
 	if($_GET['type'] == 'p'){
-		$sql = "INSERT INTO patient_logs(email, logs) VALUES ('".$_GET['email']."', 'logged out')";
+		$sql = "INSERT INTO student_logs(email, logs) VALUES ('".$_GET['email']."', 'logged out')";
 		$database->query($sql);
 	}elseif($_GET['type'] == 'd'){
-		$sql = "INSERT INTO doctor_logs(email, logs) VALUES ('".$_GET['email']."', 'logged out')";
+		$sql = "INSERT INTO teacher_logs(email, logs) VALUES ('".$_GET['email']."', 'logged out')";
 		$database->query($sql);
 	}
 
@@ -22,5 +22,3 @@
 
 	// redirecting the user to the login page
 	header('Location: login.php?action=logout');
-
- ?>

@@ -79,7 +79,7 @@
         </tr>
         <tr class="menu-row">
             <td class="menu-btn menu-icon-doctor ">
-                <a href="doctors.php" class="non-style-link-menu ">
+                <a href="teacher.php" class="non-style-link-menu ">
                     <div>
                         <p class="menu-text">Teachers</p>
                 </a>
@@ -105,7 +105,7 @@
     </tr>
     <tr class="menu-row">
         <td class="menu-btn menu-icon-patient">
-            <a href="patient.php" class="non-style-link-menu">
+            <a href="student.php" class="non-style-link-menu">
                 <div>
                     <p class="menu-text">Students</p>
             </a></div>
@@ -556,7 +556,7 @@
             $nop = $row['nop'];
 
 
-            $sqlmain12 = "select * from appointment inner join patient on patient.pid=appointment.pid inner join schedule on schedule.scheduleid=appointment.scheduleid where schedule.scheduleid=$id;";
+            $sqlmain12 = "select * from appointment inner join student on student.studentid=appointment.studentid inner join schedule on schedule.scheduleid=appointment.scheduleid where schedule.scheduleid=$id;";
             $result12 = $database->query($sqlmain12);
             echo '
             <div id="popup1" class="overlay">
@@ -621,7 +621,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="spec" class="form-label"><b>Patients that Already registerd for this session:</b> (' . $result12->num_rows . "/" . $nop . ')</label>
+                                    <label for="spec" class="form-label"><b>Students that Already registerd for this session:</b> (' . $result12->num_rows . "/" . $nop . ')</label>
                                     <br><br>
                                 </td>
                             </tr>
@@ -635,10 +635,10 @@
                                  <thead>
                                  <tr>   
                                         <th class="table-headin">
-                                             Patient ID
+                                             Student ID
                                          </th>
                                          <th class="table-headin">
-                                             Patient name
+                                             Student name
                                          </th>
                                          <th class="table-headin">
                                              
@@ -648,7 +648,7 @@
                                         
                                          
                                          <th class="table-headin">
-                                             Patient Telephone
+                                             Student Telephone
                                          </th>
                                          
                                  </thead>

@@ -98,7 +98,7 @@
         </tr>
         <tr class="menu-row">
             <td class="menu-btn menu-icon-session">
-                <a href="medical.php" class="non-style-link-menu">
+                <a href="description.php" class="non-style-link-menu">
                     <div>
                         <p class="menu-text">Description</p>
                 </a>
@@ -125,7 +125,7 @@
     </tr>
     <tr class="menu-row">
         <td class="menu-btn menu-icon-patient">
-            <a href="patient.php" class="non-style-link-menu">
+            <a href="student.php" class="non-style-link-menu">
                 <div>
                     <p class="menu-text">My Students</p>
             </a></div>

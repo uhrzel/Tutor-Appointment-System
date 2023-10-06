@@ -31,7 +31,7 @@
             $result = $stmt->get_result();
             //$resultqq= $database->query("select * from doctor where docid='$id';");
             if($result->num_rows==1){
-                $id2=$result->fetch_assoc()["pid"];
+                $id2=$result->fetch_assoc()["studentid"];
             }else{
                 $id2=$id;
             }

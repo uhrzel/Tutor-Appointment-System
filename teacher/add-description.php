@@ -25,7 +25,7 @@ if ($_POST) {
         //echo "Data not inserted";
         $_SESSION['error'] = "Failed to add medical record";
     }
-    header("location: medical.php");
+    header("location: description.php");
 } else {
-    header("location: medical.php");
+    header("location: description.php");
 }

@@ -83,7 +83,7 @@
         </tr>
         <tr class="menu-row">
             <td class="menu-btn menu-icon-session">
-                <a href="medical.php" class="non-style-link-menu">
+                <a href="description.php" class="non-style-link-menu">
                     <div>
                         <p class="menu-text">Description</p>
                 </a>
@@ -110,7 +110,7 @@
     </tr>
     <tr class="menu-row">
         <td class="menu-btn menu-icon-patient">
-            <a href="patient.php" class="non-style-link-menu">
+            <a href="student.php" class="non-style-link-menu">
                 <div>
                     <p class="menu-text">My Students</p>
             </a></div>
@@ -462,7 +462,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="nop" class="form-label">Number of Patients/Appointment Numbers : </label>
+                                    <label for="nop" class="form-label">Number of Student/Appointment Numbers : </label>
                                 </td>
                             </tr>
                             <tr>
@@ -544,7 +544,7 @@
                         <a class="close" href="appointment.php">&times;</a>
                         <div class="content">
                             You want to delete this record<br><br>
-                            Patient Name: &nbsp;<b>' . substr($nameget, 0, 40) . '</b><br>
+                            Student Name: &nbsp;<b>' . substr($nameget, 0, 40) . '</b><br>
                             Appointment number &nbsp; : <b>' . substr($apponum, 0, 40) . '</b><br><br>
                             
                         </div>
@@ -575,7 +575,7 @@
                     <div class="popup">
                     <center>
                         <h2></h2>
-                        <a class="close" href="doctors.php">&times;</a>
+                        <a class="close" href="teacher.php">&times;</a>
                         <div class="content">
                             eDoc Web App<br>
                             
@@ -644,7 +644,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <a href="doctors.php"><input type="button" value="OK" class="login-btn btn-primary-soft btn" ></a>
+                                    <a href="teacher.php"><input type="button" value="OK" class="login-btn btn-primary-soft btn" ></a>
                                 
                                     
                                 </td>

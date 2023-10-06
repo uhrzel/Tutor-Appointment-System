@@ -42,11 +42,7 @@
 
     //import database
     include("../connection.php");
-    $sqlmain = "select * from teacher where teacheremail=?";
-    $stmt = $database->prepare($sqlmain);
-    $stmt->bind_param("s", $useremail);
-    $stmt->execute();
-    $userrow = $stmt->get_result();
+    $userrow = $database->query("select * from teacher where teacheremail='$useremail'");
     $userfetch = $userrow->fetch_assoc();
     $userid = $userfetch["teacherid"];
     $username = $userfetch["teachername"];
@@ -72,7 +68,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <a href="../logout.php?type=p&email=<?= $useremail ?>"><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
+                                    <a href="../logout.php?type=d&email=<?= $useremail ?>"><input type="button" value="Log out" class="logout-btn btn-primary-soft btn"></a>
                                 </td>
                             </tr>
                         </table>
@@ -88,13 +84,21 @@
         </td>
         </tr>
         <tr class="menu-row">
-            <td class="menu-btn menu-icon-appoinment">
-                <a href="appointment.php" class="non-style-link-menu">
+            <td class="menu-btn menu-icon-session">
+                <a href="description.php" class="non-style-link-menu">
                     <div>
-                        <p class="menu-text">My Appointments</p>
+                        <p class="menu-text">Description</p>
                 </a>
     </div>
     </td>
+    </tr>
+    <tr class="menu-row">
+        <td class="menu-btn menu-icon-appoinment">
+            <a href="appointment.php" class="non-style-link-menu">
+                <div>
+                    <p class="menu-text">My Appointments</p>
+            </a></div>
+        </td>
     </tr>
 
     <tr class="menu-row">
@@ -108,7 +112,7 @@
     </tr>
     <tr class="menu-row">
         <td class="menu-btn menu-icon-patient menu-active menu-icon-patient-active">
-            <a href="patient.php" class="non-style-link-menu  non-style-link-menu-active">
+            <a href="student.php" class="non-style-link-menu  non-style-link-menu-active">
                 <div>
                     <p class="menu-text">My Students</p>
             </a></div>
@@ -133,7 +137,7 @@
 
         if (isset($_POST["search"])) {
             $keyword = $_POST["search12"];
-            /*TODO: make and understand */
+
             $sqlmain = "select * from student where studentemail='$keyword' or studentname='$keyword' or studentname like '$keyword%' or studentname like '%$keyword' or studentname like '%$keyword%' ";
             $selecttype = "my";
         }
@@ -142,11 +146,11 @@
             if ($_POST["showonly"] == 'all') {
                 $sqlmain = "select * from student";
                 $selecttype = "All";
-                $current = "All students";
+                $current = "All Students";
             } else {
                 $sqlmain = "select * from appointment inner join student on student.studentid=appointment.studentid inner join schedule on schedule.scheduleid=appointment.scheduleid where schedule.teacherid=$userid;";
                 $selecttype = "My";
-                $current = "My patients Students";
+                $current = "My Students Only";
             }
         }
     } else {
@@ -162,7 +166,7 @@
             <tr>
                 <td width="13%">
 
-                    <a href="patient.php"><button class="login-btn btn-primary-soft btn btn-icon-back" style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px">
+                    <a href="student.php"><button class="login-btn btn-primary-soft btn btn-icon-back" style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px">
                             <font class="tn-in-text">Back</font>
                         </button></a>
 
@@ -218,7 +222,7 @@
 
             <tr>
                 <td colspan="4" style="padding-top:10px;">
-                    <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)"><?php echo $selecttype . " Student (" . $list11->num_rows . ")"; ?></p>
+                    <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)"><?php echo $selecttype . " Students(" . $list11->num_rows . ")"; ?></p>
                 </td>
 
             </tr>
@@ -309,7 +313,7 @@
                                     
                                     <br>
                                     <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">We  couldnt find anything related to your keywords !</p>
-                                    <a class="non-style-link" href="patient.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Show all Students &nbsp;</font></button>
+                                    <a class="non-style-link" href="student.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Show all Student &nbsp;</font></button>
                                     </a>
                                     </center>
                                     <br><br><br><br>
@@ -318,12 +322,12 @@
                                 } else {
                                     for ($x = 0; $x < $result->num_rows; $x++) {
                                         $row = $result->fetch_assoc();
-                                        $pid = $row["pid"];
-                                        $name = $row["pname"];
-                                        $email = $row["pemail"];
-                                        $nic = $row["pnic"];
-                                        $dob = $row["pdob"];
-                                        $tel = $row["ptel"];
+                                        $pid = $row["studentid"];
+                                        $name = $row["studentname"];
+                                        $email = $row["studentemail"];
+                                        $nic = $row["studentnic"];
+                                        $dob = $row["studentdob"];
+                                        $tel = $row["studenttel"];
 
                                         echo '<tr>
                                         <td> &nbsp;' .
@@ -372,11 +376,8 @@
 
         $id = $_GET["id"];
         $action = $_GET["action"];
-        $sqlmain = "select * from student where studentid=?";
-        $stmt = $database->prepare($sqlmain);
-        $stmt->bind_param("i", $id);
-        $stmt->execute();
-        $result = $stmt->get_result();
+        $sqlmain = "select * from student where studentid='$id'";
+        $result = $database->query($sqlmain);
         $row = $result->fetch_assoc();
         $name = $row["studentname"];
         $email = $row["studentemail"];
@@ -388,7 +389,7 @@
             <div id="popup1" class="overlay">
                     <div class="popup">
                     <center>
-                        <a class="close" href="patient.php">&times;</a>
+                        <a class="close" href="student.php">&times;</a>
                         <div class="content">
 
                         </div>
@@ -403,7 +404,7 @@
                             <tr>
                                 
                                 <td class="label-td" colspan="2">
-                                    <label for="name" class="form-label">PatienStudentt ID: </label>
+                                    <label for="name" class="form-label">Student ID: </label>
                                 </td>
                             </tr>
                             <tr>
@@ -480,7 +481,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <a href="patient.php"><input type="button" value="OK" class="login-btn btn-primary-soft btn" ></a>
+                                    <a href="student.php"><input type="button" value="OK" class="login-btn btn-primary-soft btn" ></a>
                                 
                                     
                                 </td>
