@@ -424,7 +424,7 @@
                         <div class="content">
                             You want to Cancel this Appointment?<br><br>
                             Session Name: &nbsp;<b>' . substr($title, 0, 40) . '</b><br>
-                            Doctor name&nbsp; : <b>' . substr($docname, 0, 40) . '</b><br><br>
+                            Teacher name&nbsp; : <b>' . substr($docname, 0, 40) . '</b><br><br>
                             
                         </div>
                         <div style="display: flex;justify-content: center;">
@@ -437,14 +437,14 @@
             </div>
             ';
         } elseif ($action == 'view') {
-            $sqlmain = "select * from doctor where docid=?";
+            $sqlmain = "select * from teacher where teacherid=?";
             $stmt = $database->prepare($sqlmain);
             $stmt->bind_param("i", $id);
             $stmt->execute();
             $result = $stmt->get_result();
             $row = $result->fetch_assoc();
-            $name = $row["docname"];
-            $email = $row["docemail"];
+            $name = $row["teachername"];
+            $email = $row["teacheremail"];
             $spe = $row["specialties"];
 
             $sqlmain = "select sname from specialties where id=?";
@@ -454,8 +454,8 @@
             $spcil_res = $stmt->get_result();
             $spcil_array = $spcil_res->fetch_assoc();
             $spcil_name = $spcil_array["sname"];
-            $nic = $row['docnic'];
-            $tele = $row['doctel'];
+            $nic = $row['teachernic'];
+            $tele = $row['teachertel'];
             echo '
             <div id="popup1" class="overlay">
                     <div class="popup">

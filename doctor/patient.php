@@ -148,7 +148,7 @@
                 $selecttype = "All";
                 $current = "All patients";
             } else {
-                $sqlmain = "select * from appointment inner join student on student.studentid=appointment.studentid inner join schedule on schedule.scheduleid=appointment.scheduleid where schedule.docid=$userid;";
+                $sqlmain = "select * from appointment inner join student on student.studentid=appointment.studentid inner join schedule on schedule.scheduleid=appointment.scheduleid where schedule.teacherid=$userid;";
                 $selecttype = "My";
                 $current = "My patients Only";
             }

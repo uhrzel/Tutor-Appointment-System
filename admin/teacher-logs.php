@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/admin.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="icon" type="image/png" href="../img/logo.png" />
-    <title>Doctors</title>
+    <link rel="icon" type="image/png" href="../img/logo.png" />
+    <title>Teachers Logs</title>
     <style>
         .popup {
             animation: transitionIn-Y-bottom 0.5s;

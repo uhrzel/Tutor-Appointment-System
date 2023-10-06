@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/admin.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="../img/logo.png" />
-    <title>Doctor</title>
+    <title>Teacher</title>
     <style>
         .popup {
             animation: transitionIn-Y-bottom 0.5s;
@@ -60,7 +60,7 @@
 
                 $hashed_p = md5($password);
 
-                $sql1 = "insert into doctor(docemail,docname,docpassword,docnic,doctel,specialties) values('$email','$name','$hashed_p','$nic','$tele',$spec);";
+                $sql1 = "insert into teacher(teacheremail,teachername,teacherpassword,teachernic,teachertel,specialties) values('$email','$name','$hashed_p','$nic','$tele',$spec);";
                 $database->query($sql1);
 
                 $sql2 = "insert into webuser(email, usertype) values('$email','d');";

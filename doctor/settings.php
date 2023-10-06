@@ -164,8 +164,8 @@
                         echo $today;
 
 
-                        $patientrow = $database->query("select  * from  patient;");
-                        $doctorrow = $database->query("select  * from  doctor;");
+                        $patientrow = $database->query("select  * from  student;");
+                        $doctorrow = $database->query("select  * from  teacher;");
                         $appointmentrow = $database->query("select  * from  appointment where appodate>='$today';");
                         $schedulerow = $database->query("select  * from  schedule where scheduledate='$today';");
 
@@ -295,18 +295,18 @@
             </div>
             ';
         } elseif ($action == 'view') {
-            $sqlmain = "select * from doctor where docid='$id'";
+            $sqlmain = "select * from teacher where teacherid='$id'";
             $result = $database->query($sqlmain);
             $row = $result->fetch_assoc();
-            $name = $row["docname"];
-            $email = $row["docemail"];
+            $name = $row["teachername"];
+            $email = $row["teacheremail"];
             $spe = $row["specialties"];
 
             $spcil_res = $database->query("select sname from specialties where id='$spe'");
             $spcil_array = $spcil_res->fetch_assoc();
             $spcil_name = $spcil_array["sname"];
-            $nic = $row['docnic'];
-            $tele = $row['doctel'];
+            $nic = $row['teachernic'];
+            $tele = $row['teachertel'];
             echo '
             <div id="popup1" class="overlay">
                     <div class="popup">
@@ -397,18 +397,18 @@
             </div>
             ';
         } elseif ($action == 'edit') {
-            $sqlmain = "select * from doctor where docid='$id'";
+            $sqlmain = "select * from teacher where teacherid='$id'";
             $result = $database->query($sqlmain);
             $row = $result->fetch_assoc();
-            $name = $row["docname"];
-            $email = $row["docemail"];
+            $name = $row["teachername"];
+            $email = $row["teacheremail"];
             $spe = $row["specialties"];
 
             $spcil_res = $database->query("select sname from specialties where id='$spe'");
             $spcil_array = $spcil_res->fetch_assoc();
             $spcil_name = $spcil_array["sname"];
-            $nic = $row['docnic'];
-            $tele = $row['doctel'];
+            $nic = $row['teachernic'];
+            $tele = $row['teachertel'];
 
             $error_1 = $_GET["error"];
             $errorlist = array(
@@ -437,8 +437,8 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">Edit Doctor Details.</p>
-                                        Doctor ID : ' . $id . ' (Auto Generated)<br><br>
+                                            <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">Edit Teacher Details.</p>
+                                        Teacher ID : ' . $id . ' (Auto Generated)<br><br>
                                         </td>
                                     </tr>
                                     <tr>
@@ -462,7 +462,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <input type="text" name="name" class="input-text" placeholder="Doctor Name" value="' . $name . '" required><br>
+                                            <input type="text" name="name" class="input-text" placeholder="Teacher Name" value="' . $name . '" required><br>
                                         </td>
                                         
                                     </tr>

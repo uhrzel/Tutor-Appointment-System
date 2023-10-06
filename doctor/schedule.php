@@ -346,10 +346,10 @@
             </div>
             ';
         } elseif ($action == 'view') {
-            $sqlmain = "select schedule.scheduleid,schedule.title,doctor.docname,schedule.scheduledate,schedule.scheduletime,schedule.nop from schedule inner join doctor on schedule.docid=doctor.docid  where  schedule.scheduleid=$id";
+            $sqlmain = "select schedule.scheduleid,schedule.title,teacher.teachername,schedule.scheduledate,schedule.scheduletime,schedule.nop from schedule inner join teacher on schedule.teacherid=teacher.teacherid  where  schedule.scheduleid=$id";
             $result = $database->query($sqlmain);
             $row = $result->fetch_assoc();
-            $docname = $row["docname"];
+            $docname = $row["teachername"];
             $scheduleid = $row["scheduleid"];
             $title = $row["title"];
             $scheduledate = $row["scheduledate"];
@@ -359,7 +359,7 @@
             $nop = $row['nop'];
 
 
-            $sqlmain12 = "select * from appointment inner join patient on patient.pid=appointment.pid inner join schedule on schedule.scheduleid=appointment.scheduleid where schedule.scheduleid=$id;";
+            $sqlmain12 = "select * from appointment inner join student on student.studentid=appointment.studentid inner join schedule on schedule.scheduleid=appointment.scheduleid where schedule.scheduleid=$id;";
             $result12 = $database->query($sqlmain12);
             echo '
             <div id="popup1" class="overlay">
@@ -394,7 +394,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="Email" class="form-label">Doctor of this session: </label>
+                                    <label for="Email" class="form-label">Teacher of this session: </label>
                                 </td>
                             </tr>
                             <tr>
@@ -424,7 +424,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="spec" class="form-label"><b>Patients that Already registerd for this session:</b> (' . $result12->num_rows . "/" . $nop . ')</label>
+                                    <label for="spec" class="form-label"><b>Student that Already registerd for this session:</b> (' . $result12->num_rows . "/" . $nop . ')</label>
                                     <br><br>
                                 </td>
                             </tr>
@@ -438,10 +438,10 @@
                                  <thead>
                                  <tr>   
                                         <th class="table-headin">
-                                             Patient ID
+                                             Student ID
                                          </th>
                                          <th class="table-headin">
-                                             Patient name
+                                             Student name
                                          </th>
                                          <th class="table-headin">
                                              
@@ -451,7 +451,7 @@
                                         
                                          
                                          <th class="table-headin">
-                                             Patient Telephone
+                                             Student Telephone
                                          </th>
                                          
                                  </thead>
@@ -481,9 +481,9 @@
                 for ($x = 0; $x < $result->num_rows; $x++) {
                     $row = $result->fetch_assoc();
                     $apponum = $row["apponum"];
-                    $pid = $row["pid"];
-                    $pname = $row["pname"];
-                    $ptel = $row["ptel"];
+                    $pid = $row["studentid"];
+                    $pname = $row["studentname"];
+                    $ptel = $row["studenttel"];
 
                     echo '<tr style="text-align:center;">
                                                 <td>

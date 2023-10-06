@@ -92,7 +92,7 @@
                     // hash the password using md5
                     $newp = md5($newpassword);
 
-                    $database->query("insert into patient(pemail,pname,ppassword, paddress, pnic,pdob,ptel) values('$email','$name','$newp','$address','$nic','$dob','$tele');");
+                    $database->query("insert into student(studentemail,studentname,studentpassword, studentaddress, studentnic,studentdob,studenttel) values('$email','$name','$newp','$address','$nic','$dob','$tele');");
                     $database->query("insert into webuser(email, usertype) values('$email', 'p');");
                     $database->query("insert into otp(otp_code, email) values('$otp_code','$email');");
 

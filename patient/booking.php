@@ -43,14 +43,14 @@
     //import database
     include("../connection.php");
 
-    $sqlmain = "select * from patient where pemail=?";
+    $sqlmain = "select * from student where studentemail=?";
     $stmt = $database->prepare($sqlmain);
     $stmt->bind_param("s", $useremail);
     $stmt->execute();
     $result = $stmt->get_result();
     $userfetch = $result->fetch_assoc();
-    $userid = $userfetch["pid"];
-    $username = $userfetch["pname"];
+    $userid = $userfetch["studentid"];
+    $username = $userfetch["studentname"];
 
 
     //echo $userid;
@@ -101,7 +101,7 @@
             <td class="menu-btn menu-icon-doctor">
                 <a href="doctors.php" class="non-style-link-menu">
                     <div>
-                        <p class="menu-text">All Doctors</p>
+                        <p class="menu-text">All Teachers</p>
                 </a>
     </div>
     </td>
@@ -155,11 +155,11 @@
                 <td>
                     <form action="schedule.php" method="post" class="header-search">
 
-                        <input type="search" name="search" class="input-text header-searchbar" placeholder="Search Doctor name or Email or Date (YYYY-MM-DD)" list="doctors">&nbsp;&nbsp;
+                        <input type="search" name="search" class="input-text header-searchbar" placeholder="Search Teacher name or Email or Date (YYYY-MM-DD)" list="doctors">&nbsp;&nbsp;
 
                         <?php
                         echo '<datalist id="doctors">';
-                        $list11 = $database->query("select DISTINCT * from  doctor;");
+                        $list11 = $database->query("select DISTINCT * from  teacher;");
                         $list12 = $database->query("select DISTINCT * from  schedule GROUP BY title;");
 
 
@@ -168,7 +168,7 @@
 
                         for ($y = 0; $y < $list11->num_rows; $y++) {
                             $row00 = $list11->fetch_assoc();
-                            $d = $row00["docname"];
+                            $d = $row00["teachername"];
 
                             echo "<option value='$d'><br/>";
                         };
@@ -239,7 +239,7 @@
 
                                             $id = $_GET["id"];
 
-                                            $sqlmain = "select * from schedule inner join doctor on schedule.docid=doctor.docid where schedule.scheduleid=? order by schedule.scheduledate desc";
+                                            $sqlmain = "select * from schedule inner join teacher on schedule.teacherid=teacher.teacherid where schedule.scheduleid=? order by schedule.scheduledate desc";
                                             $stmt = $database->prepare($sqlmain);
                                             $stmt->bind_param("i", $id);
                                             $stmt->execute();
@@ -248,8 +248,8 @@
                                             $row = $result->fetch_assoc();
                                             $scheduleid = $row["scheduleid"];
                                             $title = $row["title"];
-                                            $docname = $row["docname"];
-                                            $docemail = $row["docemail"];
+                                            $docname = $row["teachername"];
+                                            $docemail = $row["teacheremail"];
                                             $scheduledate = $row["scheduledate"];
                                             $scheduletime = $row["scheduletime"];
                                             $sql2 = "select * from appointment where scheduleid=$id";
@@ -277,8 +277,8 @@
                                                             Session Details
                                                         </div><br><br>
                                                         <div class="h3-search" style="font-size:18px;line-height:30px">
-                                                            Doctor name:  &nbsp;&nbsp;<b>' . $docname . '</b><br>
-                                                            Doctor Email:  &nbsp;&nbsp;<b>' . $docemail . '</b> 
+                                                            Teacher name:  &nbsp;&nbsp;<b>' . $docname . '</b><br>
+                                                            Teacher Email:  &nbsp;&nbsp;<b>' . $docemail . '</b> 
                                                         </div>
                                                         <div class="h3-search" style="font-size:18px;">
                                                           

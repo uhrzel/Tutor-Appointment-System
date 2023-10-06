@@ -166,8 +166,8 @@
                         echo $today;
 
 
-                        $patientrow = $database->query("select  * from  patient;");
-                        $doctorrow = $database->query("select  * from  doctor;");
+                        $patientrow = $database->query("select  * from  student;");
+                        $doctorrow = $database->query("select  * from  teacher;");
                         $appointmentrow = $database->query("select  * from  appointment where appodate>='$today';");
                         $schedulerow = $database->query("select  * from  schedule where scheduledate='$today';");
 
@@ -297,20 +297,20 @@
             </div>
             ';
         } elseif ($action == 'view') {
-            $sqlmain = "select * from patient where pid=?";
+            $sqlmain = "select * from student where studentid=?";
             $stmt = $database->prepare($sqlmain);
             $stmt->bind_param("i", $id);
             $stmt->execute();
             $result = $stmt->get_result();
             $row = $result->fetch_assoc();
-            $name = $row["pname"];
-            $email = $row["pemail"];
-            $address = $row["paddress"];
+            $name = $row["studentname"];
+            $email = $row["studentemail"];
+            $address = $row["studentaddress"];
 
 
-            $dob = $row["pdob"];
-            $nic = $row['pnic'];
-            $tele = $row['ptel'];
+            $dob = $row["studentdob"];
+            $nic = $row['studentnic'];
+            $tele = $row['studenttel'];
             echo '
             <div id="popup1" class="overlay">
                     <div class="popup">
@@ -412,20 +412,20 @@
             </div>
             ';
         } elseif ($action == 'edit') {
-            $sqlmain = "select * from patient where pid=?";
+            $sqlmain = "select * from student where studentid=?";
             $stmt = $database->prepare($sqlmain);
             $stmt->bind_param("i", $id);
             $stmt->execute();
             $result = $stmt->get_result();
             $row = $result->fetch_assoc();
-            $name = $row["pname"];
-            $email = $row["pemail"];
+            $name = $row["studentname"];
+            $email = $row["studentemail"];
 
 
 
-            $address = $row["paddress"];
-            $nic = $row['pnic'];
-            $tele = $row['ptel'];
+            $address = $row["studentaddress"];
+            $nic = $row['studentnic'];
+            $tele = $row['studenttel'];
 
             $error_1 = $_GET["error"];
             $errorlist = array(
@@ -479,7 +479,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <input type="text" name="name" class="input-text" placeholder="Doctor Name" value="' . $name . '" required><br>
+                                            <input type="text" name="name" class="input-text" placeholder="Teacher Name" value="' . $name . '" required><br>
                                         </td>
                                         
                                     </tr>

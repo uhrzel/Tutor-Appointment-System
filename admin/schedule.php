@@ -200,20 +200,20 @@
 
                                 </td>
                                 <td width="5%" style="text-align: center;">
-                                    Doctor:
+                                    Teacher:
                                 </td>
                                 <td width="30%">
-                                    <select name="docid" id="" class="box filter-container-items" style="width:90% ;height: 37px;margin: 0;">
-                                        <option value="" disabled selected hidden>Choose Doctor Name from the list</option><br />
+                                    <select name="teacherid" id="" class="box filter-container-items" style="width:90% ;height: 37px;margin: 0;">
+                                        <option value="" disabled selected hidden>Choose Teacher Name from the list</option><br />
 
                                         <?php
 
-                                        $list11 = $database->query("select  * from  doctor order by docname asc;");
+                                        $list11 = $database->query("select  * from  teacher order by teachername asc;");
 
                                         for ($y = 0; $y < $list11->num_rows; $y++) {
                                             $row00 = $list11->fetch_assoc();
-                                            $sn = $row00["docname"];
-                                            $id00 = $row00["docid"];
+                                            $sn = $row00["teachername"];
+                                            $id00 = $row00["teacherid"];
                                             echo "<option value=" . $id00 . ">$sn</option><br/>";
                                         };
 
@@ -291,7 +291,7 @@
                                         </th>
 
                                         <th class="table-headin">
-                                            Doctor
+                                            Teacher
                                         </th>
                                         <th class="table-headin">
 
@@ -425,12 +425,12 @@
                             <tr>
                                 
                                 <td class="label-td" colspan="2">
-                                    <label for="docid" class="form-label">Select Teacher: </label>
+                                    <label for="teacherid" class="form-label">Select Teacher: </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <select name="docid" id="" class="box" >
+                                    <select name="teacherid" id="" class="box" >
                                     <option value="" disabled selected hidden>Choose Teacher Name from the list</option><br/>';
 
 
@@ -543,10 +543,10 @@
             </div>
             ';
         } elseif ($action == 'view') {
-            $sqlmain = "select schedule.scheduleid,schedule.title,doctor.docname,schedule.scheduledate,schedule.scheduletime,schedule.nop from schedule inner join doctor on schedule.docid=doctor.docid  where  schedule.scheduleid=$id";
+            $sqlmain = "select schedule.scheduleid,schedule.title,teacher.teachername,schedule.scheduledate,schedule.scheduletime,schedule.nop from schedule inner join teacher on schedule.teacherid=teacher.teacherid  where  schedule.scheduleid=$id";
             $result = $database->query($sqlmain);
             $row = $result->fetch_assoc();
-            $docname = $row["docname"];
+            $docname = $row["teachername"];
             $scheduleid = $row["scheduleid"];
             $title = $row["title"];
             $scheduledate = $row["scheduledate"];
@@ -591,7 +591,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="Email" class="form-label">Doctor of this session: </label>
+                                    <label for="Email" class="form-label">Teacher of this session: </label>
                                 </td>
                             </tr>
                             <tr>

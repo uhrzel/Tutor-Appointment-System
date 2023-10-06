@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/admin.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="../img/logo.png" />
-    <title>Doctors</title>
+    <title>Teachers</title>
     <style>
         .popup {
             animation: transitionIn-Y-bottom 0.5s;
@@ -92,7 +92,7 @@
         <td class="menu-btn menu-icon-doctor menu-active menu-icon-doctor-active">
             <a href="doctors.php" class="non-style-link-menu non-style-link-menu-active">
                 <div>
-                    <p class="menu-text">Doctors</p>
+                    <p class="menu-text">Teachers</p>
             </a></div>
         </td>
     </tr>
@@ -136,16 +136,16 @@
 
                     <form action="" method="post" class="header-search">
 
-                        <input type="search" name="search" class="input-text header-searchbar" placeholder="Search Doctor name or Email" list="doctors">&nbsp;&nbsp;
+                        <input type="search" name="search" class="input-text header-searchbar" placeholder="Search Teacher name or Email" list="doctors">&nbsp;&nbsp;
 
                         <?php
-                        echo '<datalist id="doctors">';
-                        $list11 = $database->query("select  docname,docemail from  doctor;");
+                        echo '<datalist id="teacher">';
+                        $list11 = $database->query("select  teachername,teacheremail from  teacher;");
 
                         for ($y = 0; $y < $list11->num_rows; $y++) {
                             $row00 = $list11->fetch_assoc();
-                            $d = $row00["docname"];
-                            $c = $row00["docemail"];
+                            $d = $row00["teachername"];
+                            $c = $row00["teacheremail"];
                             echo "<option value='$d'><br/>";
                             echo "<option value='$c'><br/>";
                         };
@@ -181,7 +181,7 @@
 
             <tr>
                 <td colspan="2" style="padding-top:30px;">
-                    <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">Add New Doctor</p>
+                    <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">Add New Teacher</p>
                 </td>
                 <td colspan="2">
                     <a href="?action=add&id=none&error=0" class="non-style-link"><button class="login-btn btn-primary btn button-icon" style="display: flex;justify-content: center;align-items: center;margin-left:75px;background-image: url('../img/icons/add.svg');">Add New</font></button>
@@ -190,7 +190,7 @@
             </tr>
             <tr>
                 <td colspan="4" style="padding-top:10px;">
-                    <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">All Doctors (<?php echo $list11->num_rows; ?>)</p>
+                    <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">All Teacher (<?php echo $list11->num_rows; ?>)</p>
                 </td>
 
             </tr>
@@ -198,9 +198,9 @@
             if ($_POST) {
                 $keyword = $_POST["search"];
 
-                $sqlmain = "select * from doctor where docemail='$keyword' or docname='$keyword' or docname like '$keyword%' or docname like '%$keyword' or docname like '%$keyword%'";
+                $sqlmain = "select * from teacher where teacheremail='$keyword' or teachername='$keyword' or techername like '$keyword%' or teachername like '%$keyword' or teachername like '%$keyword%'";
             } else {
-                $sqlmain = "select * from doctor order by docid desc";
+                $sqlmain = "select * from teacher order by teacherid desc";
             }
 
 
@@ -217,7 +217,7 @@
                                         <th class="table-headin">
 
 
-                                            Doctor Name
+                                            Teacher Name
 
                                         </th>
                                         <th class="table-headin">
@@ -250,7 +250,7 @@
                                     
                                     <br>
                                     <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">We  couldnt find anything related to your keywords !</p>
-                                    <a class="non-style-link" href="doctors.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Show all Doctors &nbsp;</font></button>
+                                    <a class="non-style-link" href="doctors.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Show all Teacher &nbsp;</font></button>
                                     </a>
                                     </center>
                                     <br><br><br><br>
@@ -259,9 +259,9 @@
                                     } else {
                                         for ($x = 0; $x < $result->num_rows; $x++) {
                                             $row = $result->fetch_assoc();
-                                            $docid = $row["docid"];
-                                            $name = $row["docname"];
-                                            $email = $row["docemail"];
+                                            $docid = $row["teacherid"];
+                                            $name = $row["teachername"];
+                                            $email = $row["teacheremail"];
                                             $spe = $row["specialties"];
                                             $spcil_res = $database->query("select sname from specialties where id='$spe'");
                                             $spcil_array = $spcil_res->fetch_assoc();
@@ -332,18 +332,18 @@
             </div>
             ';
         } elseif ($action == 'view') {
-            $sqlmain = "select * from doctor where docid='$id'";
+            $sqlmain = "select * from teacher where teacherid='$id'";
             $result = $database->query($sqlmain);
             $row = $result->fetch_assoc();
-            $name = $row["docname"];
-            $email = $row["docemail"];
+            $name = $row["teachername"];
+            $email = $row["teacheremail"];
             $spe = $row["specialties"];
 
             $spcil_res = $database->query("select sname from specialties where id='$spe'");
             $spcil_array = $spcil_res->fetch_assoc();
             $spcil_name = $spcil_array["sname"];
-            $nic = $row['docnic'];
-            $tele = $row['doctel'];
+            $nic = $row['teachernic'];
+            $tele = $row['teachertel'];
             echo '
             <div id="popup1" class="overlay">
                     <div class="popup">
@@ -460,7 +460,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">Add New Doctor.</p><br><br>
+                                    <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">Add New Teacher.</p><br><br>
                                 </td>
                             </tr>
                             
@@ -472,7 +472,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="text" name="name" class="input-text" placeholder="Doctor Name" required><br>
+                                    <input type="text" name="name" class="input-text" placeholder="Teacher Name" required><br>
                                 </td>
                                 
                             </tr>
@@ -596,18 +596,18 @@
         ';
             }
         } elseif ($action == 'edit') {
-            $sqlmain = "select * from doctor where docid='$id'";
+            $sqlmain = "select * from teacher where teacherid='$id'";
             $result = $database->query($sqlmain);
             $row = $result->fetch_assoc();
-            $name = $row["docname"];
-            $email = $row["docemail"];
+            $name = $row["teachername"];
+            $email = $row["teacheremail"];
             $spe = $row["specialties"];
 
             $spcil_res = $database->query("select sname from specialties where id='$spe'");
             $spcil_array = $spcil_res->fetch_assoc();
             $spcil_name = $spcil_array["sname"];
-            $nic = $row['docnic'];
-            $tele = $row['doctel'];
+            $nic = $row['teachernic'];
+            $tele = $row['teachertel'];
 
             $error_1 = $_GET["error"];
             $errorlist = array(
@@ -636,8 +636,8 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">Edit Doctor Details.</p>
-                                        Doctor ID : ' . $id . ' (Auto Generated)<br><br>
+                                            <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">Edit Teacher Details.</p>
+                                        Teacher ID : ' . $id . ' (Auto Generated)<br><br>
                                         </td>
                                     </tr>
                                     <tr>
@@ -660,7 +660,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <input type="text" name="name" class="input-text" placeholder="Doctor Name" value="' . $name . '" required><br>
+                                            <input type="text" name="name" class="input-text" placeholder="Teacher Name" value="' . $name . '" required><br>
                                         </td>
                                         
                                     </tr>

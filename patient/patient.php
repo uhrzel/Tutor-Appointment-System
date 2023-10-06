@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/admin.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="../img/logo.png" />
-    <title>Patients</title>
+    <title>Students</title>
     <style>
         .popup {
             animation: transitionIn-Y-bottom 0.5s;
@@ -42,14 +42,14 @@
 
     //import database
     include("../connection.php");
-    $sqlmain = "select * from doctor where docemail=?";
+    $sqlmain = "select * from teacher where teacheremail=?";
     $stmt = $database->prepare($sqlmain);
     $stmt->bind_param("s", $useremail);
     $stmt->execute();
     $userrow = $stmt->get_result();
     $userfetch = $userrow->fetch_assoc();
-    $userid = $userfetch["docid"];
-    $username = $userfetch["docname"];
+    $userid = $userfetch["teacherid"];
+    $username = $userfetch["teachername"];
 
 
     //echo $userid;
@@ -110,7 +110,7 @@
         <td class="menu-btn menu-icon-patient menu-active menu-icon-patient-active">
             <a href="patient.php" class="non-style-link-menu  non-style-link-menu-active">
                 <div>
-                    <p class="menu-text">My Patients</p>
+                    <p class="menu-text">My Students</p>
             </a></div>
         </td>
     </tr>
@@ -128,29 +128,29 @@
     <?php
 
     $selecttype = "My";
-    $current = "My patients Only";
+    $current = "My Students Only";
     if ($_POST) {
 
         if (isset($_POST["search"])) {
             $keyword = $_POST["search12"];
             /*TODO: make and understand */
-            $sqlmain = "select * from patient where pemail='$keyword' or pname='$keyword' or pname like '$keyword%' or pname like '%$keyword' or pname like '%$keyword%' ";
+            $sqlmain = "select * from student where studentemail='$keyword' or studentname='$keyword' or studentname like '$keyword%' or studentname like '%$keyword' or studentname like '%$keyword%' ";
             $selecttype = "my";
         }
 
         if (isset($_POST["filter"])) {
             if ($_POST["showonly"] == 'all') {
-                $sqlmain = "select * from patient";
+                $sqlmain = "select * from student";
                 $selecttype = "All";
-                $current = "All patients";
+                $current = "All students";
             } else {
-                $sqlmain = "select * from appointment inner join patient on patient.pid=appointment.pid inner join schedule on schedule.scheduleid=appointment.scheduleid where schedule.docid=$userid;";
+                $sqlmain = "select * from appointment inner join student on student.studentid=appointment.studentid inner join schedule on schedule.scheduleid=appointment.scheduleid where schedule.teacherid=$userid;";
                 $selecttype = "My";
-                $current = "My patients Only";
+                $current = "My patients Students";
             }
         }
     } else {
-        $sqlmain = "select * from appointment inner join patient on patient.pid=appointment.pid inner join schedule on schedule.scheduleid=appointment.scheduleid where schedule.docid=$userid;";
+        $sqlmain = "select * from appointment inner join student on student.studentid=appointment.studentid inner join schedule on schedule.scheduleid=appointment.scheduleid where schedule.teacherid=$userid;";
         $selecttype = "My";
     }
 
@@ -171,7 +171,7 @@
 
                     <form action="" method="post" class="header-search">
 
-                        <input type="search" name="search12" class="input-text header-searchbar" placeholder="Search Patient name or Email" list="patient">&nbsp;&nbsp;
+                        <input type="search" name="search12" class="input-text header-searchbar" placeholder="Search Student name or Email" list="patient">&nbsp;&nbsp;
 
                         <?php
                         echo '<datalist id="patient">';
@@ -180,8 +180,8 @@
 
                         for ($y = 0; $y < $list11->num_rows; $y++) {
                             $row00 = $list11->fetch_assoc();
-                            $d = $row00["pname"];
-                            $c = $row00["pemail"];
+                            $d = $row00["studentname"];
+                            $c = $row00["studentemail"];
                             echo "<option value='$d'><br/>";
                             echo "<option value='$c'><br/>";
                         };
@@ -218,7 +218,7 @@
 
             <tr>
                 <td colspan="4" style="padding-top:10px;">
-                    <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)"><?php echo $selecttype . " Patients (" . $list11->num_rows . ")"; ?></p>
+                    <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)"><?php echo $selecttype . " Student (" . $list11->num_rows . ")"; ?></p>
                 </td>
 
             </tr>
@@ -235,8 +235,8 @@
                                 <td width="30%">
                                     <select name="showonly" id="" class="box filter-container-items" style="width:90% ;height: 37px;margin: 0;">
                                         <option value="" disabled selected hidden><?php echo $current   ?></option><br />
-                                        <option value="my">My Patients Only</option><br />
-                                        <option value="all">All Patients</option><br />
+                                        <option value="my">My Students Only</option><br />
+                                        <option value="all">All Students</option><br />
 
 
                                     </select>
@@ -309,7 +309,7 @@
                                     
                                     <br>
                                     <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">We  couldnt find anything related to your keywords !</p>
-                                    <a class="non-style-link" href="patient.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Show all Patients &nbsp;</font></button>
+                                    <a class="non-style-link" href="patient.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Show all Students &nbsp;</font></button>
                                     </a>
                                     </center>
                                     <br><br><br><br>
@@ -372,18 +372,18 @@
 
         $id = $_GET["id"];
         $action = $_GET["action"];
-        $sqlmain = "select * from patient where pid=?";
+        $sqlmain = "select * from student where studentid=?";
         $stmt = $database->prepare($sqlmain);
         $stmt->bind_param("i", $id);
         $stmt->execute();
         $result = $stmt->get_result();
         $row = $result->fetch_assoc();
-        $name = $row["pname"];
-        $email = $row["pemail"];
-        $nic = $row["pnic"];
-        $dob = $row["pdob"];
-        $tele = $row["ptel"];
-        $address = $row["paddress"];
+        $name = $row["studentname"];
+        $email = $row["studentemail"];
+        $nic = $row["studentnic"];
+        $dob = $row["studentdob"];
+        $tele = $row["studenttel"];
+        $address = $row["studentaddress"];
         echo '
             <div id="popup1" class="overlay">
                     <div class="popup">
@@ -403,7 +403,7 @@
                             <tr>
                                 
                                 <td class="label-td" colspan="2">
-                                    <label for="name" class="form-label">Patient ID: </label>
+                                    <label for="name" class="form-label">PatienStudentt ID: </label>
                                 </td>
                             </tr>
                             <tr>

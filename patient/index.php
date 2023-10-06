@@ -194,7 +194,7 @@
                                     <p>Haven't any idea about teachers? no problem let's jumping to
                                         <a href="doctors.php" class="non-style-link"><b>"All Teachers"</b></a> section or
                                         <a href="schedule.php" class="non-style-link"><b>"Sessions"</b> </a><br>
-                                        Track your past and future appointments history.<br>Also find out the expected arrival time of your doctor or medical consultant.<br><br>
+                                        Track your past and future appointments history.<br>Also find out the expected arrival time of your teacher or tutor consultant.<br><br>
                                     </p>
 
                                     <h3>Channel a Teachers Here</h3>
@@ -208,7 +208,7 @@
 
                                         for ($y = 0; $y < $list11->num_rows; $y++) {
                                             $row00 = $list11->fetch_assoc();
-                                            $d = $row00["docname"];
+                                            $d = $row00["teachername"];
 
                                             echo "<option value='$d'><br/>";
                                         };
@@ -342,7 +342,7 @@
                                         </th>
 
                                         <th class="table-headin">
-                                            Doctor
+                                            Teacher
                                         </th>
                                         <th class="table-headin">
 
@@ -369,7 +369,7 @@
                                                     
                                                     <br>
                                                     <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">Nothing to show here!</p>
-                                                    <a class="non-style-link" href="schedule.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Channel a Doctor &nbsp;</font></button>
+                                                    <a class="non-style-link" href="schedule.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Channel a Teacher &nbsp;</font></button>
                                                     </a>
                                                     </center>
                                                     <br><br><br><br>

@@ -48,9 +48,9 @@
         if ($password == $cpassword) {
 
             if ($usertype == 'p') {
-                $database->query("update patient set ppassword='$password' where pemail='$email'");
+                $database->query("update student set studentpassword='$password' where studentemail='$email'");
             } else if ($usertype == 'd') {
-                $database->query("update doctor set docpassword='$password' where docemail='$email'");
+                $database->query("update teacher set teacherpassword='$password' where teacheremail='$email'");
             }
 
             $error = '<label for="promter" class="form-label">Password changed successfully</label>';

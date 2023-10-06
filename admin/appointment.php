@@ -200,10 +200,10 @@
 
                                 </td>
                                 <td width="5%" style="text-align: center;">
-                                    Doctor:
+                                    Teacher:
                                 </td>
                                 <td width="30%">
-                                    <select name="docid" id="" class="box filter-container-items" style="width:90% ;height: 37px;margin: 0;">
+                                    <select name="teacherid" id="" class="box filter-container-items" style="width:90% ;height: 37px;margin: 0;">
                                         <option value="" disabled selected hidden>Choose Teacher Name from the list</option><br />
 
                                         <?php
@@ -455,12 +455,12 @@
                             <tr>
                                 
                                 <td class="label-td" colspan="2">
-                                    <label for="docid" class="form-label">Select Teacher: </label>
+                                    <label for="teacherid" class="form-label">Select Teacher: </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <select name="docid" id="" class="box" >
+                                    <select name="teacher" id="" class="box" >
                                     <option value="" disabled selected hidden>Choose Teacher Name from the list</option><br/>';
 
 

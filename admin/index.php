@@ -213,7 +213,7 @@
                                                 <?php echo $doctorrow->num_rows  ?>
                                             </div><br>
                                             <div class="h3-dashboard">
-                                                Doctors &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                Teachers &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             </div>
                                         </div>
                                         <div class="btn-icon-back dashboard-icons" style="background-image: url('../img/icons/doctors-hover.svg');"></div>
@@ -311,12 +311,12 @@
 
                                                     </th>
                                                     <th class="table-headin">
-                                                        Patient name
+                                                        Student name
                                                     </th>
                                                     <th class="table-headin">
 
 
-                                                        Doctor
+                                                        Teacher
 
                                                     </th>
                                                     <th class="table-headin">
@@ -410,7 +410,7 @@
                                                     </th>
 
                                                     <th class="table-headin">
-                                                        Doctor
+                                                        Teacher
                                                     </th>
                                                     <th class="table-headin">
 

@@ -345,7 +345,7 @@
                             <tr>
                                 
                                 <td class="label-td" colspan="2">
-                                    <label for="docid" class="form-label">Teachers: </label>
+                                    <label for="teacherid" class="form-label">Teachers: </label>
                                 </td>
                             </tr>
                             <tr>

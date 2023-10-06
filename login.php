@@ -78,7 +78,7 @@
                 // insert into otp table
                 $database->query("insert into otp(otp_code, email) values('$otp','$email')");
 
-                $subject = "Medical Appointment System: OTP";
+                $subject = "Tutor Appointment System: OTP";
                 $message = "Your OTP is: " . $otp;
 
                 if (SendMail($email, $subject, $message)) {

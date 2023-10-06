@@ -1,7 +1,8 @@
 <?php
 
 require('./PHPMailer/PHPMailerAutoload.php');
-function SendMail($to,$subject,$message){
+function SendMail($to, $subject, $message)
+{
     $mail = new PHPMailer;
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
@@ -10,16 +11,16 @@ function SendMail($to,$subject,$message){
     $mail->Password = 'hbpezpowjedwoctl';
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
-    $mail->setFrom('Medical Appointment System');
+    $mail->setFrom('Tutor Appointment System');
     $mail->addAddress($to);
-    $mail->addReplyTo('Medical Appointment System');
+    $mail->addReplyTo('Tutor Appointment System');
     $mail->isHTML(true);
     $mail->Subject = $subject;
     $mail->Body = $message;
 
-    if($mail->send()){
+    if ($mail->send()) {
         return true;
-    }else{
+    } else {
         return false;
     }
 }
