@@ -205,7 +205,7 @@
 
             <?php
 
-            $sqlmain = "select schedule.scheduleid,schedule.title,teacher.teachername,schedule.scheduledate,schedule.scheduletime,schedule.nop from schedule inner join teacher on schedule.teacherid=teacher.teacherid where teacher.teacherid=$userid ";
+            $sqlmain = "select schedule.scheduleid,schedule.title,teacher.teachername,schedule.scheduledate,schedule.scheduletime,schedule.nop, schedule.app_fee from schedule inner join teacher on schedule.teacherid=teacher.teacherid where teacher.teacherid=$userid ";
             if ($_POST) {
                 //print_r($_POST);
                 $sqlpt1 = "";
@@ -240,6 +240,11 @@
                                         <th class="table-headin">
 
                                             Max num that can be booked
+
+                                        </th>
+                                        <th class="table-headin">
+
+                                            My rate per Session
 
                                         </th>
 
@@ -280,6 +285,7 @@
                                             $scheduledate = $row["scheduledate"];
                                             $scheduletime = $row["scheduletime"];
                                             $nop = $row["nop"];
+                                            $fee = $row["app_fee"];
                                             echo '<tr>
                                         <td> &nbsp;' .
                                                 substr($title, 0, 30)
@@ -291,7 +297,9 @@
                                         <td style="text-align:center;">
                                             ' . $nop . '
                                         </td>
-
+  <td style="text-align:center;">
+                                            ' . $fee . '
+                                        </td>
                                         <td>
                                         <div style="display:flex;justify-content: center;">
                                         
@@ -400,6 +408,16 @@
                             <tr>
                                 <td class="label-td" colspan="2">
                                 ' . $docname . '<br><br>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td class="label-td" colspan="2">
+                                    <label for="Email" class="form-label">My rate: </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-td" colspan="2">
+                                ' . $fee . '<br><br>
                                 </td>
                             </tr>
                             <tr>

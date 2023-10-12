@@ -57,7 +57,7 @@
 
 
     //TODO
-    $sqlmain = "select appointment.appoid,schedule.scheduleid,schedule.title,teacher.teachername,student.studentname,schedule.scheduledate,schedule.scheduletime,appointment.apponum,appointment.appodate,appointment.status from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join student on student.studentid=appointment.studentid inner join teacher on schedule.teacherid=teacher.teacherid  where  student.studentid=$userid ";
+    $sqlmain = "select appointment.appoid,schedule.scheduleid,schedule.title,teacher.teachername,student.studentname,schedule.scheduledate,schedule.scheduletime, schedule.app_fee,appointment.apponum,appointment.appodate,appointment.status from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join student on student.studentid=appointment.studentid inner join teacher on schedule.teacherid=teacher.teacherid  where  student.studentid=$userid ";
 
     if ($_POST) {
         //print_r($_POST);
@@ -287,6 +287,7 @@
                                                 $appodate = $row["appodate"];
                                                 $appoid = $row["appoid"];
                                                 $status = $row["status"];
+                                                $fee = $row["app_fee"];
 
                                                 if ($scheduleid == "") {
                                                     break;
@@ -300,7 +301,8 @@
                                                         <div class="h3-search">
                                                                     Status: ' . $status . '<br>
                                                                     Booking Date: ' . substr($appodate, 0, 30) . '<br>
-                                                                    Reference Number: OC-000-' . $appoid . '
+                                                                    Reference Number: OC-000-' . $appoid . ' <br>
+                                                                    Rate Per Session: ' . $fee . '
                                                                 </div>
                                                                 <div class="h1-search">
                                                                     ' . substr($title, 0, 21) . '<br>

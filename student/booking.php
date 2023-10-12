@@ -252,6 +252,7 @@
                                             $docemail = $row["teacheremail"];
                                             $scheduledate = $row["scheduledate"];
                                             $scheduletime = $row["scheduletime"];
+                                            $fee = $row["app_fee"];
                                             $sql2 = "select * from appointment where scheduleid=$id";
                                             //echo $sql2;
                                             $result12 = $database->query($sql2);
@@ -287,7 +288,7 @@
                                                             Session Title: ' . $title . '<br>
                                                             Session Scheduled Date: ' . $scheduledate . '<br>
                                                             Session Starts : ' . $scheduletime . '<br>
-                                                            Channeling fee : <b>LKR.2 000.00</b>
+                                                            Rate Per Session : ' . $fee . '<br>
 
                                                         </div>
                                                         <br>

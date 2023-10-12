@@ -166,20 +166,21 @@ CREATE TABLE `schedule` (
   `scheduledate` date DEFAULT NULL,
   `scheduletime` time DEFAULT NULL,
   `nop` int(4) DEFAULT NULL
+  `app_fee` int(4) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `schedule`
 --
 
-INSERT INTO `schedule` (`scheduleid`, `teacherid`, `title`, `scheduledate`, `scheduletime`, `nop`) VALUES
-(1, '1', 'Test Session', '2050-01-01', '18:00:00', 50),
-(2, '1', '1', '2022-06-10', '20:36:00', 1),
-(3, '1', '12', '2022-06-10', '20:33:00', 1),
-(4, '1', '1', '2022-06-10', '12:32:00', 1),
-(5, '1', '1', '2022-06-10', '20:35:00', 1),
-(6, '1', '12', '2022-06-10', '20:35:00', 1),
-(9, '6', 'tanggal ulo', '2023-10-05', '22:47:00', 12);
+INSERT INTO `schedule` (`scheduleid`, `teacherid`, `title`, `scheduledate`, `scheduletime`, `nop`, `app_fee`) VALUES
+(1, '1', 'Test Session', '2050-01-01', '18:00:00', 50, 200),
+(2, '1', '1', '2022-06-10', '20:36:00', 1, 500),
+(3, '1', '12', '2022-06-10', '20:33:00', 1, 200),
+(4, '1', '1', '2022-06-10', '12:32:00', 1, 100),
+(5, '1', '1', '2022-06-10', '20:35:00', 1, 100),
+(6, '1', '12', '2022-06-10', '20:35:00', 1, 300),
+(9, '6', 'tanggal ulo', '2023-10-05', '22:47:00', 12,900);
 
 -- --------------------------------------------------------
 

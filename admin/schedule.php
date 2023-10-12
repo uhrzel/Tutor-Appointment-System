@@ -252,7 +252,7 @@
                 }
                 //echo $sqlpt2;
                 //echo $sqlpt1;
-                $sqlmain = "select schedule.scheduleid,schedule.title,teacher.teachername,schedule.scheduledate,schedule.scheduletime,schedule.nop from schedule inner join teacher on schedule.teacherid=teacher.teacherid ";
+                $sqlmain = "select schedule.scheduleid,schedule.title,teacher.teachername,schedule.scheduledate,schedule.scheduletime,schedule.nop,schedule.app_fee from schedule inner join teacher on schedule.teacherid=teacher.teacherid ";
                 $sqllist = array($sqlpt1, $sqlpt2);
                 $sqlkeywords = array(" where ", " and ");
                 $key2 = 0;
@@ -269,7 +269,7 @@
 
                 //
             } else {
-                $sqlmain = "select schedule.scheduleid,schedule.title,teacher.teachername,schedule.scheduledate,schedule.scheduletime,schedule.nop from schedule inner join teacher on schedule.teacherid=teacher.teacherid  order by schedule.scheduledate desc";
+                $sqlmain = "select schedule.scheduleid,schedule.title,teacher.teachername,schedule.scheduledate,schedule.scheduletime,schedule.nop, schedule.app_fee from schedule inner join teacher on schedule.teacherid=teacher.teacherid  order by schedule.scheduledate desc";
             }
 
 
@@ -301,6 +301,11 @@
                                         <th class="table-headin">
 
                                             Max num that can be booked
+
+                                        </th>
+                                        <th class="table-headin">
+
+                                            Rate Per Session
 
                                         </th>
 
@@ -341,6 +346,7 @@
                                             $scheduledate = $row["scheduledate"];
                                             $scheduletime = $row["scheduletime"];
                                             $nop = $row["nop"];
+                                            $fee = $row["app_fee"];
                                             echo '<tr>
                                         <td> &nbsp;' .
                                                 substr($title, 0, 30)
@@ -353,6 +359,9 @@
                                         </td>
                                         <td style="text-align:center;">
                                             ' . $nop . '
+                                        </td>
+                                         <td style="text-align:center;">
+                                            ' . $fee . '
                                         </td>
 
                                         <td>
@@ -459,6 +468,16 @@
                                     <input type="number" name="nop" class="input-text" min="0"  placeholder="The final appointment number for this session depends on this number" required><br>
                                 </td>
                             </tr>
+                               <tr>
+                                <td class="label-td" colspan="2">
+                                    <label for="nop" class="form-label">Fee per Session : </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-td" colspan="2">
+                                    <input type="number" name="fee" class="input-text" min="0"  placeholder="Session Fee" required><br>
+                                </td>
+                            </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
                                     <label for="date" class="form-label">Session Date: </label>
@@ -500,7 +519,7 @@
             </div>
             ';
         } elseif ($action == 'session-added') {
-            $titleget = $_GET["title"];
+            $titleget = $get["title"];
             echo '
             <div id="popup1" class="overlay">
                     <div class="popup">
@@ -543,7 +562,7 @@
             </div>
             ';
         } elseif ($action == 'view') {
-            $sqlmain = "select schedule.scheduleid,schedule.title,teacher.teachername,schedule.scheduledate,schedule.scheduletime,schedule.nop from schedule inner join teacher on schedule.teacherid=teacher.teacherid  where  schedule.scheduleid=$id";
+            $sqlmain = "select schedule.scheduleid,schedule.title,teacher.teachername,schedule.scheduledate,schedule.scheduletime,schedule.nop, schedule.app_fee from schedule inner join teacher on schedule.teacherid=teacher.teacherid  where  schedule.scheduleid=$id";
             $result = $database->query($sqlmain);
             $row = $result->fetch_assoc();
             $docname = $row["teachername"];
@@ -551,6 +570,7 @@
             $title = $row["title"];
             $scheduledate = $row["scheduledate"];
             $scheduletime = $row["scheduletime"];
+            $fee = $row["app_fee"];
 
 
             $nop = $row['nop'];
@@ -597,6 +617,16 @@
                             <tr>
                                 <td class="label-td" colspan="2">
                                 ' . $docname . '<br><br>
+                                </td>
+                            </tr>
+                              <tr>
+                                <td class="label-td" colspan="2">
+                                    <label for="fee" class="form-label">Rate per session </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-td" colspan="2">
+                                ' . $fee . '<br><br>
                                 </td>
                             </tr>
                             <tr>
@@ -646,7 +676,6 @@
                                              
                                          </th>
                                         
-                                         
                                          <th class="table-headin">
                                              Student Telephone
                                          </th>
@@ -678,9 +707,9 @@
                 for ($x = 0; $x < $result->num_rows; $x++) {
                     $row = $result->fetch_assoc();
                     $apponum = $row["apponum"];
-                    $pid = $row["pid"];
-                    $pname = $row["pname"];
-                    $ptel = $row["ptel"];
+                    $pid = $row["studentid"];
+                    $pname = $row["studentname"];
+                    $ptel = $row["studenttel"];
 
                     echo '<tr style="text-align:center;">
                                                 <td>
