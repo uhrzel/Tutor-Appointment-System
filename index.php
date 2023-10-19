@@ -73,7 +73,7 @@
     <script>
         // Wait for 10 seconds and then redirect to login.php
         setTimeout(function() {
-            window.location.href = 'login.php';
+            window.location.href = 'landing_page.php';
         }, 5000);
     </script>
 </body>
