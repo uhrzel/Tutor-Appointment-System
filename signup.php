@@ -12,6 +12,11 @@
     <title>Sign Up</title>
 
 </head>
+<style>
+    body {
+        background-color: #3a3e64 !important;
+    }
+</style>
 
 <body>
     <?php

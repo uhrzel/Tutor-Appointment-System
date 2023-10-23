@@ -9,6 +9,10 @@
         font-family: 'Courier New', Courier, monospace;
         font-weight: bold;
     }
+
+    body {
+        background-color: #3a3e64 !important;
+    }
 </style>
 
 <head>

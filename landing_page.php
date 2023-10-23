@@ -28,8 +28,8 @@
                 <a class="logo" href="#"><img src="images/logoss.png" alt="" /></a>
                 <nav class="navigation" role="navigation">
                     <ul class="primary-nav">
-                        <li><a href="#features">Home</a></li>
-                        <li><a href="#testimonials">About</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#features">About</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li><a href="login.php">Login</a></li>
                     </ul>
@@ -44,8 +44,7 @@
                 <div class="banner-text text-center">
                     <h1>Online Tutor Appointment System</h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-                        commodo cursus magna vel scelerisque nisl consectetur et.
+                        Elevate Your Learning Experience to Unlock Knowledge, One Click at a Time!
                     </p>
                     <a href="#" class="btn btn-large">Find out more</a>
                 </div>
@@ -62,9 +61,7 @@
                     <div class="feature-content">
                         <h5>Networking</h5>
                         <p>
-                            Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                            Nullam quis risus eget urna mollis ornare vel eu leo. Donec
-                            ullamcorper nulla non metus auctor fringilla.
+                            Mastering Networks, One Connection at a Time: Your Networking Learning Hub!
                         </p>
                     </div>
                 </div>
@@ -73,9 +70,7 @@
                     <div class="feature-content">
                         <h5>Computer Programming</h5>
                         <p>
-                            Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                            Nullam quis risus eget urna mollis ornare vel eu leo. Donec
-                            ullamcorper nulla non metus auctor fringilla.
+                            Coding the Future: Your Gateway to Computer Programming Excellence!
                         </p>
                     </div>
                 </div>
@@ -84,9 +79,7 @@
                     <div class="feature-content">
                         <h5>Web Development</h5>
                         <p>
-                            Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                            Nullam quis risus eget urna mollis ornare vel eu leo. Donec
-                            ullamcorper nulla non metus auctor fringilla.
+                            Building the Web of Tomorrow: Your Journey in Web Development Starts Here!
                         </p>
                     </div>
                 </div>
@@ -95,9 +88,7 @@
                     <div class="feature-content">
                         <h5>Database management</h5>
                         <p>
-                            Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                            Nullam quis risus eget urna mollis ornare vel eu leo. Donec
-                            ullamcorper nulla non metus auctor fringilla.
+                            Crafting Digital Foundations: Your Path to Expertise in Database Management!
                         </p>
                     </div>
                 </div>
@@ -106,9 +97,7 @@
                     <div class="feature-content">
                         <h5>Cloud Computing</h5>
                         <p>
-                            Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                            Nullam quis risus eget urna mollis ornare vel eu leo. Donec
-                            ullamcorper nulla non metus auctor fringilla.
+                            Where Data Meets the Sky: Your Journey into Cloud Computing Excellence
                         </p>
                     </div>
                 </div>
@@ -117,9 +106,7 @@
                     <div class="feature-content">
                         <h5>Statistics</h5>
                         <p>
-                            Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                            Nullam quis risus eget urna mollis ornare vel eu leo. Donec
-                            ullamcorper nulla non metus auctor fringilla.
+                            Crunching Numbers, Unlocking Insights: Your Statistical Odyssey Begins!
                         </p>
                     </div>
                 </div>
@@ -137,33 +124,45 @@
                         <li>
                             <div class="col-md-6">
                                 <div class="avatar">
-                                    <img src="images/testimonial-1.jpg" alt="" class="img-responsive" />
+                                    <img src="images/slide1.jpg" alt="" class="img-responsive" height="700px" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <blockquote>
                                     <p>
-                                        "Integer posuere erat a ante venenatis dapibus posuere
-                                        velit aliquet. Donec sed odio dui. Aenean eu leo quam..."
+                                        "Bringing a developer on board means unlocking the potential for cutting-edge software solutions. They are the architects of your digital future, turning concepts into reality with precision and expertise."
                                     </p>
-                                    <cite class="author">Susan Sims, Interaction Designer at XYZ</cite>
+                                    <cite class="author">Jane Meldrum, Computer Programmer</cite>
                                 </blockquote>
                             </div>
                         </li>
                         <li>
                             <div class="col-md-6">
                                 <div class="avatar">
-                                    <img src="images/testimonial-2.jpg" alt="" class="img-responsive" />
+                                    <img src="images/slide2.jpg" alt="" class="img-responsive" height="700px" />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <blockquote>
                                     <p>
-                                        "Cras mattis consectetur purus sit amet fermentum. Donec
-                                        sed odio dui. Aenean lacinia bibendum nulla sed
-                                        consectetur...."
+                                        "A full-stack developer is the Swiss Army knife of the tech world. They possess the expertise to handle both front-end and back-end development, crafting comprehensive, end-to-end solutions for web applications and software projects."
                                     </p>
-                                    <cite class="author">Susan Sims, Interaction Designer at XYZ</cite>
+                                    <cite class="author">Peter Stanbridge, Full Stack Developer at Jujutsu High</cite>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="col-md-6">
+                                <div class="avatar">
+                                    <img src="images/slide3.jpg" alt="" class="img-responsive" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <blockquote>
+                                    <p>
+                                        "Cloud computing revolutionizes IT infrastructure by providing on-demand access to computing resources and services over the internet. It offers flexibility and scalability that drives innovation and efficiency across various industries."
+                                    </p>
+                                    <cite class="author">John Doe, Cloud Computing</cite>
                                 </blockquote>
                             </div>
                         </li>
@@ -201,8 +200,7 @@
                     <div class="footer-col col-md-4">
                         <h5>About Tutor Appoinment System</h5>
                         <p>
-                            Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                            Donec ullamcorper nulla non metus auctor fringilla.
+                            Facilitate accessible and personalized learning, connecting students with expert educators, all from the convenience of their own space.
                         </p>
                     </div>
                 </div>
@@ -213,7 +211,7 @@
             <div class="container">
                 <div class="col-md-12">
                     <p>
-                        Copyright © 2015 ActiveBox. All Rights Reserved<br />Made with
+                        All Rights Reserved<br />Made with
                         <i class="fa fa-heart pulse"></i> by
                         <a href="#">ArzelJRZ</a>
                     </p>
