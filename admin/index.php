@@ -25,11 +25,26 @@
         .sub-table {
             animation: transitionIn-Y-bottom 0.5s;
         }
+
+        .dashboard-items {
+            background-color: #cce0ff;
+        }
+
+        body {
+            background-color: #9999ff;
+        }
+
+        .dashbord-tables {
+            background-color: #2887A8;
+        }
     </style>
 
 
 </head>
 
+<style>
+
+</style>
 
 <body>
     <?php
@@ -145,7 +160,7 @@
 
                     <form action="teacher.php" method="post" class="header-search">
 
-                        <input type="search" name="search" class="input-text header-searchbar" placeholder="Search Teacher name or Email" list="doctors">&nbsp;&nbsp;
+                        <input type="search" name="search" style=" background-color: #66a3ff;" class="input-text header-searchbar" placeholder="Search Teacher name or Email" list="doctors">&nbsp;&nbsp;
 
                         <?php
                         echo '<datalist id="doctors">';
@@ -275,19 +290,19 @@
                     <table width="100%" border="0" class="dashbord-tables">
                         <tr>
                             <td>
-                                <p style="padding:10px;padding-left:48px;padding-bottom:0;font-size:23px;font-weight:700;color:var(--primarycolor);">
+                                <p style="padding:10px;padding-left:48px;padding-bottom:0;font-size:23px;font-weight:700;color: #193366;">
                                     Upcoming Appointments until Next <?php
                                                                         echo date("l", strtotime("+1 week"));
                                                                         ?>
                                 </p>
-                                <p style="padding-bottom:19px;padding-left:50px;font-size:15px;font-weight:500;color:#212529e3;line-height: 20px;">
+                                <p style="padding-bottom:19px;padding-left:50px;font-size:15px;font-weight:500;color: #212529e3;line-height: 20px;">
                                     Here's Quick access to Upcoming Appointments until 7 days<br>
                                     More details available in @Appointment section.
                                 </p>
 
                             </td>
                             <td>
-                                <p style="text-align:right;padding:10px;padding-right:48px;padding-bottom:0;font-size:23px;font-weight:700;color:var(--primarycolor);">
+                                <p style="text-align:right;padding:10px;padding-right:48px;padding-bottom:0;font-size:23px;font-weight:700;color: #193366;">
                                     Upcoming Sessions until Next <?php
                                                                     echo date("l", strtotime("+1 week"));
                                                                     ?>

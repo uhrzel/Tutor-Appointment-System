@@ -154,7 +154,11 @@
     }
 
     ?>
-
+    <style>
+        .container {
+            background-color: #2887A8;
+        }
+    </style>
 
     <center>
         <h1>TUTORING APPOINTMENT SYSTEM</h1>

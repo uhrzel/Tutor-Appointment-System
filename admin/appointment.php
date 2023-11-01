@@ -19,6 +19,12 @@
         .sub-table {
             animation: transitionIn-Y-bottom 0.5s;
         }
+
+
+
+        body {
+            background-color: #9999ff;
+        }
     </style>
 </head>
 
@@ -196,14 +202,14 @@
                                 <td width="30%">
                                     <form action="" method="post">
 
-                                        <input type="date" name="sheduledate" id="date" class="input-text filter-container-items" style="margin: 0;width: 95%;">
+                                        <input type="date" name="sheduledate" id="date" class="input-text filter-container-items" style=" background-color: #66a3ff; margin: 0;width: 95%;">
 
                                 </td>
                                 <td width="5%" style="text-align: center;">
                                     Teacher:
                                 </td>
                                 <td width="30%">
-                                    <select name="teacherid" id="" class="box filter-container-items" style="width:90% ;height: 37px;margin: 0;">
+                                    <select name="teacherid" id="" class="box filter-container-items" style="background-color: #66a3ff; width:90% ;height: 37px;margin: 0;">
                                         <option value="" disabled selected hidden>Choose Teacher Name from the list</option><br />
 
                                         <?php
@@ -280,7 +286,7 @@
                 <td colspan="4">
                     <center>
                         <div class="abc scroll">
-                            <table width="93%" class="sub-table scrolldown" border="0">
+                            <table width="93%" class="sub-table scrolldown" border="0" style="background-color: #2887A8;">
                                 <thead>
                                     <tr>
                                         <th class="table-headin">
@@ -557,7 +563,7 @@
             $apponum = $_GET["apponum"];
             echo '
             <div id="popup1" class="overlay">
-                    <div class="popup">
+                    <div class="popup" >
                     <center>
                         <h2>Are you sure?</h2>
                         <a class="close" href="appointment.php">&times;</a>

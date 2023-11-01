@@ -309,7 +309,7 @@ ul li {
 	$Banner
 ========================================================================== */
 .banner {
-  background-image: url("../images/tutor-bg.jpg");
+  background-image: url("../images/bg.jpg");
   background-position: center top;
   background-repeat: no-repeat;
   -moz-background-size: cover;

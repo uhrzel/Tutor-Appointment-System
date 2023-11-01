@@ -17,7 +17,13 @@
         }
 
         .sub-table {
+            background-color: #2887A8;
             animation: transitionIn-Y-bottom 0.5s;
+        }
+
+
+        body {
+            background-color: #9999ff;
         }
     </style>
 </head>
@@ -142,11 +148,11 @@
 
                     <form action="" method="post" class="header-search">
 
-                        <input type="search" name="search" class="input-text header-searchbar" placeholder="Search Teacher name or Email" list="doctors">&nbsp;&nbsp;
+                        <input type="search" name="search" style=" background-color: #66a3ff;" class="input-text header-searchbar" placeholder="Search Teacher name or Email" list="doctors">&nbsp;&nbsp;
 
                         <?php
                         echo '<datalist id="doctors">';
-                        $list11 = $database->query("select  teachername,teacheremail from  teacher;");
+                        $list11 = $database->query("select teachername,teacheremail from  teacher;");
 
                         for ($y = 0; $y < $list11->num_rows; $y++) {
                             $row00 = $list11->fetch_assoc();
@@ -204,7 +210,7 @@
             if ($_POST) {
                 $keyword = $_POST["search"];
 
-                $sqlmain = "select * from teacher where teacheremail='$keyword' or teachername='$keyword' or teachername like '$keyword%' or teachername like '%$keyword' or teacherame like '%$keyword%'";
+                $sqlmain = "select * from teacher where teacheremail='$keyword' or teachername='$keyword' or teachername like '$keyword%' or teachername like '%$keyword' or teachername like '%$keyword%'";
             } else {
                 $sqlmain = "select * from teacher order by teacherid desc";
             }
@@ -214,7 +220,7 @@
             ?>
 
             <tr>
-                <td colspan="4">
+                <td colspan="4" class="tr-data">
                     <center>
                         <div class="abc scroll">
                             <table width="93%" class="sub-table scrolldown" border="0">
@@ -289,7 +295,7 @@
                                         &nbsp;&nbsp;&nbsp;
                                         <a href="?action=view&id=' . $docid . '" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-view"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">View</font></button></a>
                                        &nbsp;&nbsp;&nbsp;
-                                       <a href="?action=drop&id=' . $docid . '&name=' . $name . '" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-delete"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Remove</font></button></a>
+                                       <a href="?action=drop&id=' . $docid . '&name=' . $name . '" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-delete "  style=" color: red; padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Remove</font></button></a>
                                         </div>
                                         </td>
                                     </tr>';
@@ -320,7 +326,7 @@
             $nameget = $_GET["name"];
             echo '
             <div id="popup1" class="overlay">
-                    <div class="popup">
+                    <div class="popup" style="background-color: red;">
                     <center>
                         <h2>Are you sure?</h2>
                         <a class="close" href="teacher.php">&times;</a>
@@ -351,8 +357,8 @@
             $nic = $row['teachernic'];
             $tele = $row['teachertel'];
             echo '
-            <div id="popup1" class="overlay">
-                    <div class="popup">
+            <div id="popup1" class="overlay" >
+                    <div class="popup" style = "background-color: #66c2ff;">
                     <center>
                         <h2></h2>
                         <a class="close" href="teacher.php">&times;</a>
@@ -452,7 +458,7 @@
             if ($error_1 != '4') {
                 echo '
             <div id="popup1" class="overlay">
-                    <div class="popup">
+                    <div class="popup" style=" background-color: #66c2ff;">
                     <center>
                     
                         <a class="close" href="teacher.php">&times;</a> 
@@ -478,7 +484,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="text" name="name" class="input-text" placeholder="Teachers Name" required><br>
+                                    <input type="text" name="name" style="background-color: #66a3ff; color: black;" class="input-text" placeholder="Teachers Name" required><br>
                                 </td>
                                 
                             </tr>
@@ -489,7 +495,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="email" name="email" class="input-text" placeholder="Email Address" required><br>
+                                    <input type="email" name="email" style="background-color: #66a3ff; color: black;" class="input-text" placeholder="Email Address" required><br>
                                 </td>
                             </tr>
                             <tr>
@@ -499,7 +505,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="text" name="nic" class="input-text" placeholder="NIC Number" required><br>
+                                    <input type="text" name="nic" style="background-color: #66a3ff; color: black;" class="input-text" placeholder="NIC Number" required><br>
                                 </td>
                             </tr>
                             <tr>
@@ -509,7 +515,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="tel" name="Tele" class="input-text" placeholder="Telephone Number" required><br>
+                                    <input type="tel" name="Tele"  style="background-color: #66a3ff; color: black;" class="input-text" placeholder="Telephone Number" required><br>
                                 </td>
                             </tr>
                             <tr>
@@ -520,7 +526,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <select name="spec" id="" class="box" >';
+                                    <select name="spec" style="background-color: #66a3ff; color: black;"  id="" class="box" >';
 
 
                 $list11 = $database->query("select  * from  specialties order by sname asc;");
@@ -545,7 +551,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="password" name="password" class="input-text" placeholder="Defind a Password" required><br>
+                                    <input type="password" style="background-color: #66a3ff; color: black;" name="password" class="input-text" placeholder="Defind a Password" required><br>
                                 </td>
                             </tr><tr>
                                 <td class="label-td" colspan="2">
@@ -554,7 +560,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="password" name="cpassword" class="input-text" placeholder="Conform Password" required><br>
+                                    <input type="password" style="background-color: #66a3ff; color: black;" name="cpassword" class="input-text" placeholder="Conform Password" required><br>
                                 </td>
                             </tr>
                             
@@ -627,8 +633,8 @@
 
             if ($error_1 != '4') {
                 echo '
-                    <div id="popup1" class="overlay">
-                            <div class="popup">
+                    <div id="popup1" class="overlay" >
+                            <div class="popup" style="background-color: #66c2ff;">
                             <center>
                             
                                 <a class="close" href="teacher.php">&times;</a> 
@@ -656,7 +662,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                        <input type="email" name="email" class="input-text" placeholder="Email Address" value="' . $email . '" required><br>
+                                        <input type="email" name="email" style="background-color: #66a3ff; color=black;" class="input-text" placeholder="Email Address" value="' . $email . '" required><br>
                                         </td>
                                     </tr>
                                     <tr>
@@ -667,7 +673,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <input type="text" name="name" class="input-text" placeholder="Teacher Name" value="' . $name . '" required><br>
+                                            <input type="text" name="name" style="background-color: #66a3ff; color=black;" class="input-text" placeholder="Teacher Name" value="' . $name . '" required><br>
                                         </td>
                                         
                                     </tr>
@@ -679,7 +685,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <input type="text" name="nic" class="input-text" placeholder="NIC Number" value="' . $nic . '" required><br>
+                                            <input type="text" name="nic" style="background-color: #66a3ff; color=black;" class="input-text" placeholder="NIC Number" value="' . $nic . '" required><br>
                                         </td>
                                     </tr>
                                     <tr>
@@ -689,7 +695,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <input type="tel" name="Tele" class="input-text" placeholder="Telephone Number" value="' . $tele . '" required><br>
+                                            <input type="tel" name="Tele" style="background-color: #66a3ff; color=black;" class="input-text" placeholder="Telephone Number" value="' . $tele . '" required><br>
                                         </td>
                                     </tr>
                                     <tr>
@@ -700,7 +706,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <select name="spec" id="" class="box">';
+                                            <select name="spec" style="background-color: #66a3ff; color=black;" id="" class="box">';
 
 
                 $list11 = $database->query("select  * from  specialties;");
@@ -725,7 +731,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <input type="password" name="password" class="input-text" placeholder="Defind a Password" required><br>
+                                            <input type="password" style="background-color: #66a3ff; color=black;" name="password" class="input-text" placeholder="Defind a Password" required><br>
                                         </td>
                                     </tr><tr>
                                         <td class="label-td" colspan="2">
@@ -734,7 +740,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <input type="password" name="cpassword" class="input-text" placeholder="Conform Password" required><br>
+                                            <input type="password" style="background-color: #66a3ff; color=black;" name="cpassword" class="input-text" placeholder="Conform Password" required><br>
                                         </td>
                                     </tr>
                                     

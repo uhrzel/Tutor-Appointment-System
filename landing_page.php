@@ -32,6 +32,7 @@
                         <li><a href="#features">About</a></li>
                         <li><a href="#contact">Contact</a></li>
                         <li><a href="login.php">Login</a></li>
+                        <li><a href="signup.php">Sign Up</a></li>
                     </ul>
                 </nav>
                 <a href="#" class="nav-toggle">Menu<span></span></a>

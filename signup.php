@@ -16,6 +16,10 @@
     body {
         background-color: #3a3e64 !important;
     }
+
+    .container {
+        background-color: #2887A8;
+    }
 </style>
 
 <body>

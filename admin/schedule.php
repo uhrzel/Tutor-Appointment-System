@@ -17,7 +17,12 @@
         }
 
         .sub-table {
+            background-color: #2887A8;
             animation: transitionIn-Y-bottom 0.5s;
+        }
+
+        body {
+            background-color: #9999ff;
         }
     </style>
 </head>
@@ -196,14 +201,14 @@
                                 <td width="30%">
                                     <form action="" method="post">
 
-                                        <input type="date" name="sheduledate" id="date" class="input-text filter-container-items" style="margin: 0;width: 95%;">
+                                        <input type="date" name="sheduledate" id="date" class="input-text filter-container-items" style="margin: 0;width: 95%; background-color: #66a3ff;">
 
                                 </td>
                                 <td width="5%" style="text-align: center;">
                                     Teacher:
                                 </td>
                                 <td width="30%">
-                                    <select name="teacherid" id="" class="box filter-container-items" style="width:90% ;height: 37px;margin: 0;">
+                                    <select name="teacherid" id="" class="box filter-container-items" style="width:90% ;height: 37px;margin: 0; background-color: #66a3ff;">
                                         <option value="" disabled selected hidden>Choose Teacher Name from the list</option><br />
 
                                         <?php
@@ -369,7 +374,7 @@
                                         
                                         <a href="?action=view&id=' . $scheduleid . '" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-view"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">View</font></button></a>
                                        &nbsp;&nbsp;&nbsp;
-                                       <a href="?action=drop&id=' . $scheduleid . '&name=' . $title . '" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-delete"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Remove</font></button></a>
+                                       <a href="?action=drop&id=' . $scheduleid . '&name=' . $title . '" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-delete"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px; color: red"><font class="tn-in-text">Remove</font></button></a>
                                         </div>
                                         </td>
                                     </tr>';
@@ -400,7 +405,7 @@
 
             echo '
             <div id="popup1" class="overlay">
-                    <div class="popup">
+                    <div class="popup" style="background-color: #3973ac;">
                     <center>
                     
                     
@@ -544,7 +549,7 @@
             $nameget = $_GET["name"];
             echo '
             <div id="popup1" class="overlay">
-                    <div class="popup">
+                    <div class="popup" style="background-color: #ff3333">
                     <center>
                         <h2>Are you sure?</h2>
                         <a class="close" href="schedule.php">&times;</a>
@@ -580,7 +585,7 @@
             $result12 = $database->query($sqlmain12);
             echo '
             <div id="popup1" class="overlay">
-                    <div class="popup" style="width: 70%;">
+                    <div class="popup" style="width: 70%; background-color: #66c2ff;">
                     <center>
                         <h2></h2>
                         <a class="close" href="schedule.php">&times;</a>
