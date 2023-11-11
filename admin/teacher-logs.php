@@ -73,56 +73,117 @@
 
                 </tr>
                 <tr class="menu-row">
-                    <td class="menu-btn menu-icon-dashbord">
-                        <a href="index.php" class="non-style-link-menu">
-                            <p class="menu-text">Dashboard</p>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="menu-btn menu-icon-doctor">
-                        <a href="teacher.php" class="non-style-link-menu">
-                            <p class="menu-text">Teachers</p>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="menu-btn menu-icon-schedule">
-                        <a href="schedule.php" class="non-style-link-menu">
-                            <div>
-                                <p class="menu-text">Schedule</p>
+                    <td class="menu-btn ">
+                        <a href="index.php" class="non-style-link-menu non-style-link-menu-active">
+                            <div style="margin-right: 80px;">
+                                <p class="menu-text menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                        <path d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z" />
+                                    </svg>
+                                    Dashboard
+                                </p>
                             </div>
                         </a>
                     </td>
                 </tr>
                 <tr class="menu-row">
-                    <td class="menu-btn menu-icon-appoinment">
+                    <td class="menu-btn ">
+                        <a href="teacher.php" class="non-style-link-menu">
+                            <div style="margin-right: 80px;">
+                                <p class="menu-text menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                        <path d="M160 64c0-35.3 28.7-64 64-64H576c35.3 0 64 28.7 64 64V352c0 35.3-28.7 64-64 64H336.8c-11.8-25.5-29.9-47.5-52.4-64H384V320c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v32h64V64L224 64v49.1C205.2 102.2 183.3 96 160 96V64zm0 64a96 96 0 1 1 0 192 96 96 0 1 1 0-192zM133.3 352h53.3C260.3 352 320 411.7 320 485.3c0 14.7-11.9 26.7-26.7 26.7H26.7C11.9 512 0 500.1 0 485.3C0 411.7 59.7 352 133.3 352z" />
+                                    </svg>
+                                    Teachers
+                                </p>
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+
+
+
+
+                <tr class="menu-row">
+                    <td class="menu-btn">
+                        <a href="schedule.php" class="non-style-link-menu">
+                            <div style="margin-right: 80px;">
+                                <p class="menu-text menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="4" y="5" width="16" height="14" rx="2" ry="2" />
+                                        <line x1="12" y1="3" x2="12" y2="5" />
+                                        <line x1="12" y1="18" x2="12" y2="21" />
+                                        <line x1="4" y1="9" x2="4" y2="9" />
+                                        <line x1="20" y1="9" x2="20" y2="9" />
+                                    </svg>
+                                    Schedule
+                                </p>
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="menu-row">
+                    <td class="menu-btn">
                         <a href="appointment.php" class="non-style-link-menu">
-                            <p class="menu-text">Appointment</p>
+                            <div style="margin-right: 80px;">
+                                <p class="menu-text menu-icon" style="font-size: 14px;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                        <path d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zM329 305c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-95 95-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L329 305z" />
+                                    </svg>
+                                    Appointment
+                                </p>
+                            </div>
                         </a>
                     </td>
                 </tr>
                 <tr class="menu-row">
-                    <td class="menu-btn menu-icon-patient">
+                    <td class="menu-btn">
                         <a href="student.php" class="non-style-link-menu">
-                            <p class="menu-text">Students</p>
+                            <div style="margin-right: 80px;">
+                                <p class="menu-text menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                        <path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z" />
+                                    </svg>
+                                    Students
+                                </p>
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+
+                <tr class="menu-row">
+                    <td class="menu-btn">
+                        <a href="teacher-logs.php" class="non-style-link-menu">
+                            <div style="margin-right: 80px;">
+                                <p class="menu-text menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <line x1="12" y1="16" x2="12" y2="12" />
+                                        <line x1="12" y1="8" x2="12" y2="8" />
+                                    </svg>
+                                    Teacher Logs
+                                </p>
+                            </div>
                         </a>
                     </td>
                 </tr>
                 <tr class="menu-row">
-                    <td class="menu-btn menu-icon-dashbord menu-active menu-icon-dashbord-active">
-                        <a href="teacher-logs.php" class="non-style-link-menu non-style-link-menu-active">
-                            <p class="menu-text">Teacher Logs</p>
-                        </a>
-                    </td>
-                </tr>
-                <tr class="menu-row">
-                    <td class="menu-btn menu-icon-dashbord">
+                    <td class="menu-btn">
                         <a href="student-logs.php" class="non-style-link-menu">
-                            <p class="menu-text">Student Logs</p>
+                            <div style="margin-right: 80px;">
+                                <p class="menu-text menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <line x1="12" y1="16" x2="12" y2="12" />
+                                        <line x1="12" y1="8" x2="12" y2="8" />
+                                    </svg>
+                                    Student Logs
+                                </p>
+                            </div>
                         </a>
                     </td>
                 </tr>
+
 
             </table>
         </div>

@@ -98,31 +98,37 @@
         </td>
         </tr>
         <tr class="menu-row">
-            <td class="menu-btn menu-icon-doctor">
+            <td class="menu-btn ">
                 <a href="teacher.php" class="non-style-link-menu">
+                    <div style="margin-right: 80px;">
+                        <p class="menu-text menu-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <path d="M160 64c0-35.3 28.7-64 64-64H576c35.3 0 64 28.7 64 64V352c0 35.3-28.7 64-64 64H336.8c-11.8-25.5-29.9-47.5-52.4-64H384V320c0-17.7 14.3-32 32-32h64c17.7 0 32 14.3 32 32v32h64V64L224 64v49.1C205.2 102.2 183.3 96 160 96V64zm0 64a96 96 0 1 1 0 192 96 96 0 1 1 0-192zM133.3 352h53.3C260.3 352 320 411.7 320 485.3c0 14.7-11.9 26.7-26.7 26.7H26.7C11.9 512 0 500.1 0 485.3C0 411.7 59.7 352 133.3 352z" />
+                            </svg>
+                            Teachers
+                        </p>
+                    </div>
+                </a>
+            </td>
+        </tr>
+
+        <tr class="menu-row">
+            <td class="menu-btn menu-icon-session">
+                <a href="schedule.php" class="non-style-link-menu">
                     <div>
-                        <p class="menu-text">All Teachers</p>
+                        <p class="menu-text">Scheduled Sessions</p>
+                    </div>
+                </a>
+            </td>
+        </tr>
+        <tr class="menu-row">
+            <td class="menu-btn menu-icon-appoinment">
+                <a href="appointment.php" class="non-style-link-menu">
+                    <div>
+                        <p class="menu-text">My Bookings</p>
                 </a>
     </div>
     </td>
-    </tr>
-
-    <tr class="menu-row">
-        <td class="menu-btn menu-icon-session">
-            <a href="schedule.php" class="non-style-link-menu">
-                <div>
-                    <p class="menu-text">Scheduled Sessions</p>
-                </div>
-            </a>
-        </td>
-    </tr>
-    <tr class="menu-row">
-        <td class="menu-btn menu-icon-appoinment">
-            <a href="appointment.php" class="non-style-link-menu">
-                <div>
-                    <p class="menu-text">My Bookings</p>
-            </a></div>
-        </td>
     </tr>
 
     <tr class="menu-row">
@@ -246,7 +252,7 @@
                                     <a href="?action=drop&id=<?php echo $userid . '&name=' . $username ?>" class="non-style-link">
                                         <div class="dashboard-items setting-tabs" style="padding:20px;margin:auto;width:95%;display: flex; background-color: #2887A8;
 ">
-                                            <div class="btn-icon-back dashboard-icons-setting" style="background-image: url('../img/icons/patients-hover.svg');"></div>
+                                            <div class="btn-icon-back dashboard-icons-setting" style="background-image: url('../img/icons/delete-iceblue.svg');"></div>
                                             <div>
                                                 <div class="h1-dashboard" style="color: #ff5050;">
                                                     Delete Account
