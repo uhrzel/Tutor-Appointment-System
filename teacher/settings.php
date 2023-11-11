@@ -24,6 +24,11 @@
         .sub-table {
             animation: transitionIn-Y-bottom 0.5s;
         }
+
+        body {
+            background-color: #9999ff;
+
+        }
     </style>
 
 
@@ -91,22 +96,15 @@
         </div></a>
         </td>
         </tr>
+
         <tr class="menu-row">
-            <td class="menu-btn menu-icon-session">
-                <a href="description.php" class="non-style-link-menu">
+            <td class="menu-btn menu-icon-appoinment">
+                <a href="appointment.php" class="non-style-link-menu">
                     <div>
-                        <p class="menu-text">Description</p>
+                        <p class="menu-text">My Appointments</p>
                 </a>
     </div>
     </td>
-    </tr>
-    <tr class="menu-row">
-        <td class="menu-btn menu-icon-appoinment">
-            <a href="appointment.php" class="non-style-link-menu">
-                <div>
-                    <p class="menu-text">My Appointments</p>
-            </a></div>
-        </td>
     </tr>
 
     <tr class="menu-row">
@@ -190,16 +188,16 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="width: 25%;">
+                                <td style="width: 25%; ">
                                     <a href="?action=edit&id=<?php echo $userid ?>&error=0" class="non-style-link">
-                                        <div class="dashboard-items setting-tabs" style="padding:20px;margin:auto;width:95%;display: flex">
+                                        <div class="dashboard-items setting-tabs" style="padding:20px;margin:auto;width:95%; background-color: #2887A8; display: flex">
                                             <div class="btn-icon-back dashboard-icons-setting" style="background-image: url('../img/icons/doctors-hover.svg');"></div>
                                             <div>
-                                                <div class="h1-dashboard">
+                                                <div class="h1-dashboard" style="color: black;">
                                                     Account Settings &nbsp;
 
                                                 </div><br>
-                                                <div class="h3-dashboard" style="font-size: 15px;">
+                                                <div class="h3-dashboard" style="font-size: 15px; color: black; ">
                                                     Edit your Account Details & Change Password
                                                 </div>
                                             </div>
@@ -218,14 +216,14 @@
                             <tr>
                                 <td style="width: 25%;">
                                     <a href="?action=view&id=<?php echo $userid ?>" class="non-style-link">
-                                        <div class="dashboard-items setting-tabs" style="padding:20px;margin:auto;width:95%;display: flex;">
+                                        <div class="dashboard-items setting-tabs" style="padding:20px;margin:auto;width:95%; background-color: #2887A8;display: flex;">
                                             <div class="btn-icon-back dashboard-icons-setting " style="background-image: url('../img/icons/view-iceblue.svg');"></div>
                                             <div>
-                                                <div class="h1-dashboard">
+                                                <div class="h1-dashboard" style="color: black;">
                                                     View Account Details
 
                                                 </div><br>
-                                                <div class="h3-dashboard" style="font-size: 15px;">
+                                                <div class="h3-dashboard" style="font-size: 15px; color: black;">
                                                     View Personal information About Your Account
                                                 </div>
                                             </div>
@@ -243,14 +241,14 @@
                             <tr>
                                 <td style="width: 25%;">
                                     <a href="?action=drop&id=<?php echo $userid . '&name=' . $username ?>" class="non-style-link">
-                                        <div class="dashboard-items setting-tabs" style="padding:20px;margin:auto;width:95%;display: flex;">
+                                        <div class="dashboard-items setting-tabs" style="padding:20px;margin:auto;width:95%;  background-color: #2887A8; display: flex;">
                                             <div class="btn-icon-back dashboard-icons-setting" style="background-image: url('../img/icons/patients-hover.svg');"></div>
                                             <div>
                                                 <div class="h1-dashboard" style="color: #ff5050;">
                                                     Delete Account
 
                                                 </div><br>
-                                                <div class="h3-dashboard" style="font-size: 15px;">
+                                                <div class="h3-dashboard" style="font-size: 15px; color:black;">
                                                     Will Permanently Remove your Account
                                                 </div>
                                             </div>
@@ -277,7 +275,7 @@
             $nameget = $_GET["name"];
             echo '
             <div id="popup1" class="overlay">
-                    <div class="popup">
+                    <div class="popup" style="background-color: red;">
                     <center>
                         <h2>Are you sure?</h2>
                         <a class="close" href="settings.php">&times;</a>
@@ -309,7 +307,7 @@
             $tele = $row['teachertel'];
             echo '
             <div id="popup1" class="overlay">
-                    <div class="popup">
+                    <div class="popup" style="background-color: #66c2ff;">
                     <center>
                         <h2></h2>
                         <a class="close" href="settings.php">&times;</a>
@@ -318,7 +316,7 @@
                             
                         </div>
                         <div style="display: flex;justify-content: center;">
-                        <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0">
+                        <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0" style="background-color: #2887A8;">
                         
                             <tr>
                                 <td>
@@ -423,13 +421,13 @@
             if ($error_1 != '4') {
                 echo '
                     <div id="popup1" class="overlay">
-                            <div class="popup">
+                            <div class="popup" style="background-color: #66c2ff">
                             <center>
                             
                                 <a class="close" href="settings.php">&times;</a> 
                                 <div style="display: flex;justify-content: center;">
                                 <div class="abc">
-                                <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0">
+                                <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0" style="background-color: #2887A8">
                                 <tr>
                                         <td class="label-td" colspan="2">' .
                     $errorlist[$error_1]

@@ -19,6 +19,10 @@
         .sub-table {
             animation: transitionIn-Y-bottom 0.5s;
         }
+
+        body {
+            background-color: #9999ff;
+        }
     </style>
 </head>
 
@@ -83,22 +87,15 @@
         </div></a>
         </td>
         </tr>
+
         <tr class="menu-row">
-            <td class="menu-btn menu-icon-session">
-                <a href="description.php" class="non-style-link-menu">
+            <td class="menu-btn menu-icon-appoinment">
+                <a href="appointment.php" class="non-style-link-menu">
                     <div>
-                        <p class="menu-text">Description</p>
+                        <p class="menu-text">My Appointments</p>
                 </a>
     </div>
     </td>
-    </tr>
-    <tr class="menu-row">
-        <td class="menu-btn menu-icon-appoinment">
-            <a href="appointment.php" class="non-style-link-menu">
-                <div>
-                    <p class="menu-text">My Appointments</p>
-            </a></div>
-        </td>
     </tr>
 
     <tr class="menu-row">
@@ -175,7 +172,7 @@
 
                     <form action="" method="post" class="header-search">
 
-                        <input type="search" name="search12" class="input-text header-searchbar" placeholder="Search Student name or Email" list="patient">&nbsp;&nbsp;
+                        <input type="search" name="search12" class="input-text header-searchbar" style="background-color: #66a3ff;" placeholder="Search Student name or Email" list="patient">&nbsp;&nbsp;
 
                         <?php
                         echo '<datalist id="patient">';
@@ -237,7 +234,7 @@
                                     Show Details About : &nbsp;
                                 </td>
                                 <td width="30%">
-                                    <select name="showonly" id="" class="box filter-container-items" style="width:90% ;height: 37px;margin: 0;">
+                                    <select name="showonly" id="" class="box filter-container-items" style="width:90% ;height: 37px;margin: 0; background-color: #66a3ff;">
                                         <option value="" disabled selected hidden><?php echo $current   ?></option><br />
                                         <option value="my">My Students Only</option><br />
                                         <option value="all">All Students</option><br />
@@ -387,14 +384,14 @@
         $address = $row["studentaddress"];
         echo '
             <div id="popup1" class="overlay">
-                    <div class="popup">
+                    <div class="popup" style="background-color: #66c2ff;">
                     <center>
                         <a class="close" href="student.php">&times;</a>
                         <div class="content">
 
                         </div>
                         <div style="display: flex;justify-content: center;">
-                        <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0">
+                        <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0" style="background-color: #2887A8;">
                         
                             <tr>
                                 <td>

@@ -500,7 +500,7 @@ input[type="search"]:focus {
 }
 
 .doctor-header {
-  background-image: url(../img/b8.jpg);
+  background-image: url(../img/tutorials.jpg);
   color: rgba(0, 0, 0, 0.87);
   background-size: 100%;
   background-repeat: no-repeat;
@@ -509,7 +509,7 @@ input[type="search"]:focus {
 }
 
 .patient-header {
-  background-image: url(../img/b3.jpg);
+  background-image: url(../img/tutorials.jpg);
 }
 
 .search-items {

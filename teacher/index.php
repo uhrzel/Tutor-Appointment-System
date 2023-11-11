@@ -29,6 +29,17 @@
         .doctor-heade {
             animation: transitionIn-Y-over 0.5s;
         }
+
+        body {
+            background-color: #9999ff;
+
+        }
+
+        .dashboard-items {
+            background-color: #cce0ff;
+        }
+
+        .dashbord-tables {}
     </style>
 
 
@@ -96,22 +107,15 @@
         </div></a>
         </td>
         </tr>
+
         <tr class="menu-row">
-            <td class="menu-btn menu-icon-session">
-                <a href="description.php" class="non-style-link-menu">
+            <td class="menu-btn menu-icon-appoinment">
+                <a href="appointment.php" class="non-style-link-menu">
                     <div>
-                        <p class="menu-text">Description</p>
+                        <p class="menu-text">My Appointments</p>
                 </a>
     </div>
     </td>
-    </tr>
-    <tr class="menu-row">
-        <td class="menu-btn menu-icon-appoinment">
-            <a href="appointment.php" class="non-style-link-menu">
-                <div>
-                    <p class="menu-text">My Appointments</p>
-            </a></div>
-        </td>
     </tr>
 
     <tr class="menu-row">
@@ -215,7 +219,7 @@
 
 
                         <center>
-                            <table class="filter-container" style="border: none;" border="0">
+                            <table class="filter-container" style="border: none; " border="0">
                                 <tr>
                                     <td colspan="4">
                                         <p style="font-size: 20px;font-weight:600;padding-left: 12px;">Status</p>
@@ -297,7 +301,7 @@
 
                     <p id="anim" style="font-size: 20px;font-weight:600;padding-left: 40px;">Your Up Coming Sessions until Next week</p>
                     <center>
-                        <div class="abc scroll" style="height: 250px;padding: 0;margin: 0;">
+                        <div class="abc scroll" style="height: 250px;padding: 0;margin: 0; background-color: #2887A8;">
                             <table width="85%" class="sub-table scrolldown" border="0">
                                 <thead>
 

@@ -19,6 +19,14 @@
         .sub-table {
             animation: transitionIn-Y-bottom 0.5s;
         }
+
+        body {
+            background-color: #9999ff;
+        }
+
+        .dashbord-tables {
+            background-color: #2887A8;
+        }
     </style>
 </head>
 
@@ -81,22 +89,15 @@
         </div></a>
         </td>
         </tr>
+
         <tr class="menu-row">
-            <td class="menu-btn menu-icon-session">
-                <a href="description.php" class="non-style-link-menu">
+            <td class="menu-btn menu-icon-appoinment  menu-active menu-icon-appoinment-active">
+                <a href="appointment.php" class="non-style-link-menu non-style-link-menu-active">
                     <div>
-                        <p class="menu-text">Description</p>
+                        <p class="menu-text">My Appointments</p>
                 </a>
     </div>
     </td>
-    </tr>
-    <tr class="menu-row">
-        <td class="menu-btn menu-icon-appoinment  menu-active menu-icon-appoinment-active">
-            <a href="appointment.php" class="non-style-link-menu non-style-link-menu-active">
-                <div>
-                    <p class="menu-text">My Appointments</p>
-            </a></div>
-        </td>
     </tr>
 
     <tr class="menu-row">
@@ -193,7 +194,7 @@
                                 <td width="30%">
                                     <form action="" method="post">
 
-                                        <input type="date" name="sheduledate" id="date" class="input-text filter-container-items" style="margin: 0;width: 95%;">
+                                        <input type="date" name="sheduledate" id="date" class="input-text filter-container-items" style=" background-color: #66a3ff; margin: 0;width: 95%;">
 
                                 </td>
 
@@ -239,10 +240,10 @@
                 <td colspan="4">
                     <center>
                         <div class="abc scroll">
-                            <table width="93%" class="sub-table scrolldown" border="0">
+                            <table width="93%" class="sub-table scrolldown" border="0" style="background-color: #2887A8;">
                                 <thead>
                                     <tr>
-                                        <th class="table-headin">
+                                        <th class=" table-headin">
                                             Student name
                                         </th>
                                         <th class="table-headin">

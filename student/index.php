@@ -24,6 +24,15 @@
         .anime {
             animation: transitionIn-Y-bottom 0.5s;
         }
+
+        body {
+            background-color: #9999ff;
+
+        }
+
+        .dashboard-items {
+            background-color: #cce0ff;
+        }
     </style>
 
 
@@ -124,14 +133,7 @@
             </a></div>
         </td>
     </tr>
-    <tr class="menu-row">
-        <td class="menu-btn menu-icon-session">
-            <a href="description.php" class="non-style-link-menu">
-                <div>
-                    <p class="menu-text">My Description</p>
-            </a></div>
-        </td>
-    </tr>
+
     <tr class="menu-row">
         <td class="menu-btn menu-icon-settings">
             <a href="settings.php" class="non-style-link-menu">
@@ -200,7 +202,7 @@
                                     <h3>Channel a Teachers Here</h3>
                                     <form action="schedule.php" method="post" style="display: flex">
 
-                                        <input type="search" name="search" class="input-text " placeholder="Search Teacher and We will Find The Session Available" list="doctors" style="width:45%;">&nbsp;&nbsp;
+                                        <input type="search" style="background-color: #66a3ff;" name="search" class="input-text " placeholder="Search Teacher and We will Find The Session Available" list="doctors" style="width:45%;">&nbsp;&nbsp;
 
                                         <?php
                                         echo '<datalist id="doctors">';
@@ -324,7 +326,7 @@
                     <p style="font-size: 20px;font-weight:600;padding-left: 40px;" class="anime">Your Upcoming Booking</p>
                     <center>
                         <div class="abc scroll" style="height: 250px;padding: 0;margin: 0;">
-                            <table width="85%" class="sub-table scrolldown" border="0">
+                            <table width="85%" class="sub-table scrolldown" border="0" style=" background-color: #2887A8;">
                                 <thead>
 
                                     <tr>

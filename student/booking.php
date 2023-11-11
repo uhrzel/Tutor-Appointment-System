@@ -19,6 +19,11 @@
         .sub-table {
             animation: transitionIn-Y-bottom 0.5s;
         }
+
+        body {
+            background-color: #9999ff;
+
+        }
     </style>
 </head>
 
@@ -124,14 +129,7 @@
             </a></div>
         </td>
     </tr>
-    <tr class="menu-row">
-        <td class="menu-btn menu-icon-session">
-            <a href="description.php" class="non-style-link-menu">
-                <div>
-                    <p class="menu-text">My Description</p>
-            </a></div>
-        </td>
-    </tr>
+
     <tr class="menu-row">
         <td class="menu-btn menu-icon-settings">
             <a href="settings.php" class="non-style-link-menu">
@@ -225,7 +223,7 @@
                 <td colspan="4">
                     <center>
                         <div class="abc scroll">
-                            <table width="100%" class="sub-table scrolldown" border="0" style="padding: 50px;border:none">
+                            <table width="100%" class="sub-table scrolldown" border="0" style="padding: 50px;border:none;">
 
                                 <tbody>
 
@@ -271,10 +269,10 @@
 
                                             echo '
                                     <td style="width: 50%;" rowspan="2">
-                                            <div  class="dashboard-items search-items"  >
+                                            <div  class="dashboard-items search-items"  style="background-color: #2887A8">
                                             
                                                 <div style="width:100%">
-                                                        <div class="h1-search" style="font-size:25px;">
+                                                        <div class="h1-search" style="font-size:25px; color: black;">
                                                             Session Details
                                                         </div><br><br>
                                                         <div class="h3-search" style="font-size:18px;line-height:30px">
@@ -301,10 +299,10 @@
                                         
                                         
                                         <td style="width: 25%;">
-                                            <div  class="dashboard-items search-items"  >
+                                            <div  class="dashboard-items search-items" style="background-color: #2887A8;">
                                             
-                                                <div style="width:100%;padding-top: 15px;padding-bottom: 15px;">
-                                                        <div class="h1-search" style="font-size:20px;line-height: 35px;margin-left:8px;text-align:center;">
+                                                <div style="width:100%;padding-top: 15px;padding-bottom: 15px; ">
+                                                        <div class="h1-search" style="font-size:20px;line-height: 35px;margin-left:8px;text-align:center; color: black;">
                                                             Your Appointment Number
                                                         </div>
                                                         <center>

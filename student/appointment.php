@@ -19,6 +19,10 @@
         .sub-table {
             animation: transitionIn-Y-bottom 0.5s;
         }
+
+        body {
+            background-color: #9999ff;
+        }
     </style>
 </head>
 
@@ -138,14 +142,7 @@
             </a></div>
         </td>
     </tr>
-    <tr class="menu-row">
-        <td class="menu-btn menu-icon-session">
-            <a href="description.php" class="non-style-link-menu">
-                <div>
-                    <p class="menu-text">My Description</p>
-            </a></div>
-        </td>
-    </tr>
+
     <tr class="menu-row">
         <td class="menu-btn menu-icon-settings">
             <a href="settings.php" class="non-style-link-menu">
@@ -222,7 +219,8 @@
                                 <td width="30%">
                                     <form action="" method="post">
 
-                                        <input type="date" name="sheduledate" id="date" class="input-text filter-container-items" style="margin: 0;width: 95%;">
+                                        <input type="date" name="sheduledate" id="date" class="input-text filter-container-items" style=" background-color: #66a3ff;
+ margin: 0;width: 95%;">
 
                                 </td>
 
@@ -294,8 +292,8 @@
                                                 }
 
                                                 echo '
-                                            <td style="width: 25%;">
-                                                    <div  class="dashboard-items search-items"  >
+                                            <td style="width: 25%; ">
+                                                    <div  class="dashboard-items search-items" style="background-color: #2887A8;" >
                                                     
                                                         <div style="width:100%;">
                                                         <div class="h3-search">
@@ -395,7 +393,7 @@
 
             echo '
             <div id="popup1" class="overlay">
-                    <div class="popup">
+                    <div class="popup" style="background-color: #2887A8">
                     <center>
                     <br><br>
                         <h2>Booking Successfully.</h2>
@@ -419,7 +417,7 @@
 
             echo '
             <div id="popup1" class="overlay">
-                    <div class="popup">
+                    <div class="popup" style=" background-color: #66c2ff;">
                     <center>
                         <h2>Are you sure?</h2>
                         <a class="close" href="appointment.php">&times;</a>

@@ -19,6 +19,11 @@
         .sub-table {
             animation: transitionIn-Y-bottom 0.5s;
         }
+
+        body {
+            background-color: #9999ff;
+
+        }
     </style>
 </head>
 
@@ -121,14 +126,7 @@
             </a></div>
         </td>
     </tr>
-    <tr class="menu-row">
-        <td class="menu-btn menu-icon-session">
-            <a href="description.php" class="non-style-link-menu">
-                <div>
-                    <p class="menu-text">My Description</p>
-            </a></div>
-        </td>
-    </tr>
+
     <tr class="menu-row">
         <td class="menu-btn menu-icon-settings">
             <a href="settings.php" class="non-style-link-menu">
@@ -178,7 +176,7 @@
                 <td>
                     <form action="" method="post" class="header-search">
 
-                        <input type="search" name="search" class="input-text header-searchbar" placeholder="Search Teacher name or Email or Date (YYYY-MM-DD)" list="doctors" value="<?php echo $insertkey ?>">&nbsp;&nbsp;
+                        <input type="search" name="search" class="input-text header-searchbar" style="background-color: #66a3ff;" placeholder="Search Teacher name or Email or Date (YYYY-MM-DD)" list="doctors" value="<?php echo $insertkey ?>">&nbsp;&nbsp;
 
                         <?php
                         echo '<datalist id="doctors">';
@@ -236,7 +234,7 @@
 
             <tr>
                 <td colspan="4" style="padding-top:10px;width: 100%;">
-                    <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)"><?php echo $searchtype . " Sessions" . "(" . $result->num_rows . ")"; ?> </p>
+                    <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49) "><?php echo $searchtype . " Sessions" . "(" . $result->num_rows . ")"; ?> </p>
                     <p class="heading-main12" style="margin-left: 45px;font-size:22px;color:rgb(49, 49, 49)"><?php echo $q . $insertkey . $q; ?> </p>
                 </td>
 
@@ -253,7 +251,6 @@
                                 <tbody>
 
                                     <?php
-
 
 
 
@@ -293,11 +290,10 @@
                                                 }
 
                                                 echo '
-                                        <td style="width: 25%;">
-                                                <div  class="dashboard-items search-items"  >
-                                                
+                                        <td style="width: 25%; ">
+                                                <div  class="dashboard-items search-items" style="background-color: #2887A8;"  >
                                                     <div style="width:100%">
-                                                            <div class="h1-search">
+                                                            <div class="h1-search" style="color: black;">
                                                                 ' . substr($title, 0, 21) . '
                                                             </div><br>
                                                             <div class="h3-search">

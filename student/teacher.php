@@ -19,6 +19,10 @@
         .sub-table {
             animation: transitionIn-Y-bottom 0.5s;
         }
+
+        body {
+            background-color: #9999ff;
+        }
     </style>
 </head>
 
@@ -108,14 +112,7 @@
             </a></div>
         </td>
     </tr>
-    <tr class="menu-row">
-        <td class="menu-btn menu-icon-session">
-            <a href="description.php" class="non-style-link-menu">
-                <div>
-                    <p class="menu-text">My Description</p>
-            </a></div>
-        </td>
-    </tr>
+
     <tr class="menu-row">
         <td class="menu-btn menu-icon-settings">
             <a href="settings.php" class="non-style-link-menu">
@@ -139,7 +136,8 @@
 
                     <form action="" method="post" class="header-search">
 
-                        <input type="search" name="search" class="input-text header-searchbar" placeholder="Search Teacher name or Email" list="doctors">&nbsp;&nbsp;
+                        <input type="search" name="search" style="background-color: #66a3ff;
+" class="input-text header-searchbar" placeholder="Search Teacher name or Email" list="doctors">&nbsp;&nbsp;
 
                         <?php
                         echo '<datalist id="doctors">';
@@ -206,7 +204,7 @@
                 <td colspan="4">
                     <center>
                         <div class="abc scroll">
-                            <table width="93%" class="sub-table scrolldown" border="0">
+                            <table width="93%" class="sub-table scrolldown" border="0" style="background-color: #2887A8;">
                                 <thead>
                                     <tr>
                                         <th class="table-headin">
