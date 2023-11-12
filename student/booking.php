@@ -256,6 +256,13 @@
                                             $scheduledate = $row["scheduledate"];
                                             $scheduletime = $row["scheduletime"];
                                             $fee = $row["app_fee"];
+                                            $scheduledDateTime = $scheduledate . ' ' . $scheduletime;
+                                            $scheduledTimestamp = strtotime($scheduledDateTime);
+                                            $timeRemaining = $scheduledTimestamp - time();
+                                            $hours = floor($timeRemaining / 3600);
+                                            $minutes = floor(($timeRemaining % 3600) / 60);
+                                            $seconds = $timeRemaining % 60;
+
                                             $sql2 = "select * from appointment where scheduleid=$id";
                                             //echo $sql2;
                                             $result12 = $database->query($sql2);
@@ -290,7 +297,8 @@
                                                         <div class="h3-search" style="font-size:18px;">
                                                             Session Title: ' . $title . '<br>
                                                             Session Scheduled Date: ' . $scheduledate . '<br>
-                                                            Session Starts : ' . $scheduletime . '<br>
+                                                            Session Scheduled time: ' . $scheduletime . '<br>
+                                                      Time remaining: ' . $hours . ' Hours ' . $minutes . ' Minutes ' . $seconds . ' Seconds<br>
                                                             Rate Per Session : ' . $fee . '<br>
 
                                                         </div>
