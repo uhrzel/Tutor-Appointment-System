@@ -14,7 +14,7 @@
 </head>
 <style>
     body {
-        background-color: #3a3e64 !important;
+        background-color: teal !important;
     }
 
     .container {
@@ -67,7 +67,7 @@
                 <tr>
                     <td colspan="2">
                         <p class="header-text">Let's Get Started</p>
-                        <p class="sub-text">Add Your Personal Details to Continue</p>
+                        <p class="sub-text" style="color: black;">Add Your Personal Details to Continue</p>
                     </td>
                 </tr>
                 <tr>
@@ -131,7 +131,7 @@
                 <tr>
                     <td colspan="2">
                         <br>
-                        <label for="" class="sub-text" style="font-weight: 280;">Already have an account&#63; </label>
+                        <label for="" class="sub-text" style="color: black; font-weight: 280;">Already have an account&#63; </label>
                         <a href="login.php" class="hover-link1 non-style-link">Login</a>
                         <br><br><br>
                     </td>

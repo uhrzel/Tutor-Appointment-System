@@ -26,7 +26,7 @@
         }
 
         body {
-            background-color: #9999ff;
+            background-color: teal;
 
         }
     </style>

@@ -11,7 +11,7 @@
     }
 
     body {
-        background-color: #3a3e64 !important;
+        background-color: teal !important;
     }
 </style>
 
@@ -53,10 +53,6 @@
 
     //import database
     include("connection.php");
-
-
-
-
 
     if ($_POST) {
 
@@ -172,7 +168,7 @@
                 <div class="form-body">
                     <tr>
                         <td>
-                            <p class="sub-text">Login with your details to continue</p>
+                            <p class="sub-text" style="color: black;">Login with your details to continue</p>
                         </td>
                     </tr>
                     <tr>
@@ -210,7 +206,7 @@
                         <td>
                             <input type="submit" value="Login" class="login-btn btn-primary btn">
                             <a href="get-verified-email.php" class="hover-link1 non-style-link">
-                                <label for="" class="sub-text" style="font-weight: 280;">Forgot Password&#63; </label>
+                                <label for="" class="sub-text" style=" color: black; font-weight: 280;">Forgot Password&#63; </label>
                             </a>
                         </td>
                     </tr>
@@ -218,7 +214,7 @@
                 <tr>
                     <td>
                         <br>
-                        <label for="" class="sub-text" style="font-weight: 280;">Don't have an account&#63; </label>
+                        <label for="" class="sub-text" style=" color: black; font-weight: 280;">Don't have an account&#63; </label>
                         <a href="signup.php" class="hover-link1 non-style-link">Sign Up</a>
                         <br><br><br>
                     </td>
