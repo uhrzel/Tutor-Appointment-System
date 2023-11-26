@@ -21,7 +21,8 @@
         }
 
         body {
-            background-color: teal;
+            background-color: #cceeff;
+
         }
     </style>
 </head>
@@ -178,7 +179,7 @@
 
                     <form action="" method="post" class="header-search">
 
-                        <input type="search" name="search12" class="input-text header-searchbar" style="background-color: #66a3ff;" placeholder="Search Student name or Email" list="patient">&nbsp;&nbsp;
+                        <input type="search" name="search12" class="input-text header-searchbar" style="background-color: #AFEEEE;" placeholder="Search Student name or Email" list="patient">&nbsp;&nbsp;
 
                         <?php
                         echo '<datalist id="patient">';
@@ -240,7 +241,7 @@
                                     Show Details About : &nbsp;
                                 </td>
                                 <td width="30%">
-                                    <select name="showonly" id="" class="box filter-container-items" style="width:90% ;height: 37px;margin: 0; background-color: #66a3ff;">
+                                    <select name="showonly" id="" class="box filter-container-items" style="width:90% ;height: 37px;margin: 0; background-color: #AFEEEE;">
                                         <option value="" disabled selected hidden><?php echo $current   ?></option><br />
                                         <option value="my">My Students Only</option><br />
                                         <option value="all">All Students</option><br />
@@ -265,7 +266,7 @@
             <td colspan="4">
                 <center>
                     <div class="abc scroll">
-                        <table width="93%" class="sub-table scrolldown" style="border-spacing:0;">
+                        <table width="93%" class="sub-table scrolldown" style="border-spacing:0; background-color: #86D2C1;">
                             <thead>
                                 <tr>
                                     <th class="table-headin">
@@ -390,7 +391,7 @@
         $address = $row["studentaddress"];
         echo '
             <div id="popup1" class="overlay">
-                    <div class="popup" style="background-color: #66c2ff;">
+                    <div class="popup" style="background-color: #86D2C1;">
                     <center>
                         <a class="close" href="student.php">&times;</a>
                         <div class="content">

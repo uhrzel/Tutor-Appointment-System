@@ -21,7 +21,8 @@
         }
 
         body {
-            background-color: teal;
+            background-color: #cceeff;
+
         }
     </style>
 </head>
@@ -143,7 +144,7 @@
 
                     <form action="" method="post" class="header-search">
 
-                        <input type="search" name="search" style="background-color: #66a3ff;
+                        <input type="search" name="search" style="background-color: #AFEEEE;
 " class="input-text header-searchbar" placeholder="Search Teacher name or Email" list="doctors">&nbsp;&nbsp;
 
                         <?php
@@ -211,7 +212,7 @@
                 <td colspan="4">
                     <center>
                         <div class="abc scroll">
-                            <table width="93%" class="sub-table scrolldown" border="0" style="background-color: #2887A8;">
+                            <table width="93%" class="sub-table scrolldown" border="0" style="background-color: #86D2C1;">
                                 <thead>
                                     <tr>
                                         <th class="table-headin">
@@ -352,7 +353,7 @@
             $tele = $row['teachertel'];
             echo '
             <div id="popup1" class="overlay">
-                    <div class="popup">
+                    <div class="popup" style="background-color: #86D2C1;">
                     <center>
                         <h2></h2>
                         <a class="close" href="teacher.php">&times;</a>
@@ -443,7 +444,7 @@
             $name = $_GET["name"];
             echo '
             <div id="popup1" class="overlay">
-                    <div class="popup">
+                    <div class="popup" style="background-color:#86D2C1;">
                     <center>
                         <h2>Redirect to Teacher sessions?</h2>
                         <a class="close" href="teacher.php">&times;</a>

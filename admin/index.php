@@ -31,11 +31,12 @@
         }
 
         body {
-            background-color: teal;
+            background-color: #cceeff;
+
         }
 
         .dashbord-tables {
-            background-color: #5A4FCF;
+            background-color: #86D2C1;
         }
     </style>
 

@@ -14,11 +14,13 @@
 </head>
 <style>
     body {
-        background-color: teal !important;
+        background-color: #cceeff;
+
     }
 
     .container {
-        background-color: #2887A8;
+        background-color: #59baa3;
+
     }
 </style>
 

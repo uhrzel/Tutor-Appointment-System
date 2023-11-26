@@ -17,13 +17,15 @@
         }
 
         .sub-table {
-            background-color: #2887A8;
+            background-color: #86D2C1;
+
             animation: transitionIn-Y-bottom 0.5s;
         }
 
 
         body {
-            background-color: teal;
+            background-color: #cceeff;
+
         }
     </style>
 </head>
@@ -201,7 +203,7 @@
 
                         <form action="" method="post" class="header-search">
 
-                            <input type="search" name="search" style=" background-color: #66a3ff;" class="input-text header-searchbar" placeholder="Search Teacher name or Email" list="doctors">&nbsp;&nbsp;
+                            <input type="search" name="search" style=" background-color: #AFEEEE;" class="input-text header-searchbar" placeholder="Search Teacher name or Email" list="doctors">&nbsp;&nbsp;
 
                             <?php
                             echo '<datalist id="doctors">';
@@ -411,7 +413,7 @@
             $tele = $row['teachertel'];
             echo '
             <div id="popup1" class="overlay" >
-                    <div class="popup" style = "background-color: #66c2ff;">
+                    <div class="popup" style = "background-color: #86D2C1;;">
                     <center>
                         <h2></h2>
                         <a class="close" href="teacher.php">&times;</a>
@@ -511,7 +513,7 @@
             if ($error_1 != '4') {
                 echo '
             <div id="popup1" class="overlay">
-                    <div class="popup" style=" background-color: #66c2ff;">
+                    <div class="popup" style=" background-color: #86D2C1;">
                     <center>
                     
                         <a class="close" href="teacher.php">&times;</a> 
@@ -537,7 +539,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="text" name="name" style="background-color: #66a3ff; color: black;" class="input-text" placeholder="Teachers Name" required><br>
+                                    <input type="text" name="name" style="background-color: #AFEEEE; color: black;" class="input-text" placeholder="Teachers Name" required><br>
                                 </td>
                                 
                             </tr>
@@ -548,7 +550,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="email" name="email" style="background-color: #66a3ff; color: black;" class="input-text" placeholder="Email Address" required><br>
+                                    <input type="email" name="email" style="background-color: #AFEEEE; color: black;" class="input-text" placeholder="Email Address" required><br>
                                 </td>
                             </tr>
                             <tr>
@@ -558,7 +560,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="text" name="nic" style="background-color: #66a3ff; color: black;" class="input-text" placeholder="NIC Number" required><br>
+                                    <input type="text" name="nic" style="background-color: #AFEEEE; color: black;" class="input-text" placeholder="NIC Number" required><br>
                                 </td>
                             </tr>
                             <tr>
@@ -568,7 +570,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="tel" name="Tele"  style="background-color: #66a3ff; color: black;" class="input-text" placeholder="Telephone Number" required><br>
+                                    <input type="tel" name="Tele"  style="background-color: #AFEEEE; color: black;" class="input-text" placeholder="Telephone Number" required><br>
                                 </td>
                             </tr>
                             <tr>
@@ -579,7 +581,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <select name="spec" style="background-color: #66a3ff; color: black;"  id="" class="box" >';
+                                    <select name="spec" style="background-color: #AFEEEE; color: black;"  id="" class="box" >';
 
 
                 $list11 = $database->query("select  * from  specialties order by sname asc;");
@@ -604,7 +606,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="password" style="background-color: #66a3ff; color: black;" name="password" class="input-text" placeholder="Defind a Password" required><br>
+                                    <input type="password" style="background-color: #AFEEEE; color: black;" name="password" class="input-text" placeholder="Defind a Password" required><br>
                                 </td>
                             </tr><tr>
                                 <td class="label-td" colspan="2">
@@ -613,7 +615,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="password" style="background-color: #66a3ff; color: black;" name="cpassword" class="input-text" placeholder="Conform Password" required><br>
+                                    <input type="password" style="background-color: #AFEEEE; color: black;" name="cpassword" class="input-text" placeholder="Conform Password" required><br>
                                 </td>
                             </tr>
                             
@@ -640,7 +642,7 @@
             } else {
                 echo '
                     <div id="popup1" class="overlay">
-                            <div class="popup">
+                            <div class="popup" style="background-color: #86D2C1;">
                             <center>
                             <br><br><br><br>
                                 <h2>New Record Added Successfully!</h2>
@@ -687,7 +689,7 @@
             if ($error_1 != '4') {
                 echo '
                     <div id="popup1" class="overlay" >
-                            <div class="popup" style="background-color: #66c2ff;">
+                            <div class="popup" style="background-color: #86D2C1;;">
                             <center>
                             
                                 <a class="close" href="teacher.php">&times;</a> 
@@ -715,7 +717,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                        <input type="email" name="email" style="background-color: #66a3ff; color=black;" class="input-text" placeholder="Email Address" value="' . $email . '" required><br>
+                                        <input type="email" name="email" style="background-color: #AFEEEE; color=black;" class="input-text" placeholder="Email Address" value="' . $email . '" required><br>
                                         </td>
                                     </tr>
                                     <tr>
@@ -726,7 +728,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <input type="text" name="name" style="background-color: #66a3ff; color=black;" class="input-text" placeholder="Teacher Name" value="' . $name . '" required><br>
+                                            <input type="text" name="name" style="background-color: #AFEEEE; color=black;" class="input-text" placeholder="Teacher Name" value="' . $name . '" required><br>
                                         </td>
                                         
                                     </tr>
@@ -738,7 +740,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <input type="text" name="nic" style="background-color: #66a3ff; color=black;" class="input-text" placeholder="NIC Number" value="' . $nic . '" required><br>
+                                            <input type="text" name="nic" style="background-color: #AFEEEE; color=black;" class="input-text" placeholder="NIC Number" value="' . $nic . '" required><br>
                                         </td>
                                     </tr>
                                     <tr>
@@ -748,7 +750,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <input type="tel" name="Tele" style="background-color: #66a3ff; color=black;" class="input-text" placeholder="Telephone Number" value="' . $tele . '" required><br>
+                                            <input type="tel" name="Tele" style="background-color: #AFEEEE; color=black;" class="input-text" placeholder="Telephone Number" value="' . $tele . '" required><br>
                                         </td>
                                     </tr>
                                     <tr>
@@ -759,7 +761,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <select name="spec" style="background-color: #66a3ff; color=black;" id="" class="box">';
+                                            <select name="spec" style="background-color: #AFEEEE; color=black;" id="" class="box">';
 
 
                 $list11 = $database->query("select  * from  specialties;");
@@ -784,7 +786,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <input type="password" style="background-color: #66a3ff; color=black;" name="password" class="input-text" placeholder="Defind a Password" required><br>
+                                            <input type="password" style="background-color: #AFEEEE; color=black;" name="password" class="input-text" placeholder="Defind a Password" required><br>
                                         </td>
                                     </tr><tr>
                                         <td class="label-td" colspan="2">
@@ -793,7 +795,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <input type="password" style="background-color: #66a3ff; color=black;" name="cpassword" class="input-text" placeholder="Conform Password" required><br>
+                                            <input type="password" style="background-color: #AFEEEE; color=black;" name="cpassword" class="input-text" placeholder="Conform Password" required><br>
                                         </td>
                                     </tr>
                                     
@@ -802,7 +804,7 @@
                                         <td colspan="2">
                                             <input type="reset" value="Reset" class="login-btn btn-primary-soft btn" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         
-                                            <input type="submit" value="Save" class="login-btn btn-primary btn">
+                                            <input type="submit" value="Save" class="login-btn btn-primary btn" >
                                         </td>
                         
                                     </tr>

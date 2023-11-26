@@ -21,7 +21,8 @@
         }
 
         body {
-            background-color: teal;
+            background-color: #cceeff;
+
 
         }
     </style>
@@ -281,7 +282,7 @@
 
                                             echo '
                                     <td style="width: 50%;" rowspan="2">
-                                            <div  class="dashboard-items search-items"  style="background-color: #2887A8">
+                                            <div  class="dashboard-items search-items"  style="background-color: #86D2C1;">
                                             
                                                 <div style="width:100%">
                                                         <div class="h1-search" style="font-size:25px; color: black;">
@@ -312,7 +313,7 @@
                                         
                                         
                                         <td style="width: 25%;">
-                                            <div  class="dashboard-items search-items" style="background-color: #2887A8;">
+                                            <div  class="dashboard-items search-items" style="background-color: #86D2C1;">
                                             
                                                 <div style="width:100%;padding-top: 15px;padding-bottom: 15px; ">
                                                         <div class="h1-search" style="font-size:20px;line-height: 35px;margin-left:8px;text-align:center; color: black;">

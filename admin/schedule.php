@@ -17,12 +17,14 @@
         }
 
         .sub-table {
-            background-color: #2887A8;
+            background-color: #86D2C1;
+
             animation: transitionIn-Y-bottom 0.5s;
         }
 
         body {
-            background-color: teal;
+            background-color: #cceeff;
+
         }
     </style>
 </head>
@@ -254,14 +256,14 @@
                                     <td width="30%">
                                         <form action="" method="post">
 
-                                            <input type="date" name="sheduledate" id="date" class="input-text filter-container-items" style="margin: 0;width: 95%; background-color: #66a3ff;">
+                                            <input type="date" name="sheduledate" id="date" class="input-text filter-container-items" style="margin: 0;width: 95%; background-color: #AFEEEE;">
 
                                     </td>
                                     <td width="5%" style="text-align: center;">
                                         Teacher:
                                     </td>
                                     <td width="30%">
-                                        <select name="teacherid" id="" class="box filter-container-items" style="width:90% ;height: 37px;margin: 0; background-color: #66a3ff;">
+                                        <select name="teacherid" id="" class="box filter-container-items" style="width:90% ;height: 37px;margin: 0; background-color: #AFEEEE;">
                                             <option value="" disabled selected hidden>Choose Teacher Name from the list</option><br />
 
                                             <?php
@@ -458,7 +460,7 @@
 
             echo '
             <div id="popup1" class="overlay">
-                    <div class="popup" style="background-color: #3973ac;">
+                    <div class="popup" style="background-color: #59baa3;">
                     <center>
                     
                     
@@ -486,18 +488,18 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="text" name="title" class="input-text" placeholder="Name of this Session" required><br>
+                                    <input type="text" name="title" style="background-color: #AFEEEE;" class="input-text" placeholder="Name of this Session" required><br>
                                 </td>
                             </tr>
                             <tr>
                                 
                                 <td class="label-td" colspan="2">
-                                    <label for="teacherid" class="form-label">Select Teacher: </label>
+                                    <label for="teacherid"  class="form-label">Select Teacher: </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <select name="teacherid" id="" class="box" >
+                                    <select name="teacherid" id="" class="box"  style="background-color: #AFEEEE;">
                                     <option value="" disabled selected hidden>Choose Teacher Name from the list</option><br/>';
 
 
@@ -518,12 +520,12 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="nop" class="form-label">Number of Student/Appointment Numbers : </label>
+                                    <label for="nop"   class="form-label">Number of Student/Appointment Numbers : </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="number" name="nop" class="input-text" min="0"  placeholder="The final appointment number for this session depends on this number" required><br>
+                                    <input type="number"  style="background-color: #AFEEEE;" name="nop" class="input-text" min="0"  placeholder="The final appointment number for this session depends on this number" required><br>
                                 </td>
                             </tr>
                                <tr>
@@ -533,27 +535,27 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="number" name="fee" class="input-text" min="0"  placeholder="Session Fee" required><br>
+                                    <input type="number"  style="background-color: #AFEEEE;"  name="fee" class="input-text" min="0"  placeholder="Session Fee" required><br>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="date" class="form-label">Session Date: </label>
+                                    <label for="date"   class="form-label">Session Date: </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="date" name="date" class="input-text" min="' . date('Y-m-d') . '" required><br>
+                                    <input type="date" style="background-color: #AFEEEE;" name="date" class="input-text" min="' . date('Y-m-d') . '" required><br>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="time" class="form-label">Schedule Time: </label>
+                                    <label for="time"  class="form-label">Schedule Time: </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="time" name="time" class="input-text" placeholder="Time" required><br>
+                                    <input type="time" name="time"  style="background-color: #AFEEEE;" class="input-text" placeholder="Time" required><br>
                                 </td>
                             </tr>
                            
@@ -580,7 +582,7 @@
             $titleget = $get["title"];
             echo '
             <div id="popup1" class="overlay">
-                    <div class="popup">
+                    <div class="popup" style="background-color: #86D2C1;">
                     <center>
                     <br><br>
                         <h2>Session Placed.</h2>
@@ -638,7 +640,7 @@
             $result12 = $database->query($sqlmain12);
             echo '
             <div id="popup1" class="overlay">
-                    <div class="popup" style="width: 70%; background-color: #66c2ff;">
+                    <div class="popup" style="width: 70%; background-color: #59baa3;">
                     <center>
                         <h2></h2>
                         <a class="close" href="schedule.php">&times;</a>

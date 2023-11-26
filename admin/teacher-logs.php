@@ -21,7 +21,7 @@
         }
 
         body {
-            background-color: teal;
+            background-color: #cceeff;
         }
     </style>
 </head>
@@ -219,7 +219,7 @@
                     <td colspan="4">
                         <center>
                             <div class="abc scroll">
-                                <table width="93%" class="sub-table scrolldown" border="0" style="background-color: #2887A8;">
+                                <table width="93%" class="sub-table scrolldown" border="0" style="background-color: #86D2C1;">
                                     <thead>
                                         <tr>
                                             <th class="table-headin">

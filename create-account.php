@@ -13,6 +13,11 @@
     <style>
         .container {
             animation: transitionIn-X 0.5s;
+            background-color: #59baa3;
+        }
+
+        body {
+            background-color: #cceeff;
         }
     </style>
 </head>

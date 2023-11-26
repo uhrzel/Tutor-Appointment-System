@@ -11,7 +11,8 @@
     }
 
     body {
-        background-color: teal !important;
+        background-color: #cceeff !important;
+
     }
 </style>
 
@@ -152,7 +153,8 @@
     ?>
     <style>
         .container {
-            background-color: #2887A8;
+            background-color: #59baa3;
+
         }
     </style>
 

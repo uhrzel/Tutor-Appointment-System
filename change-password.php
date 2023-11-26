@@ -14,6 +14,16 @@
 
 
 </head>
+<style>
+    body {
+        background-color: #cceeff;
+
+    }
+
+    .container {
+        background-color: #86D2C1;
+    }
+</style>
 
 <body>
     <?php
@@ -45,12 +55,13 @@
         $password = $_POST['password'];
         $cpassword = $_POST['cpassword'];
 
-        if ($password == $cpassword) {
 
+        if ($password == $cpassword) {
+            $hashedPassword = md5($password);
             if ($usertype == 'p') {
-                $database->query("update student set studentpassword='$password' where studentemail='$email'");
+                $database->query("update student set studentpassword='$hashedPassword' where studentemail='$email'");
             } else if ($usertype == 'd') {
-                $database->query("update teacher set teacherpassword='$password' where teacheremail='$email'");
+                $database->query("update teacher set teacherpassword='$hashedPassword' where teacheremail='$email'");
             }
 
             $error = '<label for="promter" class="form-label">Password changed successfully</label>';

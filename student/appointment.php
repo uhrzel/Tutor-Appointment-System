@@ -21,7 +21,8 @@
         }
 
         body {
-            background-color: teal;
+            background-color: #cceeff;
+
         }
     </style>
 </head>
@@ -225,7 +226,7 @@
                                 <td width="30%">
                                     <form action="" method="post">
 
-                                        <input type="date" name="sheduledate" id="date" class="input-text filter-container-items" style=" background-color: #66a3ff;
+                                        <input type="date" name="sheduledate" id="date" class="input-text filter-container-items" style=" background-color: #AFEEEE;
  margin: 0;width: 95%;">
 
                                 </td>
@@ -299,7 +300,7 @@
 
                                                 echo '
                                             <td style="width: 25%; ">
-                                                    <div  class="dashboard-items search-items" style="background-color: #2887A8;" >
+                                                    <div  class="dashboard-items search-items" style="background-color: #86D2C1;" >
                                                     
                                                         <div style="width:100%;">
                                                         <div class="h3-search">
@@ -399,7 +400,7 @@
 
             echo '
             <div id="popup1" class="overlay">
-                    <div class="popup" style="background-color: #2887A8">
+                    <div class="popup" style="background-color: #86D2C1;">
                     <center>
                     <br><br>
                         <h2>Booking Successfully.</h2>
@@ -423,7 +424,7 @@
 
             echo '
             <div id="popup1" class="overlay">
-                    <div class="popup" style=" background-color: #66c2ff;">
+                    <div class="popup" style=" background-color: #86D2C1;">
                     <center>
                         <h2>Are you sure?</h2>
                         <a class="close" href="appointment.php">&times;</a>

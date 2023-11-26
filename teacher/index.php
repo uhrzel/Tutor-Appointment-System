@@ -31,15 +31,15 @@
         }
 
         body {
-            background-color: teal;
+            background-color: #cceeff;
+
 
         }
 
         .dashboard-items {
-            background-color: #cce0ff;
-        }
+            background-color: #59baa3;
 
-        .dashbord-tables {}
+        }
     </style>
 
 
@@ -307,7 +307,7 @@
 
                     <p id="anim" style="font-size: 20px;font-weight:600;padding-left: 40px;">Your Up Coming Sessions until Next week</p>
                     <center>
-                        <div class="abc scroll" style="height: 250px;padding: 0;margin: 0; background-color: #2887A8;">
+                        <div class="abc scroll" style="height: 250px;padding: 0;margin: 0; background-color: #86D2C1;">
                             <table width="85%" class="sub-table scrolldown" border="0">
                                 <thead>
 

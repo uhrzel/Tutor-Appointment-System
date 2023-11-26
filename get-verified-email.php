@@ -15,6 +15,17 @@
 
 </head>
 
+<style>
+    body {
+        background-color: #cceeff;
+
+    }
+
+    .container {
+        background-color: #86D2C1;
+    }
+</style>
+
 <body>
     <?php
 

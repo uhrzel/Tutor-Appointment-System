@@ -21,7 +21,8 @@
         }
 
         body {
-            background-color: teal;
+            background-color: #cceeff;
+
 
         }
     </style>
@@ -182,7 +183,7 @@
                 <td>
                     <form action="" method="post" class="header-search">
 
-                        <input type="search" name="search" class="input-text header-searchbar" style="background-color: #66a3ff;" placeholder="Search Teacher name or Email or Date (YYYY-MM-DD)" list="doctors" value="<?php echo $insertkey ?>">&nbsp;&nbsp;
+                        <input type="search" name="search" class="input-text header-searchbar" style="background-color: #AFEEEE;" placeholder="Search Teacher name or Email or Date (YYYY-MM-DD)" list="doctors" value="<?php echo $insertkey ?>">&nbsp;&nbsp;
 
                         <?php
                         echo '<datalist id="doctors">';
@@ -297,7 +298,7 @@
 
                                                 echo '
                                         <td style="width: 25%; ">
-                                                <div  class="dashboard-items search-items" style="background-color: #2887A8;"  >
+                                                <div  class="dashboard-items search-items" style="background-color: #86D2C1;"  >
                                                     <div style="width:100%">
                                                             <div class="h1-search" style="color: black;">
                                                                 ' . substr($title, 0, 21) . '

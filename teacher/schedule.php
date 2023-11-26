@@ -18,10 +18,12 @@
 
         .sub-table {
             animation: transitionIn-Y-bottom 0.5s;
+            background-color: #86D2C1;
         }
 
         body {
-            background-color: teal;
+            background-color: #cceeff;
+
         }
     </style>
 </head>
@@ -189,7 +191,7 @@
                                 <td width="30%">
                                     <form action="" method="post">
 
-                                        <input type="date" name="sheduledate" id="date" class="input-text filter-container-items" style="background-color: #66a3ff; margin: 0;width: 95%;">
+                                        <input type="date" name="sheduledate" id="date" class="input-text filter-container-items" style="background-color: #AFEEEE; margin: 0;width: 95%;">
 
                                 </td>
 
@@ -224,7 +226,7 @@
                 <td colspan="4">
                     <center>
                         <div class="abc scroll">
-                            <table width="93%" class="sub-table scrolldown" border="0" style="background-color: #2887A8;">
+                            <table width="93%" class="sub-table scrolldown" border="0" style="background-color: #86D2C1;">
                                 <thead>
                                     <tr>
                                         <th class="table-headin">
@@ -373,8 +375,8 @@
             $sqlmain12 = "select * from appointment inner join student on student.studentid=appointment.studentid inner join schedule on schedule.scheduleid=appointment.scheduleid where schedule.scheduleid=$id;";
             $result12 = $database->query($sqlmain12);
             echo '
-            <div id="popup1" class="overlay">
-                    <div class="popup" style="width: 70%;">
+            <div id="popup1" class="overlay" >
+                    <div class="popup" style="width: 70%; background-color: #59baa3;">
                     <center>
                         <h2></h2>
                         <a class="close" href="schedule.php">&times;</a>

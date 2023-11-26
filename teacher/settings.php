@@ -26,7 +26,8 @@
         }
 
         body {
-            background-color: teal;
+            background-color: #cceeff;
+
 
         }
     </style>
@@ -196,7 +197,7 @@
                             <tr>
                                 <td style="width: 25%; ">
                                     <a href="?action=edit&id=<?php echo $userid ?>&error=0" class="non-style-link">
-                                        <div class="dashboard-items setting-tabs" style="padding:20px;margin:auto;width:95%; background-color: #2887A8; display: flex">
+                                        <div class="dashboard-items setting-tabs" style="padding:20px;margin:auto;width:95%; background-color: #86D2C1; display: flex">
                                             <div class="btn-icon-back dashboard-icons-setting" style="background-image: url('../img/icons/doctors-hover.svg');"></div>
                                             <div>
                                                 <div class="h1-dashboard" style="color: black;">
@@ -222,7 +223,7 @@
                             <tr>
                                 <td style="width: 25%;">
                                     <a href="?action=view&id=<?php echo $userid ?>" class="non-style-link">
-                                        <div class="dashboard-items setting-tabs" style="padding:20px;margin:auto;width:95%; background-color: #2887A8;display: flex;">
+                                        <div class="dashboard-items setting-tabs" style="padding:20px;margin:auto;width:95%; background-color: #86D2C1; display: flex;">
                                             <div class="btn-icon-back dashboard-icons-setting " style="background-image: url('../img/icons/view-iceblue.svg');"></div>
                                             <div>
                                                 <div class="h1-dashboard" style="color: black;">
@@ -247,7 +248,7 @@
                             <tr>
                                 <td style="width: 25%;">
                                     <a href="?action=drop&id=<?php echo $userid . '&name=' . $username ?>" class="non-style-link">
-                                        <div class="dashboard-items setting-tabs" style="padding:20px;margin:auto;width:95%;  background-color: #2887A8; display: flex;">
+                                        <div class="dashboard-items setting-tabs" style="padding:20px;margin:auto;width:95%;  background-color: #86D2C1; display: flex;">
                                             <div class="btn-icon-back dashboard-icons-setting" style="background-image: url('../img/icons/delete-iceblue.svg');"></div>
                                             <div>
                                                 <div class="h1-dashboard" style="color: #ff5050;">
@@ -313,7 +314,7 @@
             $tele = $row['teachertel'];
             echo '
             <div id="popup1" class="overlay">
-                    <div class="popup" style="background-color: #66c2ff;">
+                    <div class="popup" style="background-color: #59baa3;">
                     <center>
                         <h2></h2>
                         <a class="close" href="settings.php">&times;</a>
@@ -322,7 +323,7 @@
                             
                         </div>
                         <div style="display: flex;justify-content: center;">
-                        <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0" style="background-color: #2887A8;">
+                        <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0" style="background-color: #86D2C1;">
                         
                             <tr>
                                 <td>
@@ -427,13 +428,13 @@
             if ($error_1 != '4') {
                 echo '
                     <div id="popup1" class="overlay">
-                            <div class="popup" style="background-color: #66c2ff">
+                            <div class="popup" style="background-color: #59baa3;">
                             <center>
                             
                                 <a class="close" href="settings.php">&times;</a> 
                                 <div style="display: flex;justify-content: center;">
                                 <div class="abc">
-                                <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0" style="background-color: #2887A8">
+                                <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0" style="background-color: #86D2C1;">
                                 <tr>
                                         <td class="label-td" colspan="2">' .
                     $errorlist[$error_1]
@@ -455,7 +456,7 @@
                                     <tr>
                                         <td class="label-td" colspan="2">
                                         <input type="hidden" name="oldemail" value="' . $email . '" >
-                                        <input type="email" name="email" class="input-text" placeholder="Email Address" value="' . $email . '" required><br>
+                                        <input type="email" name="email" style="background-color: #AFEEEE;" class="input-text" placeholder="Email Address" value="' . $email . '" required><br>
                                         </td>
                                     </tr>
                                     <tr>
@@ -466,7 +467,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <input type="text" name="name" class="input-text" placeholder="Teacher Name" value="' . $name . '" required><br>
+                                            <input type="text" name="name"  style="background-color: #AFEEEE;" class="input-text" placeholder="Teacher Name" value="' . $name . '" required><br>
                                         </td>
                                         
                                     </tr>
@@ -478,7 +479,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <input type="text" name="nic" class="input-text" placeholder="NIC Number" value="' . $nic . '" required><br>
+                                            <input type="text" name="nic"   style="background-color: #AFEEEE;" class="input-text" placeholder="NIC Number" value="' . $nic . '" required><br>
                                         </td>
                                     </tr>
                                     <tr>
@@ -488,7 +489,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <input type="tel" name="Tele" class="input-text" placeholder="Telephone Number" value="' . $tele . '" required><br>
+                                            <input type="tel" name="Tele"  style="background-color: #AFEEEE;" class="input-text" placeholder="Telephone Number" value="' . $tele . '" required><br>
                                         </td>
                                     </tr>
                                     <tr>
@@ -499,7 +500,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <select name="spec" id="" class="box">';
+                                            <select name="spec"  style="background-color: #AFEEEE;" id="" class="box">';
 
 
                 $list11 = $database->query("select  * from  specialties;");
@@ -524,7 +525,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <input type="password" name="password" class="input-text" placeholder="Defind a Password" required><br>
+                                            <input type="password"  style="background-color: #AFEEEE;" name="password" class="input-text" placeholder="Defind a Password" required><br>
                                         </td>
                                     </tr><tr>
                                         <td class="label-td" colspan="2">
@@ -533,7 +534,7 @@
                                     </tr>
                                     <tr>
                                         <td class="label-td" colspan="2">
-                                            <input type="password" name="cpassword" class="input-text" placeholder="Conform Password" required><br>
+                                            <input type="password"  style="background-color: #AFEEEE;" name="cpassword" class="input-text" placeholder="Conform Password" required><br>
                                         </td>
                                     </tr>
                                     

@@ -21,7 +21,8 @@
         }
 
         body {
-            background-color: teal;
+            background-color: #cceeff;
+
         }
     </style>
 </head>
@@ -199,7 +200,7 @@
 
                         <form action="" method="post" class="header-search">
 
-                            <input type="search" name="search" style=" background-color: #66a3ff;
+                            <input type="search" name="search" style=" background-color: #AFEEEE;
 " class="input-text header-searchbar" placeholder="Search Student name or Email" list="patient">&nbsp;&nbsp;
 
                             <?php
@@ -267,7 +268,7 @@
                     <td colspan="4">
                         <center>
                             <div class="abc scroll">
-                                <table width="93%" class="sub-table scrolldown" style="border-spacing:0; background-color: #2887A8">
+                                <table width="93%" class="sub-table scrolldown" style="border-spacing:0; background-color: #86D2C1;">
                                     <thead>
                                         <tr>
                                             <th class="table-headin">
@@ -392,14 +393,14 @@
         $address = $row["studentaddress"];
         echo '
             <div id="popup1" class="overlay" >
-                    <div class="popup" style="background-color: #66c2ff;">
+                    <div class="popup" style="background-color: #59baa3;">
                     <center>
                         <a class="close" href="student.php">&times;</a>
                         <div class="content">
 
                         </div>
                         <div style="display: flex;justify-content: center;">
-                        <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0" style=" background-color: #2887A8">
+                        <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0" style=" background-color: #86D2C1;">
                             <tr>
                                 <td>
                                     <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">View Details.</p><br><br>

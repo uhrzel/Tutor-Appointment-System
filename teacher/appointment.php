@@ -21,11 +21,13 @@
         }
 
         body {
-            background-color: teal;
+            background-color: #cceeff;
+
         }
 
         .dashbord-tables {
-            background-color: #2887A8;
+            background-color: #86D2C1;
+
         }
     </style>
 </head>
@@ -200,7 +202,7 @@
                                 <td width="30%">
                                     <form action="" method="post">
 
-                                        <input type="date" name="sheduledate" id="date" class="input-text filter-container-items" style=" background-color: #66a3ff; margin: 0;width: 95%;">
+                                        <input type="date" name="sheduledate" id="date" class="input-text filter-container-items" style=" background-color: #AFEEEE; margin: 0;width: 95%;">
 
                                 </td>
 
@@ -246,7 +248,7 @@
                 <td colspan="4">
                     <center>
                         <div class="abc scroll">
-                            <table width="93%" class="sub-table scrolldown" border="0" style="background-color: #2887A8;">
+                            <table width="93%" class="sub-table scrolldown" border="0" style="background-color: #86D2C1;">
                                 <thead>
                                     <tr>
                                         <th class=" table-headin">
