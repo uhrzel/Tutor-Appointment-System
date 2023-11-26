@@ -27,7 +27,7 @@
         }
 
         .dashboard-items {
-            background-color: #cce0ff;
+            background-color: #59baa3;
         }
 
         body {
@@ -35,7 +35,7 @@
         }
 
         .dashbord-tables {
-            background-color: #2887A8;
+            background-color: #5A4FCF;
         }
     </style>
 
@@ -213,7 +213,7 @@
 
                         <form action="teacher.php" method="post" class="header-search">
 
-                            <input type="search" name="search" style=" background-color: #66a3ff;" class="input-text header-searchbar" placeholder="Search Teacher name or Email" list="doctors">&nbsp;&nbsp;
+                            <input type="search" name="search" style=" background-color: #AFEEEE;" class="input-text header-searchbar" placeholder="Search Teacher name or Email" list="doctors">&nbsp;&nbsp;
 
                             <?php
                             echo '<datalist id="doctors">';
@@ -332,9 +332,6 @@
                         </center>
                     </td>
                 </tr>
-
-
-
 
 
 
