@@ -153,6 +153,21 @@
                         </a>
                     </td>
                 </tr>
+                <tr class="menu-row">
+                    <td class="menu-btn">
+                        <a href="courses.php" class="non-style-link-menu">
+                            <div style="margin-right: 80px;">
+                                <p class="menu-text menu-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+
+                                        <path d="M44 4h360c24.4 0 44 19.6 44 44s-19.6 44-44 44H44C19.6 92 0 72.4 0 48S19.6 4 44 4zm360 80H44C19.6 84 0 103.6 0 128s19.6 44 44 44h360c24.4 0 44-19.6 44-44s-19.6-44-44-44zM44 324h360c24.4 0 44-19.6 44-44s-19.6-44-44-44H44C19.6 236 0 255.6 0 280s19.6 44 44 44zm360 80H44C19.6 404 0 423.6 0 448s19.6 44 44 44h360c24.4 0 44-19.6 44-44s-19.6-44-44-44z" />
+                                    </svg>
+                                    Courses
+                                </p>
+                            </div>
+                        </a>
+                    </td>
+                </tr>
 
                 <tr class="menu-row">
                     <td class="menu-btn">

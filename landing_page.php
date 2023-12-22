@@ -179,7 +179,7 @@
                 <div class="row">
                     <div class="footer-col col-md-4">
                         <h5>Location</h5>
-                        <p>9506 Polomolok South Cotabato, <br />Philippines</p>
+                        <p>9506 Tupi South Cotabato, <br />Philippines</p>
                     </div>
                     <div class="footer-col col-md-4">
                         <h5>Share with Love</h5>
@@ -214,7 +214,7 @@
                     <p>
                         All Rights Reserved<br />Made with
                         <i class="fa fa-heart pulse"></i> by
-                        <a href="#">ArzelJRZ</a>
+                        <a href="#">Web Dev </a>
                     </p>
                 </div>
             </div>

@@ -10,15 +10,18 @@
     <link rel="stylesheet" href="../css/admin.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="../img/logo.png" />
-    <title>Students</title>
+    <title>Courses</title>
     <style>
         .popup {
             animation: transitionIn-Y-bottom 0.5s;
         }
 
         .sub-table {
+            background-color: #86D2C1;
+
             animation: transitionIn-Y-bottom 0.5s;
         }
+
 
         body {
             background-color: #cceeff;
@@ -71,6 +74,7 @@
                             </tr>
                         </table>
                     </td>
+
                 </tr>
                 <tr class="menu-row">
                     <td class="menu-btn ">
@@ -199,33 +203,31 @@
                     </td>
                 </tr>
 
+
             </table>
         </div>
         <div class="dash-body">
             <table border="0" width="100%" style=" border-spacing: 0;margin:0;padding:0;margin-top:25px; ">
                 <tr>
                     <td width="13%">
-
-                        <a href="student.php"><button class="login-btn btn-primary-soft btn btn-icon-back" style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px">
+                        <a href="courses.php"><button class="login-btn btn-primary-soft btn btn-icon-back" style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px">
                                 <font class="tn-in-text">Back</font>
                             </button></a>
-
                     </td>
                     <td>
 
                         <form action="" method="post" class="header-search">
 
-                            <input type="search" name="search" style=" background-color: #AFEEEE;
-" class="input-text header-searchbar" placeholder="Search Student name or Email" list="patient">&nbsp;&nbsp;
+                            <input type="search" name="search" style=" background-color: #AFEEEE;" class="input-text header-searchbar" placeholder="Search courses" list="doctors">&nbsp;&nbsp;
 
                             <?php
-                            echo '<datalist id="patient">';
-                            $list11 = $database->query("select  studentname,studentemail from student;");
+                            echo '<datalist id="doctors">';
+                            $list11 = $database->query("select coursename,coursedescription from  courses;");
 
                             for ($y = 0; $y < $list11->num_rows; $y++) {
                                 $row00 = $list11->fetch_assoc();
-                                $d = $row00["studentname"];
-                                $c = $row00["studentemail"];
+                                $d = $row00["coursename"];
+                                $c = $row00["coursedescription"];
                                 echo "<option value='$d'><br/>";
                                 echo "<option value='$c'><br/>";
                             };
@@ -259,10 +261,18 @@
 
                 </tr>
 
-
+                <tr>
+                    <td colspan="2" style="padding-top:30px;">
+                        <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">Add New Courses</p>
+                    </td>
+                    <td colspan="2">
+                        <a href="?action=add&id=none&error=0" class="non-style-link"><button class="login-btn btn-primary btn button-icon" style="display: flex;justify-content: center;align-items: center;margin-left:75px;background-image: url('../img/icons/add.svg');">Add New</font></button>
+                        </a>
+                    </td>
+                </tr>
                 <tr>
                     <td colspan="4" style="padding-top:10px;">
-                        <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">All Students (<?php echo $list11->num_rows; ?>)</p>
+                        <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">All Courses (<?php echo $list11->num_rows; ?>)</p>
                     </td>
 
                 </tr>
@@ -270,51 +280,33 @@
                 if ($_POST) {
                     $keyword = $_POST["search"];
 
-                    $sqlmain = "select * from student where studentemail='$keyword' or studentname='$keyword' or studentname like '$keyword%' or studentname like '%$keyword' or studentname like '%$keyword%' ";
+                    $sqlmain = "SELECT * FROM courses WHERE coursename LIKE '%$keyword%' OR coursedescription LIKE '%$keyword%'";
                 } else {
-                    $sqlmain = "select * from student order by studentid desc";
+                    $sqlmain = "SELECT * FROM courses ORDER BY courseid DESC";
                 }
-
-
-
                 ?>
 
+
                 <tr>
-                    <td colspan="4">
+                    <td colspan="4" class="tr-data">
                         <center>
                             <div class="abc scroll">
-                                <table width="93%" class="sub-table scrolldown" style="border-spacing:0; background-color: #86D2C1;">
+                                <table width="93%" class="sub-table scrolldown" border="0">
                                     <thead>
                                         <tr>
                                             <th class="table-headin">
 
 
-                                                Name
+                                                Course Title
 
                                             </th>
                                             <th class="table-headin">
-
-
-                                                NIC
-
+                                                Course description
                                             </th>
                                             <th class="table-headin">
-
-
-                                                Telephone
-
-                                            </th>
-                                            <th class="table-headin">
-                                                Email
-                                            </th>
-                                            <th class="table-headin">
-
-                                                Date of Birth
-
-                                            </th>
-                                            <th class="table-headin">
-
                                                 Events
+                                            </th>
+
 
                                         </tr>
                                     </thead>
@@ -334,7 +326,7 @@
                                     
                                     <br>
                                     <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">We  couldnt find anything related to your keywords !</p>
-                                    <a class="non-style-link" href="student.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Show all Sutdents &nbsp;</font></button>
+                                    <a class="non-style-link" href="courses.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Show all Courses &nbsp;</font></button>
                                     </a>
                                     </center>
                                     <br><br><br><br>
@@ -343,34 +335,26 @@
                                         } else {
                                             for ($x = 0; $x < $result->num_rows; $x++) {
                                                 $row = $result->fetch_assoc();
-                                                $pid = $row["studentid"];
-                                                $name = $row["studentname"];
-                                                $email = $row["studentemail"];
-                                                $nic = $row["studentnic"];
-                                                $dob = $row["studentdob"];
-                                                $tel = $row["studenttel"];
+                                                $courseid = $row["courseid"];
+                                                $coursename = $row["coursename"];
+                                                $coursedescription = $row["coursedescription"];
 
                                                 echo '<tr>
                                         <td> &nbsp;' .
-                                                    substr($name, 0, 35)
+                                                    substr($coursename, 0, 30)
                                                     . '</td>
                                         <td>
-                                        ' . substr($nic, 0, 12) . '
+                                        ' . substr($coursedescription, 0, 20) . '
                                         </td>
+                                     
+
                                         <td>
-                                            ' . substr($tel, 0, 10) . '
-                                        </td>
-                                        <td>
-                                        ' . substr($email, 0, 20) . '
-                                         </td>
-                                        <td>
-                                        ' . substr($dob, 0, 10) . '
-                                        </td>
-                                        <td >
                                         <div style="display:flex;justify-content: center;">
-                                        
-                                        <a href="?action=view&id=' . $pid . '" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-view"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">View</font></button></a>
-                                       
+                                        <a href="?action=edit&id=' . $courseid . '&error=0" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-edit"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Edit</font></button></a>
+                                        &nbsp;&nbsp;&nbsp;
+                                        <a href="?action=view&id=' . $courseid . '" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-view"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">View</font></button></a>
+                                       &nbsp;&nbsp;&nbsp;
+                                       <a href="?action=drop&id=' . $courseid . '" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-delete "  style=" color: red; padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Remove</font></button></a>
                                         </div>
                                         </td>
                                     </tr>';
@@ -397,113 +381,80 @@
 
         $id = $_GET["id"];
         $action = $_GET["action"];
-        $sqlmain = "select * from student where studentid='$id'";
-        $result = $database->query($sqlmain);
-        $row = $result->fetch_assoc();
-        $name = $row["studentname"];
-        $email = $row["studentemail"];
-        $nic = $row["studentnic"];
-        $dob = $row["studentdob"];
-        $tele = $row["studenttel"];
-        $address = $row["studentaddress"];
-        echo '
-            <div id="popup1" class="overlay" >
-                    <div class="popup" style="background-color: #59baa3;">
+        if ($action == 'drop') {
+            $nameget = $_GET["name"];
+            echo '
+            <div id="popup1" class="overlay">
+                    <div class="popup" style="background-color: red;">
                     <center>
-                        <a class="close" href="student.php">&times;</a>
+                        <h2>Are you sure?</h2>
+                        <a class="close" href="courses.php">&times;</a>
                         <div class="content">
-
+                            You want to delete this record<br>(' . substr($nameget, 0, 40) . ').
+                            
                         </div>
                         <div style="display: flex;justify-content: center;">
-                        <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0" style=" background-color: #86D2C1;">
+                        <a href="delete-course.php?id=' . $id . '" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"<font class="tn-in-text">&nbsp;Yes&nbsp;</font></button></a>&nbsp;&nbsp;&nbsp;
+                        <a href="courses.php" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"><font class="tn-in-text">&nbsp;&nbsp;No&nbsp;&nbsp;</font></button></a>
+
+                        </div>
+                    </center>
+            </div>
+            </div>
+            ';
+        } elseif ($action == 'view') {
+            $sqlmain = "select * from courses where courseid='$id'";
+            $result = $database->query($sqlmain);
+            $row = $result->fetch_assoc();
+            $courseName = $row["coursename"];
+            $courseDescription = $row["coursedescription"];
+
+            echo '
+            <div id="popup1" class="overlay" >
+                    <div class="popup" style = "background-color: #86D2C1;">
+                    <center>
+                        <h2></h2>
+                        <a class="close" href="courses.php">&times;</a>
+                        <div class="content">
+                            eDoc Web App<br>
+                            
+                        </div>
+                        <div style="display: flex;justify-content: center;">
+                        <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0">
+                        
                             <tr>
                                 <td>
                                     <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">View Details.</p><br><br>
                                 </td>
                             </tr>
-                            <tr>
-                                
-                                <td class="label-td" colspan="2">
-                                    <label for="name" class="form-label">Student ID: </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    P-' . $id . '<br><br>
-                                </td>
-                                
-                            </tr>
                             
                             <tr>
                                 
                                 <td class="label-td" colspan="2">
-                                    <label for="name" class="form-label">Name: </label>
+                                    <label for="name" class="form-label">Course Name: </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    ' . $name . '<br><br>
+                                    ' . $courseName . '<br><br>
                                 </td>
                                 
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="Email" class="form-label">Email: </label>
+                                    <label for="Email" class="form-label">Course Description: </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                ' . $email . '<br><br>
+                                ' . $courseDescription . '<br><br>
                                 </td>
                             </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    <label for="nic" class="form-label">NIC: </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                ' . $nic . '<br><br>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    <label for="Tele" class="form-label">Telephone: </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                ' . $tele . '<br><br>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    <label for="spec" class="form-label">Address: </label>
-                                    
-                                </td>
-                            </tr>
-                            <tr>
-                            <td class="label-td" colspan="2">
-                            ' . $address . '<br><br>
-                            </td>
-                            </tr>
-                            <tr>
-                                
-                                <td class="label-td" colspan="2">
-                                    <label for="name" class="form-label">Date of Birth: </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    ' . $dob . '<br><br>
-                                </td>
-                                
-                            </tr>
+                        
                             <tr>
                                 <td colspan="2">
-                                    <a href="student.php"><input type="button" value="OK" class="login-btn btn-primary-soft btn" ></a>
+                                    <a href="courses.php"><input type="button" value="OK" class="login-btn btn-primary-soft btn" style="color: blue;"></a>
                                 
-                                    
                                 </td>
                 
                             </tr>
@@ -516,6 +467,200 @@
             </div>
             </div>
             ';
+        } elseif ($action == 'add') {
+            $error_1 = $_GET["error"];
+            $errorlist = array(
+                '1' => '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Already have a course</label>',
+                '2' => '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Error Courses</label>',
+                '3' => '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;"></label>',
+                '4' => "",
+                '0' => '',
+
+            );
+            if ($error_1 != '4') {
+                echo '
+            <div id="popup1" class="overlay">
+                    <div class="popup" style=" background-color: #86D2C1;">
+                    <center>
+                    
+                        <a class="close" href="courses.php">&times;</a> 
+                        <div style="display: flex;justify-content: center;">
+                        <div class="abc">
+                        <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0">
+                        <tr>
+                                <td class="label-td" colspan="2">' .
+                    $errorlist[$error_1]
+                    . '</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">Add New Course.</p><br><br>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <form action="add-courses.php" method="POST" class="add-new-form">
+                                <td class="label-td" colspan="2">
+                                    <label for="name" class="form-label">Course Title: </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-td" colspan="2">
+                                    <input type="text" name="courseName" style="background-color: #AFEEEE; color: black;" class="input-text" placeholder="Course Title" required><br>
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td class="label-td" colspan="2">
+                                    <label for="courseDescription" class="form-label">Course Description: </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-td" colspan="2">
+                                    <input type="text" name="courseDescription" style="background-color: #AFEEEE; color: black;" class="input-text" placeholder="Course Description" required><br>
+                                </td>
+                            </tr>
+                          
+                            
+                
+                            <tr>
+                                <td colspan="2">
+                                    <input type="reset" value="Reset" class="login-btn btn-primary-soft btn" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                
+                                    <input type="submit" value="Add" class="login-btn btn-primary btn">
+                                </td>
+                
+                            </tr>
+                           
+                            </form>
+                            </tr>
+                        </table>
+                        </div>
+                        </div>
+                    </center>
+                    <br><br>
+            </div>
+            </div>
+            ';
+            } else {
+                echo '
+                    <div id="popup1" class="overlay">
+                            <div class="popup" style="background-color: #86D2C1;">
+                            <center>
+                            <br><br><br><br>
+                                <h2>New Course Added Successfully!</h2>
+                                <a class="close" href="courses.php">&times;</a>
+                                <div class="content">
+                                    
+                                    
+                                </div>
+                                <div style="display: flex;justify-content: center;">
+                                
+                                <a href="courses.php" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"><font class="tn-in-text">&nbsp;&nbsp;OK&nbsp;&nbsp;</font></button></a>
+
+                                </div>
+                                <br><br>
+                            </center>
+                    </div>
+                    </div>
+        ';
+            }
+        } else if ($action == 'edit') {
+            $sqlmain = "SELECT * FROM courses WHERE courseid='$id'";
+            $result = $database->query($sqlmain);
+            $row = $result->fetch_assoc();
+            $courseName = $row["coursename"];
+            $courseDescription = $row["coursedescription"];
+
+            $error_1 = $_GET["error"];
+            $errorlist = array(
+                '1' => '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Course with this name already exists.</label>',
+                '2' => '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Password Confirmation Error! Reconfirm Password</label>',
+                '3' => '<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;"></label>',
+                '4' => "",
+                '0' => '',
+            );
+
+            if ($error_1 != '4') {
+                echo '
+        <div id="popup1" class="overlay">
+            <div class="popup" style="background-color: #86D2C1;">
+                <center>
+                    <a class="close" href="courses.php">&times;</a>
+                    <div style="display: flex;justify-content: center;">
+                        <div class="abc">
+                            <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0">
+                                <tr>
+                                    <td class="label-td" colspan="2">' . $errorlist[$error_1] . '</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">Edit Course Details.</p>
+                                        Course ID: ' . $id . ' (Auto Generated)<br><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-td" colspan="2">
+                                        <form action="edit-course.php" method="POST" class="add-new-form">
+                                            <label for="CourseName" class="form-label">Course Name: </label>
+                                            <input type="hidden" value="' . $id . '" name="id00">
+                                            <input type="hidden" name="oldCourseName" value="' . $courseName . '">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-td" colspan="2">
+                                        <input type="text" name="courseName" style="background-color: #AFEEEE; color=black;" class="input-text" placeholder="Course Name" value="' . $courseName . '" required><br>
+                                    </td>
+                                </tr>
+                                <!-- Add other fields here -->
+                                <tr>
+                                    <td class="label-td" colspan="2">
+                                        <label for="CourseDescription" class="form-label">Course Description: </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="label-td" colspan="2">
+                                        <input type="text" name="courseDescription" style="background-color: #AFEEEE; color=black;" class="input-text" placeholder="Course Description" value="' . $courseDescription . '" required><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <input type="reset" value="Reset" class="login-btn btn-primary-soft btn" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="submit" value="Save" class="login-btn btn-primary btn" >
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </center>
+                <br><br>
+            </div>
+        </div>
+        ';
+            } else {
+                echo '
+                <div id="popup1" class="overlay">
+                        <div class="popup" style="background-color: #86D2C1;">
+                        <center>
+                        <br><br><br><br>
+                            <h2>Edit Successfully!</h2>
+                            <a class="close" href="courses.php">&times;</a>
+                            <div class="content">
+                                
+                                
+                            </div>
+                            <div style="display: flex;justify-content: center;">
+                            
+                            <a href="courses.php" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"><font class="tn-in-text">&nbsp;&nbsp;OK&nbsp;&nbsp;</font></button></a>
+
+                            </div>
+                            <br><br>
+                        </center>
+                </div>
+                </div>
+    ';
+            };
+        };
     };
 
     ?>
