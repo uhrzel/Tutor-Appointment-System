@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-    /*  body {
-        background-image: url(img/doc.jpg);
-    } */
 
-    h1 {
-        font-family: 'Courier New', Courier, monospace;
-        font-weight: bold;
-    }
-
-    body {
-        background-color: #cceeff !important;
-
-    }
-</style>
 
 <head>
     <meta charset="UTF-8">
@@ -30,6 +16,43 @@
 
 
 </head>
+<style>
+    .container {
+        background-color: #59baa3 !important;
+
+    }
+
+    h1 {
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+    }
+
+    body {
+        background-color: #cceeff !important;
+
+    }
+
+    @media only screen and (max-width: 600px) {
+
+        /* Adjust styles for smaller screens here */
+        .container {
+            width: 100%;
+        }
+
+        .form-body {
+            margin-top: 10px;
+        }
+
+        .label-td {
+            padding: 5px;
+        }
+
+        .input-text,
+        .login-btn {
+            width: 100%;
+        }
+    }
+</style>
 <link rel="icon" type="image/png" href="./img/logo.png" />
 
 
@@ -151,12 +174,7 @@
     }
 
     ?>
-    <style>
-        .container {
-            background-color: #59baa3;
 
-        }
-    </style>
 
     <center>
         <h1>TUTORING APPOINTMENT SYSTEM</h1>

@@ -22,6 +22,27 @@
         background-color: #59baa3;
 
     }
+
+    @media only screen and (max-width: 600px) {
+
+        /* Adjust styles for smaller screens here */
+        .container {
+            width: 100%;
+        }
+
+        .form-body {
+            margin-top: 10px;
+        }
+
+        .label-td {
+            padding: 5px;
+        }
+
+        .input-text,
+        .login-btn {
+            width: 100%;
+        }
+    }
 </style>
 
 <body>
