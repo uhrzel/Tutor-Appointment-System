@@ -345,9 +345,9 @@
                                                 $name = $row["teachername"];
                                                 $email = $row["teacheremail"];
                                                 $spe = $row["specialties"];
-                                                $spcil_res = $database->query("select sname from specialties where id='$spe'");
+                                                $spcil_res = $database->query("select coursename from courses where courseid='$spe'");
                                                 $spcil_array = $spcil_res->fetch_assoc();
-                                                $spcil_name = $spcil_array["sname"];
+                                                $spcil_name = $spcil_array["coursename"];
                                                 echo '<tr>
                                         <td> &nbsp;' .
                                                     substr($name, 0, 30)
@@ -421,14 +421,14 @@
             $email = $row["teacheremail"];
             $spe = $row["specialties"];
 
-            $spcil_res = $database->query("select sname from specialties where id='$spe'");
+            $spcil_res = $database->query("select coursename from courses where courseid='$spe'");
             $spcil_array = $spcil_res->fetch_assoc();
-            $spcil_name = $spcil_array["sname"];
+            $spcil_name = $spcil_array["coursename"];
             $nic = $row['teachernic'];
             $tele = $row['teachertel'];
             echo '
             <div id="popup1" class="overlay" >
-                    <div class="popup" style = "background-color: #86D2C1;;">
+                    <div class="popup" style = "background-color: #86D2C1;">
                     <center>
                         <h2></h2>
                         <a class="close" href="teacher.php">&times;</a>
@@ -599,14 +599,14 @@
                                     <select name="spec" style="background-color: #AFEEEE; color: black;"  id="" class="box" >';
 
 
-                $list11 = $database->query("select  * from  specialties order by sname asc;");
+                $list11 = $database->query("select * from courses order by coursename asc;");
 
-                for ($y = 0; $y < $list11->num_rows; $y++) {
-                    $row00 = $list11->fetch_assoc();
-                    $sn = $row00["sname"];
-                    $id00 = $row00["id"];
-                    echo "<option value=" . $id00 . ">$sn</option><br/>";
-                };
+                while ($row00 = $list11->fetch_assoc()) {
+                    $courseId = $row00["courseid"];
+                    $courseName = $row00["coursename"];
+                    echo "<option value='$courseId'>$courseName</option>";
+                }
+
 
 
 
@@ -685,9 +685,9 @@
             $email = $row["teacheremail"];
             $spe = $row["specialties"];
 
-            $spcil_res = $database->query("select sname from specialties where id='$spe'");
+            $spcil_res = $database->query("select coursename from courses where courseid='$spe'");
             $spcil_array = $spcil_res->fetch_assoc();
-            $spcil_name = $spcil_array["sname"];
+            $spcil_name = $spcil_array["coursename"];
             $nic = $row['teachernic'];
             $tele = $row['teachertel'];
 
@@ -779,12 +779,12 @@
                                             <select name="spec" style="background-color: #AFEEEE; color=black;" id="" class="box">';
 
 
-                $list11 = $database->query("select  * from  specialties;");
+                $list11 = $database->query("select  * from  courses;");
 
                 for ($y = 0; $y < $list11->num_rows; $y++) {
                     $row00 = $list11->fetch_assoc();
-                    $sn = $row00["sname"];
-                    $id00 = $row00["id"];
+                    $sn = $row00["coursename"];
+                    $id00 = $row00["courseid"];
                     echo "<option value=" . $id00 . ">$sn</option><br/>";
                 };
 
@@ -837,7 +837,7 @@
             } else {
                 echo '
                 <div id="popup1" class="overlay">
-                        <div class="popup">
+                        <div class="popup" style="background-color: #86D2C1;">
                         <center>
                         <br><br><br><br>
                             <h2>Edit Successfully!</h2>

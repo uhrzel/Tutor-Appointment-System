@@ -41,8 +41,6 @@
 
 
     if ($_POST) {
-        //print_r($_POST);
-        $result = $database->query("select * from webuser");
         $name = $_POST['name'];
         $nic = $_POST['nic'];
         $spec = $_POST['spec'];
@@ -57,14 +55,22 @@
             if ($result->num_rows == 1) {
                 $error = '1';
             } else {
-
                 $hashed_p = md5($password);
 
-                $sql1 = "insert into teacher(teacheremail,teachername,teacherpassword,teachernic,teachertel,specialties) values('$email','$name','$hashed_p','$nic','$tele',$spec);";
+                // Insert into the teacher table
+                $sql1 = "INSERT INTO teacher (teacheremail, teachername, teacherpassword, teachernic, teachertel, specialties) VALUES ('$email', '$name', '$hashed_p', '$nic', '$tele', '$spec')";
                 $database->query($sql1);
 
-                $sql2 = "insert into webuser(email, usertype) values('$email','d');";
+                // Get the teacher ID
+                $teacherId = $database->insert_id;
+
+                // Insert into the webuser table
+                $sql2 = "INSERT INTO webuser (email, usertype) VALUES ('$email', 'd')";
                 $database->query($sql2);
+
+                // Insert into the courses table
+                $sql3 = "INSERT INTO courses (teacher_id, course_id) VALUES ('$teacherId', '$spec')";
+                $database->query($sql3);
 
                 require('../PHPMailer/PHPMailerAutoload.php');
                 $mail = new PHPMailer;
@@ -91,22 +97,17 @@
                     echo 'Message has been sent';
                 }
 
-                //echo $sql1;
-                //echo $sql2;
                 $error = '4';
             }
         } else {
             $error = '2';
         }
     } else {
-        //header('location: signup.php');
         $error = '3';
     }
 
-
     header("location: teacher.php?action=add&error=" . $error);
     ?>
-
 
 
 </body>

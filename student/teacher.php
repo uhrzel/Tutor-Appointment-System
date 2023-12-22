@@ -264,9 +264,9 @@
                                             $name = $row["teachername"];
                                             $email = $row["teacheremail"];
                                             $spe = $row["specialties"];
-                                            $spcil_res = $database->query("select sname from specialties where id='$spe'");
+                                            $spcil_res = $database->query("select coursename from courses where courseid='$spe'");
                                             $spcil_array = $spcil_res->fetch_assoc();
-                                            $spcil_name = $spcil_array["sname"];
+                                            $spcil_name = $spcil_array["coursename"];
                                             echo '<tr>
                                         <td> &nbsp;' .
                                                 substr($name, 0, 30)
@@ -343,12 +343,12 @@
             $email = $row["teacheremail"];
             $spe = $row["specialties"];
 
-            $stmt = $database->prepare("select sname from specialties where id=?");
+            $stmt = $database->prepare("select coursename from courses where courseid=?");
             $stmt->bind_param("s", $spe);
             $stmt->execute();
             $spcil_res = $stmt->get_result();
             $spcil_array = $spcil_res->fetch_assoc();
-            $spcil_name = $spcil_array["sname"];
+            $spcil_name = $spcil_array["coursename"];
             $nic = $row['teachernic'];
             $tele = $row['teachertel'];
             echo '
