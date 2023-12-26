@@ -1,13 +1,13 @@
 # TUTOR APPOINTMENT SYSTEM
 
-1. Student:
-   ajmixrhyme@gmail.com
-   123
+1. Student
+   Email: ajmixrhyme@gmail.com
+   Password: 123
 
 2. Teacher:
-   Arzeljrz17@gmail.com
-   123
+   Email: Arzeljrz17@gmail.com
+   Password: 123
 
 3. Admin:
-   admin@admin.com
-   password
+   Email: admin@admin.com
+   Password: password
