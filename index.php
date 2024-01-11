@@ -22,13 +22,9 @@
 
         #loader-img {
             width: 200px;
-            /* Set the width of your image */
             height: 200px;
-            /* Set the height of your image */
             border: 8px solid transparent;
-            /* Set the border width and initial color */
             border-top-color: #3498db;
-            /* Set the initial border color */
             border-radius: 50%;
             animation: spin 2s linear infinite, changeBorderColor 4s linear infinite;
         }
@@ -64,17 +60,64 @@
                 border-top-color: #3498db;
             }
         }
+
+        #messenger-box {
+            display: none;
+            position: fixed;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #ok-button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #ok-button:hover {
+            background-color: #2980b9;
+        }
     </style>
 </head>
 
 <body>
-    <img id="loader-img" src="./img/logo.png" alt="Loader">
+    <div id="messenger-box">
+        <p>This website is not responsive. Please use the desktop site for a better experience.</p>
+        <button id="ok-button" onclick="stopLoader()">OK</button>
+    </div>
+
+    <div id="loader-container">
+        <img id="loader-img" src="./img/logo.png" alt="Loader">
+    </div>
+
 
     <script>
-        // Wait for 10 seconds and then redirect to login.php
-        setTimeout(function() {
+        if (/Mobi/.test(navigator.userAgent)) {
+
+            setTimeout(function() {
+                document.getElementById('messenger-box').style.display = 'block';
+            }, 2000);
+        } else {
+
+            setTimeout(function() {
+                window.location.href = 'landing_page.php';
+            }, 5000);
+        }
+
+        function stopLoader() {
+            document.getElementById('loader-container').style.display = 'none';
             window.location.href = 'landing_page.php';
-        }, 5000);
+        }
     </script>
 </body>
 

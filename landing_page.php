@@ -212,9 +212,8 @@
             <div class="container">
                 <div class="col-md-12">
                     <p>
-                        All Rights Reserved<br />Made with
-                        <i class="fa fa-heart pulse"></i> by
-                        <a href="#">Web Dev </a>
+                        Use dekstop site for <br />better
+                        <a href="#"> <strong>Experience</strong> </a>
                     </p>
                 </div>
             </div>
